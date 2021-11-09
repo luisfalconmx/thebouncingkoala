@@ -48,7 +48,7 @@ module.exports = (env, argv) => {
     config.devServer = {
       host: HOST,
       port: 3000,
-      contentBase: path.join(__dirname, 'dist'),
+      static: path.join(__dirname, 'dist'),
       compress: true
     }
   }

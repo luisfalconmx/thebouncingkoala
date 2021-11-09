@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './index.pcss'
 
 const Hero = (props) => {
   const { title, image, imageAlt } = props
 
   return (
-    <div className="w-screen h-screen bg-gray-900 flex flex-col justify-center items-center">
+    <div className="hero">
       <img src={image} alt={imageAlt} />
-      <h1 className="text-white text-5xl font-bold">{title}</h1>
+      <h1 className="hero__title">{title}</h1>
     </div>
   )
 }
