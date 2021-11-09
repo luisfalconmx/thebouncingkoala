@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import './index.pcss'
+import './index.pcss'
 
 const Hero = (props) => {
   const { title, image, imageAlt } = props
