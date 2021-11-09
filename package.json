@@ -1,7 +1,7 @@
 {
-  "name": "react-tailwindcss",
+  "name": "thebouncingkoala.com",
   "version": "1.0.0",
-  "description": "Componetizer - React and Tailwindcss template",
+  "description": "Official website for The Bouncing Koala",
   "main": "src/index.js",
   "scripts": {
     "start": "npm run dev",
@@ -12,14 +12,18 @@
   },
   "keywords": [
     "react",
-    "tailwindcss",
-    "postcss",
-    "webpack",
+    "docker",
     "babel",
+    "webpack",
+    "postcss",
     "eslint",
-    "prettier"
+    "docker-compose",
+    "prettier",
+    "husky",
+    "browserlist",
+    "tailwindcss"
   ],
-  "author": "luisfalconmx",
+  "author": "thebouncingkoala",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.13.16",
