@@ -31,8 +31,7 @@
   ],
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -41,7 +40,6 @@
     "@babel/preset-react": "^7.16.0",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -50,6 +48,7 @@
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^7.0.2",
     "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-standard": "^16.0.2",
@@ -63,14 +62,13 @@
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
-    "jsdom": "18.0.1",
-    "jsdom-global": "3.0.2",
     "lint-staged": "^11.2.6",
     "mini-css-extract-plugin": "^1.6.2",
     "postcss": "^8.3.11",
     "postcss-loader": "^5.2.0",
     "postcss-nested": "^5.0.6",
     "prettier": "^2.4.1",
+    "react-dom": "^16.14.0",
     "style-loader": "^2.0.0",
     "stylelint": "^14.0.1",
     "stylelint-config-prettier": "^9.0.3",
