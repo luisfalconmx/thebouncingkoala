@@ -79,10 +79,11 @@ jobs:
       - name: Run linters
         run: npm run lint
 
-      - name: Get code coverage
-        uses: mattallty/jest-github-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Tests
+        run: npm test
+
+      - name: Code Coverage
+        run: 'npm run test:coverage'
 
   release:
     needs: test
