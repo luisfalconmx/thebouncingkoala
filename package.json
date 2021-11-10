@@ -12,6 +12,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "test:update": "jest --updateSnapshot",
     "deploy": "gh-pages -d dist",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
@@ -69,6 +70,7 @@
     "postcss-nested": "^5.0.6",
     "prettier": "^2.4.1",
     "react-dom": "^16.14.0",
+    "react-test-renderer": "^16.14.0",
     "style-loader": "^2.0.0",
     "stylelint": "^14.0.1",
     "stylelint-config-prettier": "^9.0.3",
