@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  verbose: true,
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: [path.resolve(__dirname, 'src/setupTests.js')],
   moduleNameMapper: {

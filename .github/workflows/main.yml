@@ -1,0 +1,168 @@
+name: CI / CD
+on:
+  push:
+    branches: '**'
+  pull_request:
+    types: [opened, reopened, closed]
+  release:
+    types: [published]
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: javascript
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v1
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
+
+  build:
+    needs: analyze
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.17.0'
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+  test:
+    needs: build
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.17.0'
+
+      - name: Restore node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Run linters
+        run: npm run lint
+
+      - name: Get code coverage
+        uses: mattallty/jest-github-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    needs: test
+    name: Release
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    # Correr un nuevo contenedor con la imagen publicada anteriormente en el servidor de produccion
+    needs: release
+    name: Deploy
+    if: github.event.release.action == 'released'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GITHUB_CONTAINER_REGISTRY_USERNAME }}
+          password: ${{ secrets.GITHUB_CONTAINER_REGISTRY_PASSWORD }}
+
+      - name: Build and Push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: |
+            ${{ env.GITHUB_REPOSITORY }}:latest
+            ${{ env.GITHUB_REPOSITORY }}:${{ env.RELEASE_VERSION }}
+            ghcr.io/${{ env.GITHUB_REPOSITORY }}:latest
+            ghcr.io/${{ env.GITHUB_REPOSITORY }}:${{ env.RELEASE_VERSION }}
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
+
+      # - name: Set Badge Version
+      #   uses: schneegans/dynamic-badges-action@v1.0.0
+      #   with:
+      #     auth: ${{ secrets.REPOSITORY_TOKEN }}
+      #     gistID: a5061f5a6d416bf2228bedc05f8dfa1b
+      #     filename: docker-badge.json
+      #     label: Dockerhub
+      #     message: ${{ env.RELEASE_VERSION }}
+      #     labelColor: 20232a
+      #     color: 2496ED
+      #     namedLogo: docker
+      #     style: for-the-badge
+
+      - name: Push README to Dockerhub
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_PASSWORD }}
+        with:
+          destination_container_repo: ${{ env.GITHUB_REPOSITORY }}
+          provider: dockerhub
+          short_description: 'Official website for The Bouncing Koala'
+          readme_file: 'README.md'
