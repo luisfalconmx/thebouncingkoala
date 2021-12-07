@@ -1,0 +1,119 @@
+name: Repository maintenance
+on:
+  schedule:
+    - cron: 0 0 * * *
+jobs:
+  docs:
+    name: Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetching repository contents
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Get package.json metadata
+        uses: antifree/json-to-variables@v1.0.1
+        with:
+          filename: 'package.json'
+          prefix: package
+
+      - name: Github repository metadata
+        uses: varunsridharan/action-repository-meta@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get latest release
+        id: get_release
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          owner: ${{ env.REPOSITORY_OWNER }}
+          repo: ${{ env.REPOSITORY_SLUG }}
+          excludes: prerelease, draft
+
+      - name: Dynamic template render
+        uses: varunsridharan/action-dynamic-readme@main
+        with:
+          GLOBAL_TEMPLATE_REPOSITORY: luisfalconmx/luisfalconmx
+          files: README.md
+          committer_name: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
+          commit_message: 'docs: update readme file [skip ci]'
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+
+      - name: Update readme badges
+        uses: wow-actions/add-badges@v1.0.1
+        env:
+          repo_url: ${{ env.REPOSITORY_GITHUB_URL }}
+          repo_name: ${{ env.REPOSITORY_SLUG }}
+          repo_owner: ${{ env.REPOSITORY_OWNER }}
+        with:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+          center: true
+          badges: |
+            [
+              {
+                "badge": "https://img.shields.io/badge/Node%20js-${{env.package_engines_node}}-3c730f?style=for-the-badge&logo=node.js&labelColor=20232a",
+                "alt": "node",
+                "link": ""
+              },
+              {
+                "badge": "https://img.shields.io/badge/react-${{env.package_dependencies_react}}-35408a?style=for-the-badge&logo=react&labelColor=20232a",
+                "alt": "react",
+                "link": ""
+              },
+              {
+                "badge": "https://img.shields.io/badge/dockerhub-${{ steps.get_release.outputs.release }}-2496ED?style=for-the-badge&logo=docker&labelColor=20232a",
+                "alt": "dockerhub",
+                "link": "https://hub.docker.com/r/luisfalconmx/strapi"
+              },
+              {
+                "badge": "https://img.shields.io/github/license/${{ env.REPOSITORY_FULL_NAME }}?style=for-the-badge&logo=github&labelColor=20232a&color=orange",
+                "alt": "MIT License",
+                "link": "${{ env.REPOSITORY_GITHUB_URL }}/blob/main/LICENSE"
+              }
+            ]
+
+      - name: Screenshot website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: ${{ env.REPOSITORY_HOMEPAGE_URL }}
+          destination: screenshot.png
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: screenshot
+          path: .github/
+
+      - name: Update resources
+        uses: test-room-7/action-update-file@v1.6.0
+        with:
+          github-token: ${{ secrets.PAT }}
+          file-path: .github/screenshot.png
+          commit-msg: 'docs: screenshot update [skip ci]'
+
+      - name: Push README to Dockerhub
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_PASSWORD }}
+        with:
+          destination_container_repo: ${{ env.REPOSITORY_FULL_NAME }}
+          provider: dockerhub
+          short_description: ${{ env.REPOSITORY_DESCRIPTION }}
+          readme_file: 'README.md'
+
+  meta:
+    name: Metadata
+    needs: docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Synchronize labels
+        uses: julb/action-manage-label@v1
+        with:
+          from: https://raw.githubusercontent.com/luisfalconmx/luisfalconmx/main/.github/config/labels.yml
+          skip_delete: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

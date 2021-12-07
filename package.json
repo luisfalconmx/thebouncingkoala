@@ -1,10 +1,13 @@
 {
   "name": "thebouncingkoala.com",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Official website for The Bouncing Koala",
   "author": "thebouncingkoala",
   "license": "MIT",
   "main": "src/index.js",
+  "engines": {
+    "node": ">=14.16"
+  },
   "scripts": {
     "start": "npm run dev",
     "dev": "NODE_ENV=development webpack serve --mode development",
@@ -13,7 +16,6 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
-    "deploy": "gh-pages -d dist",
     "lint": "eslint --fix",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
