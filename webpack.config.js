@@ -34,6 +34,8 @@ module.exports = (env, argv) => {
       '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@containers': path.resolve(__dirname, 'src/containers/'),
+      '@routes': path.resolve(__dirname, 'src/routes/'),
+      '@hooks': path.resolve(__dirname, 'src/hooks/'),
       '@styles': path.resolve(__dirname, 'src/styles/')
     }
   }
@@ -50,7 +52,8 @@ module.exports = (env, argv) => {
       host: HOST,
       port: 3000,
       static: path.join(__dirname, 'dist'),
-      compress: true
+      compress: true,
+      historyApiFallback: true
     }
   }
 

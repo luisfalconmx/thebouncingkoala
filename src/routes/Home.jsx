@@ -1,12 +1,12 @@
 // Dependencies
 import React from 'react'
-import Hero from '@components/Hero'
+import Hero from '@containers/Hero'
 import { useTranslation } from 'react-i18next'
 
 // Assets
 import Logo from '@images/tailwindcss.png'
 
-const App = () => {
+const Home = () => {
   const { t, i18n } = useTranslation()
 
   const changeLanguage = (lng) => {
@@ -29,4 +29,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Home
