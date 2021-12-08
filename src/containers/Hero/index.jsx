@@ -4,9 +4,7 @@ import PropTypes from 'prop-types'
 import Logo from '@images/tailwindcss.png'
 import './index.pcss'
 
-const Hero = (props) => {
-  const { title, image, imageAlt } = props
-
+const Hero = ({ title, image, imageAlt }) => {
   return (
     <div className="hero">
       <img src={image} alt={imageAlt} />

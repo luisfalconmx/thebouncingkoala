@@ -1,6 +1,9 @@
-# Dockerfile optimize for development with docker compose
-FROM node:14.16.1-alpine
-COPY . /home/node/app
+# --- Dockerfile optimize for development --- #
+
+# Build image
+FROM node:14.17.0-alpine
+COPY ["./package.json", "./yarn.lock", "/home/node/app/"]
 WORKDIR /home/node/app
-RUN npm install
-CMD [ "npm", "start" ]
+RUN yarn
+COPY [".", "./"]
+CMD [ "yarn", "start" ]

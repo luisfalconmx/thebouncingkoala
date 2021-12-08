@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WebpackBar = require('webpackbar')
+const CopyPlugin = require('copy-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 require('dotenv').config()
 
@@ -33,6 +34,8 @@ module.exports = (env, argv) => {
       '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@containers': path.resolve(__dirname, 'src/containers/'),
+      '@routes': path.resolve(__dirname, 'src/routes/'),
+      '@hooks': path.resolve(__dirname, 'src/hooks/'),
       '@styles': path.resolve(__dirname, 'src/styles/')
     }
   }
@@ -49,7 +52,8 @@ module.exports = (env, argv) => {
       host: HOST,
       port: 3000,
       static: path.join(__dirname, 'dist'),
-      compress: true
+      compress: true,
+      historyApiFallback: true
     }
   }
 
@@ -114,7 +118,16 @@ module.exports = (env, argv) => {
 
     new Dotenv(),
 
-    new WebpackBar()
+    new WebpackBar(),
+
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/lang/'),
+          to: path.resolve(__dirname, 'dist/lang/')
+        }
+      ]
+    })
   ]
 
   // Enable optimizations in production mode
