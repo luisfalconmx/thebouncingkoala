@@ -54,12 +54,12 @@ exclude-contributors:
 
 template: |
   ## Getting the project
-  Get Docker Image from Dockerhub: https://hub.docker.com/r/luisfalconmx/portfolio
-  Get Docker Image from Github Container Registry: https://github.com/luisfalconmx/strapi/pkgs/container/portfolio
-  License: https://github.com/luisfalconmx/portfolio/blob/main/LICENSE
-  Code of Conduct: https://github.com/luisfalconmx/portfolio/blob/main/.github/CODE_OF_CONDUCT.md
+  Get Docker Image from Dockerhub: https://hub.docker.com/r/luisfalconmx/thebouncingkoala.com
+  Get Docker Image from Github Container Registry:
+  License: https://github.com/thebouncingkoala/thebouncingkoala.com/blob/main/LICENSE
+  Code of Conduct: https://github.com/thebouncingkoala/thebouncingkoala.com/blob/main/.github/CODE_OF_CONDUCT.md
 
-  ## New in portfolio $RESOLVED_VERSION
+  ## New in thebouncingkoala.com $RESOLVED_VERSION
 
   $CHANGES
   $CONTRIBUTORS
