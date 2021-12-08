@@ -50,7 +50,7 @@ jobs:
           filename: 'package.json'
           prefix: package
 
-      - name: Install Dependencies
+      - name: Setup Node Enviroment
         uses: actions/setup-node@v2
         with:
           node-version: ${{env.package_engines_node}}
@@ -93,13 +93,15 @@ jobs:
         run: yarn run lint
 
       - name: Run tests
-        run: yarn test
+        run: yarn run test:ci
 
       - name: Generate coverage report
         uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           threshold: 80
+          package-manager: yarn
+          test-script: yarn run test:coverage
 
       - name: Validate min coverage
         uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
