@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WebpackBar = require('webpackbar')
+const CopyPlugin = require('copy-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 require('dotenv').config()
 
@@ -114,7 +115,16 @@ module.exports = (env, argv) => {
 
     new Dotenv(),
 
-    new WebpackBar()
+    new WebpackBar(),
+
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/lang/'),
+          to: path.resolve(__dirname, 'dist/lang/')
+        }
+      ]
+    })
   ]
 
   // Enable optimizations in production mode
