@@ -6,6 +6,7 @@ jobs:
   docs:
     name: Documentation
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Fetching repository contents
         uses: actions/checkout@v2
@@ -103,6 +104,7 @@ jobs:
     name: Metadata
     needs: docs
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Synchronize labels
         uses: julb/action-manage-label@v1

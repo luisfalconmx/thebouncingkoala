@@ -10,6 +10,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     if: |
       !contains(github.event.head_commit.message, '[skip ci]') &&
       (github.event_name == 'push' || github.event_name == 'pull_request')
@@ -36,6 +37,7 @@ jobs:
     needs: analyze
     name: Build
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     if: |
       !contains(github.event.head_commit.message, '[skip ci]') &&
       (github.event_name == 'push' || github.event_name == 'pull_request') &&
@@ -69,6 +71,7 @@ jobs:
     needs: build
     name: Test
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     if: |
       !contains(github.event.head_commit.message, '[skip ci]') &&
       github.event_name == 'push' &&
