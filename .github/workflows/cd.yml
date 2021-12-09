@@ -65,14 +65,14 @@ jobs:
           username: ${{ secrets.GCR_USERNAME }}
           password: ${{ secrets.PAT }}
 
-      - name: Build and push docker image to Dockerhub
+      - name: Build and push docker image to Dockerhub and GCR
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: |
-            ${{ env.REPOSITORY_FULL_NAME }}:${{ env.RELEASE_VERSION }}
-            ${{ env.REPOSITORY_FULL_NAME }}:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_SLUG }}:${{ env.RELEASE_VERSION }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_SLUG }}:latest
             ghcr.io/${{ env.REPOSITORY_FULL_NAME }}:${{ env.RELEASE_VERSION }}
             ghcr.io/${{ env.REPOSITORY_FULL_NAME }}:latest
 
