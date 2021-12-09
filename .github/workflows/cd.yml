@@ -146,13 +146,6 @@ jobs:
       - name: Removing .git/COMMIT_EDITMSG file
         run: rm -Rf .git/COMMIT_EDITMSG
 
-      - name: Screenshot website
-        if: success()
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: ${{ env.REPOSITORY_HOMEPAGE_URL }}
-          destination: screenshot.png
-
       - name: Download artifact
         if: success()
         uses: actions/download-artifact@v2
