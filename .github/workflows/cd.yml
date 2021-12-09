@@ -10,6 +10,11 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
       - name: Run release drafter
         uses: release-drafter/release-drafter@v5
         env:
@@ -145,13 +150,6 @@ jobs:
 
       - name: Removing .git/COMMIT_EDITMSG file
         run: rm -Rf .git/COMMIT_EDITMSG
-
-      - name: Screenshot website
-        if: success()
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: ${{ env.REPOSITORY_HOMEPAGE_URL }}
-          destination: screenshot.png
 
       - name: Download artifact
         if: success()

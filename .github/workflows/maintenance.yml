@@ -75,12 +75,6 @@ jobs:
               }
             ]
 
-      - name: Screenshot website
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: ${{ env.REPOSITORY_HOMEPAGE_URL }}
-          destination: screenshot.png
-
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
