@@ -76,18 +76,18 @@ jobs:
               }
             ]
 
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: screenshot
-          path: .github/
+      # - name: Download artifact
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: screenshot
+      #     path: .github/
 
-      - name: Update resources
-        uses: test-room-7/action-update-file@v1.6.0
-        with:
-          github-token: ${{ secrets.PAT }}
-          file-path: .github/screenshot.png
-          commit-msg: 'docs: screenshot update [skip ci]'
+      # - name: Update resources
+      #   uses: test-room-7/action-update-file@v1.6.0
+      #   with:
+      #     github-token: ${{ secrets.PAT }}
+      #     file-path: .github/screenshot.png
+      #     commit-msg: 'docs: screenshot update [skip ci]'
 
       - name: Push README to Dockerhub
         uses: christian-korneck/update-container-description-action@v1
