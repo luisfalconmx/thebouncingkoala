@@ -9,6 +9,7 @@ jobs:
     name: Release
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
@@ -25,6 +26,7 @@ jobs:
     needs: release
     if: always() && github.event_name == 'release'
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Get repository metadata
         uses: varunsridharan/action-repository-meta@main
@@ -148,24 +150,24 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'ci: deploy to gh-pages [skip ci]'
 
-      - name: Removing .git/COMMIT_EDITMSG file
-        run: rm -Rf .git/COMMIT_EDITMSG
+      # - name: Removing .git/COMMIT_EDITMSG file
+      #   run: rm -Rf .git/COMMIT_EDITMSG
 
-      - name: Download artifact
-        if: success()
-        uses: actions/download-artifact@v2
-        with:
-          name: screenshot
-          path: .github/
+      # - name: Download artifact
+      #   if: success()
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: screenshot
+      #     path: .github/
 
-      - name: Upload Screenshot
-        uses: EndBug/add-and-commit@v7
-        with:
-          author_name: github-actions[bot]
-          author_email: github-actions[bot]@users.noreply.github.com
-          message: 'ci: screenshot updated [skip ci]'
-          branch: ${{ env.REPOSITORY_DEFAULT_BRANCH }}
-          add: '.github/screenshot.png'
+      # - name: Upload Screenshot
+      #   uses: EndBug/add-and-commit@v7
+      #   with:
+      #     author_name: github-actions[bot]
+      #     author_email: github-actions[bot]@users.noreply.github.com
+      #     message: 'ci: screenshot updated [skip ci]'
+      #     branch: ${{ env.REPOSITORY_DEFAULT_BRANCH }}
+      #     add: '.github/screenshot.png'
 
       - name: Push README to Dockerhub
         uses: christian-korneck/update-container-description-action@v1
