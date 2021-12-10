@@ -12,13 +12,6 @@
 </p>
 
 <!-- [START BADGES] -->
-<!-- Please keep comment here to allow auto update -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Node%20js->=14.16-3c730f?style=for-the-badge&logo=node.js&labelColor=20232a" alt="node" />
-  <img src="https://img.shields.io/badge/react-^17.0.2-35408a?style=for-the-badge&logo=react&labelColor=20232a" alt="react" />
-  <a href="https://hub.docker.com/r/luisfalconmx/strapi"><img src="https://img.shields.io/badge/dockerhub-v1.0.0-2496ED?style=for-the-badge&logo=docker&labelColor=20232a" alt="dockerhub" /></a>
-  <a href="https://github.com/thebouncingkoala/thebouncingkoala.com/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thebouncingkoala/thebouncingkoala.com?style=for-the-badge&logo=github&labelColor=20232a&color=orange" alt="MIT License" /></a>
-</p>
 <!-- [END BADGES] -->
 
 <br />
