@@ -1,12 +1,21 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: 'media', // or 'media' or 'class'
+  content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   theme: {
-    extend: {}
-  },
-  variants: {
-    extend: {}
+    extend: {
+      colors: {
+        brand: {
+          primary: '#0070f3',
+          secondary: '#ff4081',
+          tertiary: '#f50057'
+        },
+        state: {
+          success: '#4caf50',
+          warning: '#ffc107',
+          error: '#f44336',
+          info: '#2196f3'
+        }
+      }
+    }
   },
   plugins: []
 }

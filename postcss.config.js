@@ -1,4 +1,4 @@
-const postcssNested = require('postcss-nested')
+const nesting = require('tailwindcss/nesting')
 const autoprefixer = require('autoprefixer')
 const tailwindcss = require('tailwindcss')
 const cssnano = require('cssnano')
@@ -8,7 +8,7 @@ module.exports = ({ env }) => {
   const Production = env === 'production'
 
   config.plugins = [
-    postcssNested(),
+    nesting(),
     tailwindcss(),
     autoprefixer(),
     Production &&
