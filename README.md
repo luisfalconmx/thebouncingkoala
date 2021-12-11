@@ -1,6 +1,6 @@
 <!-- START templates/head.md -->
 <h1 align="center">
-  Thebouncingkoala.Com
+  thebouncingkoala.com
 </h1>
 
 <h3 align="center">
