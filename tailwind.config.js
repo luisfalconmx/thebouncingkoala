@@ -3,17 +3,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          primary: '#0070f3',
-          secondary: '#ff4081',
-          tertiary: '#f50057'
-        },
-        state: {
-          success: '#4caf50',
-          warning: '#ffc107',
-          error: '#f44336',
-          info: '#2196f3'
+        primary: '#8B5CF6',
+        secondary: '#FD70EB',
+        night: {
+          50: '#1B1B30',
+          100: '#121127'
         }
+      },
+      boxShadow: {
+        soft: '0px 20px 50px rgba(18, 17, 39, 0.08)'
       }
     }
   },
