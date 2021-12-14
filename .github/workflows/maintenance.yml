@@ -95,7 +95,7 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKER_PASS: ${{ secrets.DOCKERHUB_PASSWORD }}
         with:
-          destination_container_repo: ${{ env.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_SLUG }}
+          destination_container_repo: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_SLUG }}
           provider: dockerhub
           short_description: ${{ env.REPOSITORY_DESCRIPTION }}
           readme_file: 'README.md'

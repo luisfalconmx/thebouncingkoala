@@ -1,0 +1,33 @@
+.navbar {
+  @apply bg-neutral-50 text-neutral-900 shadow-soft flex justify-between items-center py-5 px-16 sticky;
+  @apply dark:bg-night-50 dark:text-neutral-50;
+
+  &__logo {
+    @apply w-16;
+  }
+
+  &__nav {
+    @apply w-fit grid grid-cols-[repeat(3,_auto)] gap-x-8 items-center;
+  }
+
+  &__list {
+    @apply w-fit h-fit flex;
+  }
+
+  &__item {
+    @apply mr-4 last-of-type:mr-0;
+  }
+
+  &__link {
+    @apply text-base font-medium;
+  }
+
+  &__actions {
+    @apply flex border-l-2 border-neutral-900 pl-4;
+    @apply dark:border-neutral-50;
+  }
+
+  &__icon {
+    @apply w-7 h-7 mr-4 last-of-type:mr-0 cursor-pointer;
+  }
+}
