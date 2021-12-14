@@ -1,42 +1,55 @@
-import React from 'react'
-import Button from '@components/Button'
-// import { useTranslation } from 'react-i18next'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
 import './index.pcss'
 
-// Import assets
+// Import components and containers
+import Button from '@components/Button'
+
+// Import assets and media
 import Logo from '@images/Logotype.svg'
 import { TranslateIcon, MoonIcon } from '@heroicons/react/outline'
 
+const links = [
+  {
+    text: 'Home',
+    href: '/'
+  },
+  {
+    text: 'Services',
+    href: '/'
+  },
+  {
+    text: 'About us',
+    href: '/'
+  },
+  {
+    text: 'Blog',
+    href: '/'
+  }
+]
+
 const Navbar = () => {
-  // const { t, i18n } = useTranslation()
+  const [tooltip, setTooltip] = useState(false)
+  const { i18n } = useTranslation()
 
-  const links = [
-    {
-      text: 'Home',
-      href: '/'
-    },
-    {
-      text: 'Services',
-      href: '/'
-    },
-    {
-      text: 'About us',
-      href: '/'
-    },
-    {
-      text: 'Blog',
-      href: '/'
-    }
-  ]
+  const showTooltip = () => setTooltip(!tooltip)
 
-  // const changeLanguage = (lng) => {
-  //   i18n.changeLanguage(lng)
-  //   // onClick={() => changeLanguage('es')}
-  // }
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng)
+    setTooltip(false)
+  }
+
+  const changeLangEn = () => changeLanguage('en')
+  const changeLangEs = () => changeLanguage('es')
+
+  const tooltipClasses = classNames('navbar__tooltip', {
+    'navbar__tooltip--visible': tooltip
+  })
 
   return (
     <header className="navbar">
-      <a className="na" href="/">
+      <a className="navbar__hotlink" href="/">
         <img className="navbar__logo" src={Logo} />
       </a>
       <nav className="navbar__nav">
@@ -51,7 +64,28 @@ const Navbar = () => {
         </ul>
         <Button />
         <div className="navbar__actions">
-          <TranslateIcon className="navbar__icon" />
+          <div className="navbar__action-language">
+            <TranslateIcon
+              className="navbar__icon navbar__icon--language"
+              onClick={showTooltip}
+            />
+            <div className={tooltipClasses}>
+              <button
+                className="navbar__tooltip-button"
+                type="button"
+                onClick={changeLangEs}
+              >
+                Español
+              </button>
+              <button
+                className="navbar__tooltip-button"
+                type="button"
+                onClick={changeLangEn}
+              >
+                English
+              </button>
+            </div>
+          </div>
           <MoonIcon className="navbar__icon" />
         </div>
       </nav>

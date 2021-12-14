@@ -1,10 +1,11 @@
 // Dependencies
 import React from 'react'
-
-// Assets
+import { useTranslation } from 'react-i18next'
 
 const Home = () => {
-  return <b>This is a hero</b>
+  const { t } = useTranslation()
+
+  return <b>{t('welcome')}</b>
 }
 
 export default Home

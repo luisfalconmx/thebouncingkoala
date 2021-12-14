@@ -1,6 +1,10 @@
 .navbar {
-  @apply bg-neutral-50 text-neutral-900 shadow-soft flex justify-between items-center py-5 px-16 sticky;
-  @apply dark:bg-night-50 dark:text-neutral-50;
+  @apply bg-neutral-50 shadow-soft flex justify-between items-center py-5 px-16 sticky top-0 z-50;
+  @apply dark:bg-night-50;
+
+  &__hotlink {
+    @apply cursor-pointer;
+  }
 
   &__logo {
     @apply w-16;
@@ -19,7 +23,9 @@
   }
 
   &__link {
-    @apply text-base font-medium;
+    @apply text-base font-medium text-neutral-900;
+    @apply hover:text-primary transition-all duration-200;
+    @apply dark:text-neutral-50;
   }
 
   &__actions {
@@ -27,7 +33,25 @@
     @apply dark:border-neutral-50;
   }
 
+  &__action-language {
+    @apply relative mr-4;
+  }
+
   &__icon {
-    @apply w-7 h-7 mr-4 last-of-type:mr-0 cursor-pointer;
+    @apply w-7 h-7 cursor-pointer;
+    @apply hover:stroke-primary transition-all duration-200;
+  }
+
+  &__tooltip {
+    @apply absolute top-[calc(100%+2rem)] right-0 bg-neutral-50 shadow-soft max-h-0 overflow-hidden;
+
+    &--visible {
+      @apply max-h-fit py-2 px-6;
+    }
+  }
+
+  &__tooltip-button {
+    @apply mr-2 mb-1;
+    @apply hover:text-primary;
   }
 }
