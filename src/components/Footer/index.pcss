@@ -1,0 +1,21 @@
+.footer {
+  @apply bg-neutral-50 flex justify-between items-center py-12 px-36;
+  @apply dark:bg-night-50;
+
+  &__leyend {
+    @apply text-sm font-normal text-neutral-600;
+    @apply dark:text-neutral-300;
+  }
+
+  &__list {
+    @apply flex;
+  }
+
+  &__item {
+    @apply mr-8 last-of-type:mr-0;
+  }
+
+  &__link {
+    @apply w-fit cursor-pointer;
+  }
+}
