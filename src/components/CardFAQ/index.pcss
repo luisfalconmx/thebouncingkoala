@@ -1,0 +1,26 @@
+.CardFAQ {
+  @apply max-w-[552px] grid grid-cols-[repeat(2,auto)] gap-x-5 bg-neutral-50 shadow-soft rounded-xl px-6 py-8;
+  @apply dark:bg-night-50;
+
+  &__Icon {
+    @apply w-5 text-primary;
+  }
+
+  /* &__Content {
+  } */
+
+  &__Question {
+    @apply text-base text-neutral-900 font-bold mb-3;
+    @apply dark:text-neutral-50;
+  }
+
+  &__Answer {
+    @apply text-sm font-normal text-neutral-600 mb-3;
+    @apply dark:text-neutral-300;
+  }
+
+  &__Button {
+    @apply text-primary font-semibold cursor-pointer;
+    @apply hover:translate-x-1 duration-300;
+  }
+}
