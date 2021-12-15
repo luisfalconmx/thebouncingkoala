@@ -24,8 +24,8 @@
 
   &__link {
     @apply text-base font-medium text-neutral-900;
-    @apply hover:text-primary transition-all duration-200;
     @apply dark:text-neutral-50;
+    @apply hover:text-primary transition-all duration-200;
   }
 
   &__actions {
@@ -39,11 +39,13 @@
 
   &__icon {
     @apply w-7 h-7 cursor-pointer;
+    @apply dark:stroke-neutral-50;
     @apply hover:stroke-primary transition-all duration-200;
   }
 
   &__tooltip {
     @apply absolute top-[calc(100%+2rem)] right-0 bg-neutral-50 shadow-soft max-h-0 overflow-hidden;
+    @apply dark:bg-night-50 dark:text-neutral-50;
 
     &--visible {
       @apply max-h-fit py-2 px-6;

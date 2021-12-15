@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useDarkmode } from '@hooks/useDarkmode'
 import classNames from 'classnames'
 import './index.pcss'
 
@@ -8,7 +9,7 @@ import Button from '@components/Button'
 
 // Import assets and media
 import Logo from '@images/Logotype.svg'
-import { TranslateIcon, MoonIcon } from '@heroicons/react/outline'
+import { TranslateIcon, MoonIcon, SunIcon } from '@heroicons/react/outline'
 
 const links = [
   {
@@ -31,6 +32,7 @@ const links = [
 
 const Navbar = () => {
   const [tooltip, setTooltip] = useState(false)
+  const { darkmode, toggleDarkmode } = useDarkmode()
   const { i18n } = useTranslation()
 
   const showTooltip = () => setTooltip(!tooltip)
@@ -86,7 +88,11 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-          <MoonIcon className="navbar__icon" />
+          {darkmode ? (
+            <SunIcon className="navbar__icon" onClick={toggleDarkmode} />
+          ) : (
+            <MoonIcon className="navbar__icon" onClick={toggleDarkmode} />
+          )}
         </div>
       </nav>
     </header>
