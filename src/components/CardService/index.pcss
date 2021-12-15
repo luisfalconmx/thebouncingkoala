@@ -1,3 +1,31 @@
 .CardService {
-  @apply shadow-soft rounded-xl;
+  @apply shadow-soft rounded-xl bg-neutral-50 max-w-[264px] py-14 px-6;
+  @apply dark:bg-night-50;
+
+  &__Image {
+    @apply mb-6;
+  }
+
+  &__Title {
+    @apply text-base font-bold text-neutral-900 mb-4;
+    @apply dark:text-neutral-50;
+  }
+
+  &__Description {
+    @apply text-sm font-normal text-neutral-600 mb-6;
+    @apply dark:text-neutral-300;
+  }
+
+  &__Link {
+    @apply flex cursor-pointer w-fit;
+    @apply hover:translate-x-2 duration-300;
+  }
+
+  &__LinkText {
+    @apply text-primary text-sm mr-2;
+  }
+
+  &__Icon {
+    @apply w-5 text-primary;
+  }
 }

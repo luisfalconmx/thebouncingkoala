@@ -15,12 +15,10 @@ const CardService = ({
       <img className="CardService__Image" src={image} alt={title} />
       <h3 className="CardService__Title">{title}</h3>
       <p className="CardService__Description">{description}</p>
-      <div className="CardService__Hotlink">
-        <a className="CardService__Link" href={link}>
-          {link}
-        </a>
+      <a className="CardService__Link" href={link}>
+        <b className="CardService__LinkText">Go there</b>
         <ArrowNarrowRightIcon className="CardService__Icon" />
-      </div>
+      </a>
     </div>
   )
 }
