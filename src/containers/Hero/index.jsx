@@ -6,10 +6,10 @@ import './index.pcss'
 
 const Hero = ({ title, image, imageAlt }) => {
   return (
-    <div className="hero">
+    <div className="Hero">
       <img src={image} alt={imageAlt} />
       <img src={Logo} alt="Tailwindcss Logo" />
-      <h1 className="hero__title">{title}</h1>
+      <h1 className="Hero__Title">{title}</h1>
     </div>
   )
 }

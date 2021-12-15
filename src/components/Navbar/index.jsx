@@ -45,42 +45,42 @@ const Navbar = () => {
   const changeLangEn = () => changeLanguage('en')
   const changeLangEs = () => changeLanguage('es')
 
-  const tooltipClasses = classNames('navbar__tooltip', {
-    'navbar__tooltip--visible': tooltip
+  const tooltipClasses = classNames('Navbar__Tooltip', {
+    'Navbar__Tooltip--Visible': tooltip
   })
 
   return (
-    <header className="navbar">
-      <a className="navbar__hotlink" href="/">
-        <img className="navbar__logo" src={Logo} />
+    <header className="Navbar">
+      <a className="Navbar__Hotlink" href="/">
+        <img className="Navbar__Logo" src={Logo} />
       </a>
-      <nav className="navbar__nav">
-        <ul className="navbar__list">
+      <nav className="Navbar__Nav">
+        <ul className="Navbar__List">
           {links.map((link) => (
-            <li className="navbar__item" key={link.text}>
-              <a className="navbar__link" href={link.href}>
+            <li className="Navbar__Item" key={link.text}>
+              <a className="Navbar__Link" href={link.href}>
                 {link.text}
               </a>
             </li>
           ))}
         </ul>
         <Button />
-        <div className="navbar__actions">
-          <div className="navbar__action-language">
+        <div className="Navbar__Actions">
+          <div className="Navbar__ActionLanguage">
             <TranslateIcon
-              className="navbar__icon navbar__icon--language"
+              className="Navbar__Icon Navbar__Icon--Language"
               onClick={showTooltip}
             />
             <div className={tooltipClasses}>
               <button
-                className="navbar__tooltip-button"
+                className="Navbar__TooltipButton"
                 type="button"
                 onClick={changeLangEs}
               >
                 Español
               </button>
               <button
-                className="navbar__tooltip-button"
+                className="Navbar__TooltipButton"
                 type="button"
                 onClick={changeLangEn}
               >
@@ -89,9 +89,9 @@ const Navbar = () => {
             </div>
           </div>
           {darkmode ? (
-            <SunIcon className="navbar__icon" onClick={toggleDarkmode} />
+            <SunIcon className="Navbar__Icon" onClick={toggleDarkmode} />
           ) : (
-            <MoonIcon className="navbar__icon" onClick={toggleDarkmode} />
+            <MoonIcon className="Navbar__Icon" onClick={toggleDarkmode} />
           )}
         </div>
       </nav>
