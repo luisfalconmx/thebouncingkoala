@@ -1,0 +1,35 @@
+.CardBlog {
+  @apply flex flex-col max-w-[360px] h-[590px] rounded-xl shadow-soft bg-neutral-50 m-6;
+  @apply dark:bg-night-50;
+
+  &__Image {
+    @apply h-[201px] object-cover text-neutral-900 rounded-t-xl;
+    @apply empty:bg-zinc-300;
+    @apply dark:text-neutral-50;
+  }
+
+  &__Content {
+    @apply h-full px-6 pt-8;
+  }
+
+  &__Type {
+    @apply block uppercase text-sm font-semibold text-purple-600 mb-2;
+  }
+
+  &__Link {
+    @apply block w-fit cursor-pointer mb-6;
+  }
+
+  &__Title {
+    @apply text-xl font-bold text-neutral-900;
+    @apply dark:text-neutral-50;
+  }
+
+  &__Description {
+    @apply text-base font-normal;
+  }
+
+  &__Footer {
+    @apply px-6 pb-8;
+  }
+}

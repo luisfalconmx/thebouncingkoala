@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import User from '@components/User'
+import CardBlog from '@components/CardBlog'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <section>
       <b>{t('welcome')}</b>
-      <User />
+      <CardBlog />
     </section>
   )
 }
