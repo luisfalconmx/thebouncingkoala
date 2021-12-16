@@ -1,3 +1,7 @@
 {
-  "welcome": "Bienvenido a la app"
+  "hero": {
+    "title": "Hazlo simple pero significativo.",
+    "description": "El público está más familiarizado con el mal diseño que con el buen diseño. En efecto, está condicionado a preferir un mal diseño.",
+    "button": "Empezar"
+  }
 }

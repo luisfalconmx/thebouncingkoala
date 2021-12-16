@@ -1,23 +1,22 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
-import PropTypes from 'prop-types'
-import Logo from '@images/tailwindcss.png'
+import { useTranslation } from 'react-i18next'
+import Button from '@components/Button'
+import Image from '@images/HeroImage.png'
 import './index.pcss'
 
-const Hero = ({ title, image, imageAlt }) => {
-  return (
-    <div className="Hero">
-      <img src={image} alt={imageAlt} />
-      <img src={Logo} alt="Tailwindcss Logo" />
-      <h1 className="Hero__Title">{title}</h1>
-    </div>
-  )
-}
+const Hero = () => {
+  const { t } = useTranslation()
 
-Hero.propTypes = {
-  title: PropTypes.string,
-  image: PropTypes.string,
-  imageAlt: PropTypes.string
+  return (
+    <section className="Hero">
+      <div className="Hero__Content">
+        <h1 className="Hero__Title">{t('hero.title')}</h1>
+        <p className="Hero__Description">{t('hero.description')}</p>
+        <Button />
+      </div>
+      <img src={Image} alt="thebouncingkoala hero" />
+    </section>
+  )
 }
 
 export default Hero

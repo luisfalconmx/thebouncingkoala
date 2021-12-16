@@ -1,15 +1,14 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
-import Input from '@components/Input'
+// import { useTranslation } from 'react-i18next'
+import Hero from '@containers/Hero'
 
 const Home = () => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
-    <section>
-      <b>{t('welcome')}</b>
-      <Input />
-    </section>
+    <>
+      <Hero />
+    </>
   )
 }
 

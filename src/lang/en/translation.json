@@ -1,3 +1,7 @@
 {
-  "welcome": "Welcome to the app!"
+  "hero": {
+    "title": "Make it simple, but significant.",
+    "description": "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design.",
+    "button": "Get Started"
+  }
 }
