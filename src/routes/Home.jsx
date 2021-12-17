@@ -1,11 +1,11 @@
 import React from 'react'
-// import { useTranslation } from 'react-i18next'
 import Hero from '@containers/Hero'
 import Services from '@containers/Services'
 import Team from '@containers/Team'
 import Featured from '@containers/Featured'
 import Pricing from '@containers/Pricing'
 import FeaturedBlog from '@containers/FeaturedBlog'
+import FAQ from '@containers/FAQ'
 
 const Home = () => (
   <>
@@ -15,6 +15,7 @@ const Home = () => (
     <Featured />
     <Pricing />
     <FeaturedBlog />
+    <FAQ />
   </>
 )
 
