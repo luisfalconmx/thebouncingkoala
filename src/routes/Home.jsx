@@ -6,6 +6,7 @@ import Featured from '@containers/Featured'
 import Pricing from '@containers/Pricing'
 import FeaturedBlog from '@containers/FeaturedBlog'
 import FAQ from '@containers/FAQ'
+import Newsletter from '@containers/Newsletter'
 
 const Home = () => (
   <>
@@ -16,6 +17,7 @@ const Home = () => (
     <Pricing />
     <FeaturedBlog />
     <FAQ />
+    <Newsletter />
   </>
 )
 
