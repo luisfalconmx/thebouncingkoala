@@ -4,6 +4,7 @@ import Hero from '@containers/Hero'
 import Services from '@containers/Services'
 import Team from '@containers/Team'
 import Featured from '@containers/Featured'
+import Pricing from '@containers/Pricing'
 
 const Home = () => {
   // const { t } = useTranslation()
@@ -14,6 +15,7 @@ const Home = () => {
       <Services />
       <Team />
       <Featured />
+      <Pricing />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '@components/Button'
-import Image from '@images/mockup-featured.png'
+// import Image from '@images/mockup-featured.png'
 import './index.pcss'
 
 const Featured = () => {
