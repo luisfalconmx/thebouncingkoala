@@ -1,3 +1,4 @@
+const postcssImport = require('postcss-import')
 const nesting = require('tailwindcss/nesting')
 const autoprefixer = require('autoprefixer')
 const tailwindcss = require('tailwindcss')
@@ -8,6 +9,7 @@ module.exports = ({ env }) => {
   const Production = env === 'production'
 
   config.plugins = [
+    postcssImport(),
     nesting(),
     tailwindcss(),
     autoprefixer(),

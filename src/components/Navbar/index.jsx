@@ -1,58 +1,98 @@
-import React from 'react'
-import Button from '@components/Button'
-// import { useTranslation } from 'react-i18next'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useDarkmode } from '@hooks/useDarkmode'
+import classNames from 'classnames'
 import './index.pcss'
 
-// Import assets
+// Import components and containers
+import Button from '@components/Button'
+
+// Import assets and media
 import Logo from '@images/Logotype.svg'
-import { TranslateIcon, MoonIcon } from '@heroicons/react/outline'
+import { TranslateIcon, MoonIcon, SunIcon } from '@heroicons/react/outline'
+
+const links = [
+  {
+    text: 'Home',
+    href: '/'
+  },
+  {
+    text: 'Services',
+    href: '/'
+  },
+  {
+    text: 'About us',
+    href: '/'
+  },
+  {
+    text: 'Blog',
+    href: '/'
+  }
+]
 
 const Navbar = () => {
-  // const { t, i18n } = useTranslation()
+  const [tooltip, setTooltip] = useState(false)
+  const { darkmode, toggleDarkmode } = useDarkmode()
+  const { i18n } = useTranslation()
 
-  const links = [
-    {
-      text: 'Home',
-      href: '/'
-    },
-    {
-      text: 'Services',
-      href: '/'
-    },
-    {
-      text: 'About us',
-      href: '/'
-    },
-    {
-      text: 'Blog',
-      href: '/'
-    }
-  ]
+  const showTooltip = () => setTooltip(!tooltip)
 
-  // const changeLanguage = (lng) => {
-  //   i18n.changeLanguage(lng)
-  //   // onClick={() => changeLanguage('es')}
-  // }
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng)
+    setTooltip(false)
+  }
+
+  const changeLangEn = () => changeLanguage('en')
+  const changeLangEs = () => changeLanguage('es')
+
+  const tooltipClasses = classNames('Navbar__Tooltip', {
+    'Navbar__Tooltip--Visible': tooltip
+  })
 
   return (
-    <header className="navbar">
-      <a className="na" href="/">
-        <img className="navbar__logo" src={Logo} />
+    <header className="Navbar">
+      <a className="Navbar__Hotlink" href="/">
+        <img className="Navbar__Logo" src={Logo} />
       </a>
-      <nav className="navbar__nav">
-        <ul className="navbar__list">
+      <nav className="Navbar__Nav">
+        <ul className="Navbar__List">
           {links.map((link) => (
-            <li className="navbar__item" key={link.text}>
-              <a className="navbar__link" href={link.href}>
+            <li className="Navbar__Item" key={link.text}>
+              <a className="Navbar__Link" href={link.href}>
                 {link.text}
               </a>
             </li>
           ))}
         </ul>
         <Button />
-        <div className="navbar__actions">
-          <TranslateIcon className="navbar__icon" />
-          <MoonIcon className="navbar__icon" />
+        <div className="Navbar__Actions">
+          <div className="Navbar__ActionLanguage">
+            <TranslateIcon
+              className="Navbar__Icon Navbar__Icon--Language"
+              onClick={showTooltip}
+            />
+            <div className={tooltipClasses}>
+              <button
+                className="Navbar__TooltipButton"
+                type="button"
+                onClick={changeLangEs}
+              >
+                Español
+              </button>
+              <button
+                className="Navbar__TooltipButton"
+                type="button"
+                onClick={changeLangEn}
+              >
+                English
+              </button>
+            </div>
+          </div>
+          {darkmode ? (
+            <SunIcon className="Navbar__Icon" onClick={toggleDarkmode} />
+          ) : (
+            <MoonIcon className="Navbar__Icon" onClick={toggleDarkmode} />
+          )}
         </div>
       </nav>
     </header>

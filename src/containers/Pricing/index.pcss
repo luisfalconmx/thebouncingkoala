@@ -1,0 +1,51 @@
+.Pricing {
+  @apply max-w-[1128px] mx-auto mb-24;
+
+  &__Head {
+    @apply flex justify-between mb-16;
+  }
+
+  &__HeadTitle {
+    @apply text-neutral-900 text-4xl font-bold mb-2;
+    @apply dark:text-neutral-50;
+
+    & b {
+      @apply text-primary;
+    }
+  }
+
+  &__HeadDescription {
+    @apply text-neutral-600 text-lg font-normal;
+    @apply dark:text-neutral-300;
+  }
+
+  &__Separator {
+    @apply block w-full h-px bg-zinc-500 mb-12;
+  }
+
+  &__Content {
+    @apply grid grid-cols-[auto_1fr] gap-x-6;
+  }
+
+  &__Info {
+    @apply max-w-[360px];
+  }
+
+  &__Label {
+    @apply text-sm font-semibold text-primary mb-2;
+  }
+
+  &__Title {
+    @apply text-3xl font-bold text-neutral-900 mb-5;
+    @apply dark:text-neutral-50;
+  }
+
+  &__Description {
+    @apply text-base font-normal text-neutral-600;
+    @apply dark:text-neutral-300;
+  }
+
+  &__List {
+    @apply grid grid-cols-2 gap-x-6;
+  }
+}

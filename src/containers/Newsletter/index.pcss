@@ -1,0 +1,42 @@
+.Newsletter {
+  @apply relative py-20;
+
+  &__Overlay {
+    @apply absolute top-0 left-0 w-full h-full bg-primary opacity-10 -z-10;
+  }
+
+  &__Container {
+    @apply max-w-[1193px] mx-auto flex justify-between items-center;
+  }
+
+  &__Info {
+    @apply max-w-[575px];
+  }
+
+  &__Title {
+    @apply text-3xl font-bold text-neutral-900 mb-3;
+    @apply dark:text-neutral-50;
+  }
+
+  &__Description {
+    @apply text-base font-normal text-neutral-600;
+    @apply dark:text-neutral-300;
+  }
+
+  &__Form {
+    @apply max-w-[490px] w-full;
+  }
+
+  &__FormElement {
+    @apply grid grid-cols-[1fr_auto] gap-x-4 mb-4;
+  }
+
+  &__Leyend {
+    @apply text-xs font-normal text-neutral-900;
+    @apply dark:text-neutral-50;
+
+    & a {
+      @apply text-primary;
+    }
+  }
+}

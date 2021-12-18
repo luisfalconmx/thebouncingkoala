@@ -1,0 +1,17 @@
+.User {
+  @apply max-w-[203px] grid grid-cols-[repeat(auto-fit,minmax(0,auto))] gap-x-3 items-center;
+
+  &__Info {
+    @apply flex flex-col;
+  }
+
+  &__Name {
+    @apply text-sm font-semibold text-neutral-900;
+    @apply dark:text-neutral-50;
+  }
+
+  &__Label {
+    @apply text-xs font-normal text-neutral-600;
+    @apply dark:text-neutral-300;
+  }
+}

@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import './index.pcss'
 
 const Button = ({ text = 'Get Started' }) => {
-  return <button className="button">{text}</button>
+  return <button className="Button">{text}</button>
 }
 
 Button.propTypes = {

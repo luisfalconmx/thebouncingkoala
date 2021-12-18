@@ -1,33 +1,59 @@
-.navbar {
-  @apply bg-neutral-50 text-neutral-900 shadow-soft flex justify-between items-center py-5 px-16 sticky;
-  @apply dark:bg-night-50 dark:text-neutral-50;
+.Navbar {
+  @apply bg-neutral-50 shadow-soft flex justify-between items-center py-5 px-16 sticky top-0 z-50;
+  @apply dark:bg-night-50;
 
-  &__logo {
+  &__Hotlink {
+    @apply cursor-pointer;
+  }
+
+  &__Logo {
     @apply w-16;
   }
 
-  &__nav {
+  &__Nav {
     @apply w-fit grid grid-cols-[repeat(3,_auto)] gap-x-8 items-center;
   }
 
-  &__list {
+  &__List {
     @apply w-fit h-fit flex;
   }
 
-  &__item {
+  &__Item {
     @apply mr-4 last-of-type:mr-0;
   }
 
-  &__link {
-    @apply text-base font-medium;
+  &__Link {
+    @apply text-base font-medium text-neutral-900;
+    @apply dark:text-neutral-50;
+    @apply hover:text-primary transition-all duration-200;
   }
 
-  &__actions {
+  &__Actions {
     @apply flex border-l-2 border-neutral-900 pl-4;
     @apply dark:border-neutral-50;
   }
 
-  &__icon {
-    @apply w-7 h-7 mr-4 last-of-type:mr-0 cursor-pointer;
+  &__ActionLanguage {
+    @apply relative mr-4;
+  }
+
+  &__Icon {
+    @apply w-7 h-7 cursor-pointer;
+    @apply dark:stroke-neutral-50;
+    @apply hover:stroke-primary transition-all duration-200;
+  }
+
+  &__Tooltip {
+    @apply absolute top-[calc(100%+2rem)] right-0 bg-neutral-50 shadow-soft max-h-0 overflow-hidden;
+    @apply dark:bg-night-50 dark:text-neutral-50;
+
+    &--Visible {
+      @apply max-h-fit py-2 px-6;
+    }
+  }
+
+  &__TooltipButton {
+    @apply mr-2 mb-1;
+    @apply hover:text-primary;
   }
 }
