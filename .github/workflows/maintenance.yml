@@ -65,6 +65,21 @@ jobs:
                 "link": ""
               },
               {
+                "badge": "https://img.shields.io/badge/tailwindcss-${{env.package_devDependencies_tailwindcss}}-06B6D4?style=for-the-badge&logo=tailwindcss&labelColor=20232a",
+                "alt": "tailwindcss",
+                "link": ""
+              },
+              {
+                "badge": "https://img.shields.io/badge/postcss-${{env.package_devDependencies_postcss}}-DD3A0A?style=for-the-badge&logo=postcss&labelColor=20232a",
+                "alt": "postcss",
+                "link": ""
+              },
+              {
+                "badge": "https://img.shields.io/badge/jest-${{env.package_devDependencies_jest}}-C21325?style=for-the-badge&logo=jest&labelColor=20232a",
+                "alt": "jest",
+                "link": ""
+              },
+              {
                 "badge": "https://img.shields.io/badge/dockerhub-${{ steps.get_release.outputs.release }}-2496ED?style=for-the-badge&logo=docker&labelColor=20232a",
                 "alt": "dockerhub",
                 "link": "https://hub.docker.com/r/luisfalconmx/strapi"
@@ -76,18 +91,24 @@ jobs:
               }
             ]
 
-      # - name: Download artifact
-      #   uses: actions/download-artifact@v2
-      #   with:
-      #     name: screenshot
-      #     path: .github/
+      - name: Screenshot website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: ${{ env.REPOSITORY_HOMEPAGE_URL }}
+          destination: screenshot.png
 
-      # - name: Update resources
-      #   uses: test-room-7/action-update-file@v1.6.0
-      #   with:
-      #     github-token: ${{ secrets.PAT }}
-      #     file-path: .github/screenshot.png
-      #     commit-msg: 'docs: screenshot update [skip ci]'
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: screenshot
+          path: .github/
+
+      - name: Update resources
+        uses: test-room-7/action-update-file@v1.6.0
+        with:
+          github-token: ${{ secrets.PAT }}
+          file-path: .github/screenshot.png
+          commit-msg: 'docs: screenshot update [skip ci]'
 
       - name: Push README to Dockerhub
         uses: christian-korneck/update-container-description-action@v1
