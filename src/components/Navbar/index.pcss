@@ -1,5 +1,6 @@
 .Navbar {
-  @apply bg-neutral-50 shadow-soft flex justify-between items-center py-5 px-16 sticky top-0 z-50;
+  @apply bg-neutral-50 flex justify-between items-center py-4 px-8 sticky top-0 z-50;
+  @apply lg:py-5 lg:px-16 lg:shadow-soft;
   @apply dark:bg-night-50;
 
   &__Hotlink {
@@ -11,25 +12,36 @@
   }
 
   &__Nav {
-    @apply w-fit grid grid-cols-[repeat(3,_auto)] gap-x-8 items-center;
+    @apply w-screen h-[calc(100vh-84px)] absolute top-full left-0 grid grid-rows-[1fr_auto] gap-x-8 bg-neutral-50 p-8 pt-16;
+    @apply lg:w-fit lg:h-fit lg:static lg:grid-cols-[repeat(3,_auto)] lg:items-center lg:p-0;
+    @apply dark:bg-night-50;
   }
 
   &__List {
-    @apply w-fit h-fit flex;
+    @apply w-fit h-fit;
+    @apply lg:flex;
   }
 
   &__Item {
-    @apply mr-4 last-of-type:mr-0;
+    @apply mb-4 last-of-type:mb-0;
+    @apply lg:mr-4 lg:last-of-type:mr-0;
   }
 
   &__Link {
-    @apply text-base font-medium text-neutral-900;
+    @apply text-2xl font-semibold text-neutral-900;
+    @apply lg:text-base lg:font-medium;
     @apply dark:text-neutral-50;
     @apply hover:text-primary transition-all duration-200;
   }
 
+  &__Button {
+    @apply hidden;
+    @apply lg:block;
+  }
+
   &__Actions {
-    @apply flex border-l-2 border-neutral-900 pl-4;
+    @apply flex;
+    @apply lg:border-l-2 lg:pl-4 lg:border-neutral-900;
     @apply dark:border-neutral-50;
   }
 
