@@ -14,7 +14,7 @@ const Hero = () => {
         <p className="Hero__Description">{t('hero.description')}</p>
         <Button />
       </div>
-      <img src={Image} alt="thebouncingkoala hero" />
+      <img className="Hero__Image" src={Image} alt="thebouncingkoala hero" />
     </section>
   )
 }

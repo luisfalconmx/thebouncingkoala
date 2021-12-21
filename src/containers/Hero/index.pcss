@@ -1,5 +1,6 @@
 .Hero {
   @apply max-w-[1392px] mt-8 mx-auto mb-24 grid grid-cols-2 place-items-center;
+  @apply 2xl:container 2xl:bg-primary 2xl:bg-opacity-10;
 
   &__Content {
     @apply max-w-[360px];
@@ -13,5 +14,9 @@
   &__Description {
     @apply text-neutral-600 text-base font-normal mb-8;
     @apply dark:text-neutral-300;
+  }
+
+  &__Image {
+    @apply w-full;
   }
 }
