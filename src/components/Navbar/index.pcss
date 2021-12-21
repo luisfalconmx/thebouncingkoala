@@ -1,7 +1,13 @@
 .Navbar {
-  @apply bg-neutral-50 flex justify-between items-center py-4 px-8 sticky top-0 z-50;
-  @apply lg:py-5 lg:px-16 lg:shadow-soft;
+  @apply bg-neutral-50;
   @apply dark:bg-night-50;
+  @apply lg:shadow-soft;
+
+  &__Container {
+    @apply container mx-auto flex justify-between items-center py-4 px-8 sticky top-0 z-50;
+    @apply lg:py-5 lg:px-16;
+    @apply 2xl:py-4;
+  }
 
   &__Hotlink {
     @apply cursor-pointer;

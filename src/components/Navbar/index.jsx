@@ -58,8 +58,8 @@ const Navbar = () => {
   })
 
   return (
-    <>
-      <header className="Navbar">
+    <header className="Navbar">
+      <div className="Navbar__Container">
         <a className="Navbar__Hotlink" href="/">
           <img className="Navbar__Logo" src={Logo} />
         </a>
@@ -117,8 +117,8 @@ const Navbar = () => {
             />
           )}
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   )
 }
 
