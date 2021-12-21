@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from '@containers/Hero'
-// import Services from '@containers/Services'
+import Services from '@containers/Services'
 // import Team from '@containers/Team'
 // import Featured from '@containers/Featured'
 // import Pricing from '@containers/Pricing'
@@ -11,7 +11,7 @@ import Hero from '@containers/Hero'
 const Home = () => (
   <>
     <Hero />
-    {/* <Services /> */}
+    <Services />
     {/* <Team /> */}
     {/* <Featured /> */}
     {/* <Pricing /> */}
