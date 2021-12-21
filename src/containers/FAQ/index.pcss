@@ -1,17 +1,21 @@
 .FAQ {
-  @apply max-w-[1128px] mx-auto mb-24;
+  @apply max-w-[1128px] mx-6 mb-24;
+  @apply lg:mx-auto;
 
   &__Title {
-    @apply text-center text-4xl font-bold mb-3 text-neutral-900;
+    @apply text-center text-3xl font-bold mb-3 text-neutral-900;
+    @apply lg:text-4xl;
     @apply dark:text-neutral-50;
   }
 
   &__Description {
-    @apply text-sm text-center font-semibold mb-16 text-neutral-600 block;
+    @apply text-sm text-center font-semibold mb-11 text-neutral-600 block;
+    @apply lg:mb-16;
     @apply dark:text-neutral-300;
   }
 
   &__Grid {
-    @apply grid grid-cols-2 gap-6;
+    @apply grid grid-cols-1 gap-y-8;
+    @apply lg:grid-cols-2 lg:gap-6;
   }
 }
