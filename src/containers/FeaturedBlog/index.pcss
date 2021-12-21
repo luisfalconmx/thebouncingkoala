@@ -1,21 +1,25 @@
 .FeaturedBlog {
-  @apply max-w-[1128px] mx-auto mb-24;
+  @apply max-w-[1128px] mx-auto mb-24 px-6;
+  @apply lg:px-0;
 
   &__Label {
-    @apply text-primary text-sm font-semibold mb-3 block text-center;
+    @apply text-primary text-sm font-semibold mb-2 block text-center;
   }
 
   &__Title {
-    @apply text-neutral-900 text-4xl font-semibold text-center mb-3;
-    @apply dark:text-neutral-900;
+    @apply text-neutral-900 text-3xl font-semibold text-center mb-5;
+    @apply lg:text-4xl lg:mb-3;
+    @apply dark:text-neutral-50;
   }
 
   &__Description {
-    @apply max-w-[552px] mx-auto text-center text-lg font-normal text-neutral-600 mb-10;
+    @apply max-w-[552px] mx-auto text-center text-base font-normal text-neutral-600 mb-11;
+    @apply lg:text-lg;
     @apply dark:text-neutral-300;
   }
 
   &__Track {
-    @apply grid grid-cols-3 gap-x-6;
+    @apply grid grid-cols-1 gap-y-8;
+    @apply lg:grid-cols-3 lg:gap-x-6;
   }
 }
