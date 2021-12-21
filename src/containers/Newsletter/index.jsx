@@ -6,7 +6,6 @@ import './index.pcss'
 const Newsletter = () => {
   return (
     <section className="Newsletter">
-      <div className="Newsletter__Overlay" />
       <div className="Newsletter__Container">
         <div className="Newsletter__Info">
           <h2 className="Newsletter__Title">Sign up for our newsletter</h2>
@@ -17,8 +16,8 @@ const Newsletter = () => {
         </div>
         <form className="Newsletter__Form">
           <div className="Newsletter__FormElement">
-            <Input />
-            <Button />
+            <Input className="Newsletter__Input" />
+            <Button className="Newsletter__Button" />
           </div>
           <small className="Newsletter__Leyend">
             We care about the protection of your data. read our{' '}
