@@ -12,19 +12,23 @@
   }
 
   &__Nav {
-    @apply w-screen h-[calc(100vh-84px)] absolute top-full left-0 grid grid-rows-[1fr_auto] gap-x-8 bg-neutral-50 p-8 pt-16;
-    @apply lg:w-fit lg:h-fit lg:static lg:grid-cols-[repeat(3,_auto)] lg:items-center lg:p-0;
+    @apply w-screen h-[calc(100vh-84px)] max-h-0 overflow-y-hidden absolute top-full left-0 grid grid-rows-[1fr_auto] gap-x-8 bg-neutral-50 px-8;
+    @apply lg:w-fit lg:h-fit lg:max-h-fit lg:overflow-visible lg:static lg:grid-cols-[repeat(3,_auto)] lg:items-center lg:p-0;
     @apply dark:bg-night-50;
+
+    &--Visible {
+      @apply max-h-fit pt-16 pb-8 transition-all;
+    }
   }
 
   &__List {
     @apply w-fit h-fit;
-    @apply lg:flex;
+    @apply lg:flex lg:items-center;
   }
 
   &__Item {
-    @apply mb-4 last-of-type:mb-0;
-    @apply lg:mr-4 lg:last-of-type:mr-0;
+    @apply mb-4 last-of-type:m-0;
+    @apply lg:mb-0 lg:mr-4 lg:last-of-type:m-0;
   }
 
   &__Link {
@@ -67,5 +71,13 @@
   &__TooltipButton {
     @apply mr-2 mb-1;
     @apply hover:text-primary;
+  }
+
+  &__OffcanvasButton {
+    @apply lg:hidden;
+  }
+
+  &__OffcanvasIcon {
+    @apply w-9 h-9 cursor-pointer;
   }
 }
