@@ -1,7 +1,11 @@
 .Footer {
-  @apply bg-neutral-50 flex flex-col-reverse justify-between items-center p-12;
-  @apply lg:flex-row lg:py-12 lg:px-36;
+  @apply bg-neutral-50;
   @apply dark:bg-night-50;
+
+  &__Container {
+    @apply container mx-auto flex flex-col-reverse justify-between items-center p-12;
+    @apply lg:flex-row lg:py-12 lg:px-36;
+  }
 
   &__Leyend {
     @apply text-sm font-normal text-neutral-600;

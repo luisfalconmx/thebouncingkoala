@@ -27,18 +27,20 @@ const SocialIcons = [
 const Footer = () => {
   return (
     <footer className="Footer">
-      <strong className="Footer__Leyend">
-        © 2020 Dlex, Inc. All rights reserved
-      </strong>
-      <ul className="Footer__List">
-        {SocialIcons.map((item) => (
-          <li className="Footer__Item" key={item.link}>
-            <a className="Footer__Link" href={item.link}>
-              <img className="Footer__Icon" src={item.icon} />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="Footer__Container">
+        <strong className="Footer__Leyend">
+          © 2020 Dlex, Inc. All rights reserved
+        </strong>
+        <ul className="Footer__List">
+          {SocialIcons.map((item) => (
+            <li className="Footer__Item" key={item.link}>
+              <a className="Footer__Link" href={item.link}>
+                <img className="Footer__Icon" src={item.icon} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   )
 }
