@@ -10,15 +10,20 @@
   }
 
   &__Title {
-    @apply text-neutral-900 text-3xl font-bold mb-3;
-    @apply lg:text-6xl lg:mb-6;
+    @apply text-neutral-900 text-3xl font-bold mb-3 text-center;
+    @apply lg:text-6xl lg:mb-6 lg:text-left;
     @apply dark:text-neutral-50;
   }
 
   &__Description {
-    @apply text-neutral-600 text-base font-normal mb-6;
-    @apply lg:mb-8;
+    @apply text-neutral-600 text-base font-normal mb-6 text-center;
+    @apply lg:mb-8 lg:text-left;
     @apply dark:text-neutral-300;
+  }
+
+  &__Button {
+    @apply block mx-auto;
+    @apply lg:mx-0;
   }
 
   &__Image {

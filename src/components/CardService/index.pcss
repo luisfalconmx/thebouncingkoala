@@ -1,5 +1,6 @@
 .CardService {
-  @apply shadow-soft rounded-xl bg-neutral-50 max-w-[264px] py-14 px-6;
+  @apply shadow-soft rounded-xl bg-neutral-50 py-14 px-6;
+  @apply lg:max-w-[264px];
   @apply dark:bg-night-50;
 
   &__Image {
@@ -7,7 +8,7 @@
   }
 
   &__Title {
-    @apply text-base font-bold text-neutral-900 mb-4;
+    @apply text-xl font-bold text-neutral-900 mb-4;
     @apply dark:text-neutral-50;
   }
 
@@ -22,7 +23,7 @@
   }
 
   &__LinkText {
-    @apply text-primary text-sm mr-2;
+    @apply text-primary text-base mr-2;
   }
 
   &__Icon {
