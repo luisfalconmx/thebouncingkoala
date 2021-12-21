@@ -1,16 +1,24 @@
 .Services {
-  @apply max-w-[1128px] mx-auto mb-24;
+  @apply max-w-[1128px] mx-auto mb-24 px-6;
+  @apply lg:px-8;
+  @apply xl:px-4;
+  @apply 2xl:px-0;
 
   &__Label {
-    @apply block text-primary text-sm font-semibold mb-2;
+    @apply block text-primary text-sm font-bold mb-2 text-center;
+    @apply lg:text-left lg:font-semibold;
   }
 
   &__Title {
-    @apply text-4xl font-bold text-neutral-900 max-w-[604px] mb-10;
+    @apply text-3xl text-center font-bold text-neutral-900 max-w-[327px] mb-11 mx-auto;
+    @apply md:max-w-[450px];
+    @apply lg:max-w-[604px] lg:text-4xl lg:text-left lg:mx-0;
     @apply dark:text-neutral-50;
   }
 
   &__Track {
-    @apply grid grid-cols-4 gap-6;
+    @apply grid grid-cols-1 gap-6 justify-items-center;
+    @apply md:grid-cols-2;
+    @apply lg:grid-cols-4;
   }
 }

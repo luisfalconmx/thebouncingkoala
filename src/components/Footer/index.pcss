@@ -1,21 +1,33 @@
-.footer {
-  @apply bg-neutral-50 flex justify-between items-center py-12 px-36;
+.Footer {
+  @apply bg-neutral-50;
   @apply dark:bg-night-50;
 
-  &__leyend {
+  &__Container {
+    @apply container mx-auto flex flex-col-reverse justify-between items-center p-12;
+    @apply lg:flex-row lg:py-12 lg:px-36;
+    @apply 2xl:px-16;
+  }
+
+  &__Leyend {
     @apply text-sm font-normal text-neutral-600;
     @apply dark:text-neutral-300;
   }
 
-  &__list {
-    @apply flex;
+  &__List {
+    @apply flex mb-4;
+    @apply lg:mb-0;
   }
 
-  &__item {
+  &__Item {
     @apply mr-8 last-of-type:mr-0;
   }
 
-  &__link {
+  &__Link {
     @apply w-fit cursor-pointer;
+  }
+
+  &__Icon {
+    @apply text-neutral-600;
+    @apply dark:text-neutral-300;
   }
 }

@@ -12,9 +12,9 @@ const Hero = () => {
       <div className="Hero__Content">
         <h1 className="Hero__Title">{t('hero.title')}</h1>
         <p className="Hero__Description">{t('hero.description')}</p>
-        <Button />
+        <Button className="Hero__Button" />
       </div>
-      <img src={Image} alt="thebouncingkoala hero" />
+      <img className="Hero__Image" src={Image} alt="thebouncingkoala hero" />
     </section>
   )
 }

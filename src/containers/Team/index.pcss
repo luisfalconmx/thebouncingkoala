@@ -1,16 +1,22 @@
 .Team {
-  @apply max-w-[1140px] mx-auto mb-24;
+  @apply max-w-[1140px] mx-auto mb-24 px-6;
+  @apply lg:px-8;
+  @apply xl:px-4;
+  @apply 2xl:px-0;
 
   &__Label {
-    @apply block text-sm font-semibold text-primary mb-3 text-center;
+    @apply block text-sm font-bold text-primary mb-2 text-center;
+    @apply lg:font-semibold lg:mb-3;
   }
 
   &__Title {
-    @apply text-4xl font-bold text-center text-neutral-900 mb-16;
+    @apply text-3xl font-bold text-center text-neutral-900 mb-11;
+    @apply lg:text-4xl lg:mb-16;
     @apply dark:text-neutral-50;
   }
 
   &__Track {
-    @apply grid grid-cols-3 gap-x-7;
+    @apply grid grid-cols-1 gap-y-10 justify-items-center;
+    @apply lg:grid-cols-3 lg:gap-y-0 lg:gap-x-7;
   }
 }

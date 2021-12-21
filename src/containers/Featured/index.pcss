@@ -1,25 +1,30 @@
 .Featured {
-  @apply relative max-w-[1316px] min-h-[500px] px-24 mx-auto mb-24 grid grid-cols-2;
-
-  &__Overlay {
-    @apply w-full h-full absolute top-0 left-0 bg-primary opacity-10 rounded-3xl -z-10;
-  }
+  @apply max-w-[1316px] px-6 py-14 mx-auto mb-24 grid grid-cols-1 bg-primary bg-opacity-10;
+  @apply lg:min-h-[500px] lg:rounded-3xl lg:grid-cols-2 lg:px-24 lg:py-0;
 
   &__Content {
     @apply my-auto;
   }
 
   &__Title {
-    @apply text-4xl font-bold text-neutral-900 max-w-[280px] mb-5;
+    @apply max-w-[327px] mx-auto text-center text-3xl font-bold text-neutral-900 mb-5;
+    @apply lg:mx-0 lg:max-w-[280px] lg:text-4xl;
     @apply dark:text-neutral-50;
   }
 
   &__Description {
-    @apply text-lg font-normal text-neutral-600 max-w-[454px] mb-8;
+    @apply text-base text-center text-neutral-600 font-normal max-w-[454px] mb-5 mx-auto;
+    @apply lg:text-lg lg:text-left lg:mb-8 lg:mx-0;
     @apply dark:text-neutral-300;
   }
 
+  &__Button {
+    @apply block mx-auto;
+    @apply lg:mx-0;
+  }
+
   &__Image {
-    @apply block mt-auto;
+    @apply w-full max-w-[360px] block mt-auto row-start-1 mx-auto mb-11;
+    @apply lg:w-fit lg:max-w-full lg:row-start-auto lg:mb-0 lg:mx-0;
   }
 }

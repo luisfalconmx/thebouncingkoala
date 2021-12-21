@@ -1,10 +1,9 @@
 import React from 'react'
-import './index.pcss'
-
 import LogoFacebook from '@images/logo-facebook.svg'
 import LogoTwitter from '@images/logo-twitter.svg'
 import LogoInstagram from '@images/logo-instagram.svg'
 import LogoGithub from '@images/logo-github.svg'
+import './index.pcss'
 
 const SocialIcons = [
   {
@@ -27,19 +26,21 @@ const SocialIcons = [
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <strong className="footer__leyend">
-        © 2020 Dlex, Inc. All rights reserved
-      </strong>
-      <ul className="footer__list">
-        {SocialIcons.map((item) => (
-          <li className="footer__item" key={item.link}>
-            <a className="footer__link" href={item.link}>
-              <img src={item.icon} />
-            </a>
-          </li>
-        ))}
-      </ul>
+    <footer className="Footer">
+      <div className="Footer__Container">
+        <strong className="Footer__Leyend">
+          © 2022 The Bouncing Koala. All rights reserved
+        </strong>
+        <ul className="Footer__List">
+          {SocialIcons.map((item) => (
+            <li className="Footer__Item" key={item.link}>
+              <a className="Footer__Link" href={item.link}>
+                <img className="Footer__Icon" src={item.icon} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   )
 }

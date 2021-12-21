@@ -1,12 +1,10 @@
 .Newsletter {
-  @apply relative py-20;
-
-  &__Overlay {
-    @apply absolute top-0 left-0 w-full h-full bg-primary opacity-10 -z-10;
-  }
+  @apply bg-primary bg-opacity-10 py-14 px-6;
+  @apply lg:py-20;
 
   &__Container {
-    @apply max-w-[1193px] mx-auto flex justify-between items-center;
+    @apply max-w-[1193px] mx-auto flex flex-col justify-between items-center;
+    @apply lg:flex-row;
   }
 
   &__Info {
@@ -14,12 +12,14 @@
   }
 
   &__Title {
-    @apply text-3xl font-bold text-neutral-900 mb-3;
+    @apply text-3xl font-bold text-neutral-900 mb-5 text-center;
+    @apply lg:mb-3 lg:text-left;
     @apply dark:text-neutral-50;
   }
 
   &__Description {
-    @apply text-base font-normal text-neutral-600;
+    @apply text-base font-normal text-neutral-600 mb-11 text-center;
+    @apply lg:mb-0 lg:text-left;
     @apply dark:text-neutral-300;
   }
 
@@ -28,11 +28,22 @@
   }
 
   &__FormElement {
-    @apply grid grid-cols-[1fr_auto] gap-x-4 mb-4;
+    @apply grid gap-y-4 mb-4;
+    @apply lg:grid-cols-[1fr_auto] lg:gap-x-4;
+  }
+
+  &__Input {
+    @apply block w-full;
+  }
+
+  &__Button {
+    @apply block w-full;
+    @apply lg:w-fit;
   }
 
   &__Leyend {
-    @apply text-xs font-normal text-neutral-900;
+    @apply block text-xs font-normal text-neutral-900 text-center;
+    @apply lg:text-left;
     @apply dark:text-neutral-50;
 
     & a {
