@@ -1,6 +1,8 @@
 .Pricing {
   @apply grid grid-rows-[repeat(3,auto)] gap-y-11 max-w-[1128px] mx-6 mb-24;
-  @apply lg:mx-auto;
+  @apply lg:mx-auto lg:px-8;
+  @apply xl:px-4;
+  @apply 2xl:px-0;
 
   &__Head {
     @apply row-start-3 flex flex-col justify-between;
@@ -39,7 +41,8 @@
   }
 
   &__Info {
-    @apply max-w-[360px];
+    @apply max-w-[360px] mx-auto;
+    @apply lg:mx-0;
   }
 
   &__Label {
@@ -61,6 +64,7 @@
 
   &__List {
     @apply grid grid-cols-1 gap-y-2;
+    @apply md:grid-cols-2;
     @apply lg:grid-cols-2 lg:gap-x-6;
   }
 }

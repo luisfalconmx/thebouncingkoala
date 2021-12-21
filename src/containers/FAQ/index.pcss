@@ -1,6 +1,8 @@
 .FAQ {
   @apply max-w-[1128px] mx-6 mb-24;
-  @apply lg:mx-auto;
+  @apply lg:mx-auto lg:px-8;
+  @apply xl:px-4;
+  @apply 2xl:px-0;
 
   &__Title {
     @apply text-center text-3xl font-bold mb-3 text-neutral-900;
@@ -15,7 +17,7 @@
   }
 
   &__Grid {
-    @apply grid grid-cols-1 gap-y-8;
+    @apply grid grid-cols-1 gap-y-8 justify-items-center;
     @apply lg:grid-cols-2 lg:gap-6;
   }
 }

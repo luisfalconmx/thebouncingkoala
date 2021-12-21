@@ -13,8 +13,8 @@
   }
 
   &__Description {
-    @apply text-base text-center text-neutral-600 font-normal max-w-[454px] mb-5;
-    @apply lg:text-lg lg:text-left lg:mb-8;
+    @apply text-base text-center text-neutral-600 font-normal max-w-[454px] mb-5 mx-auto;
+    @apply lg:text-lg lg:text-left lg:mb-8 lg:mx-0;
     @apply dark:text-neutral-300;
   }
 
@@ -24,7 +24,7 @@
   }
 
   &__Image {
-    @apply w-full block mt-auto row-start-1 mb-11;
-    @apply lg:w-fit lg:row-start-auto lg:mb-0;
+    @apply w-full max-w-[360px] block mt-auto row-start-1 mx-auto mb-11;
+    @apply lg:w-fit lg:max-w-full lg:row-start-auto lg:mb-0 lg:mx-0;
   }
 }

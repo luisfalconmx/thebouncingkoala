@@ -29,7 +29,7 @@ const Footer = () => {
     <footer className="Footer">
       <div className="Footer__Container">
         <strong className="Footer__Leyend">
-          © 2020 Dlex, Inc. All rights reserved
+          © 2022 The Bouncing Koala. All rights reserved
         </strong>
         <ul className="Footer__List">
           {SocialIcons.map((item) => (
