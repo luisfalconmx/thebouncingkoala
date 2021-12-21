@@ -8,15 +8,15 @@ const Pricing = () => {
     <section className="Pricing">
       <div className="Pricing__Head">
         <div>
-          <b className="Pricing__HeadTitle">
-            Everything you need for <b>$99 a month</b>
-          </b>
+          <p className="Pricing__HeadTitle">
+            Everything you need for <i>$99 a month</i>
+          </p>
           <p className="Pricing__HeadDescription">
             Includes every feature we offer plus unlimited projects and
             unlimited users
           </p>
         </div>
-        <Button />
+        <Button className="Pricing__HeadButton" />
       </div>
       <div className="Pricing__Separator" />
       <div className="Pricing__Content">

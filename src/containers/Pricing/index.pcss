@@ -1,30 +1,41 @@
 .Pricing {
-  @apply max-w-[1128px] mx-auto mb-24;
+  @apply grid grid-rows-[repeat(3,auto)] gap-y-11 max-w-[1128px] mx-6 mb-24;
+  @apply lg:mx-auto;
 
   &__Head {
-    @apply flex justify-between mb-16;
+    @apply row-start-3 flex flex-col justify-between;
+    @apply lg:flex-row lg:row-start-auto;
   }
 
   &__HeadTitle {
-    @apply text-neutral-900 text-4xl font-bold mb-2;
+    @apply text-neutral-900 text-3xl font-bold mb-5 text-center;
+    @apply lg:text-4xl lg:mb-2 lg:text-left;
     @apply dark:text-neutral-50;
 
-    & b {
-      @apply text-primary;
+    & i {
+      @apply text-primary not-italic;
     }
   }
 
   &__HeadDescription {
-    @apply text-neutral-600 text-lg font-normal;
+    @apply text-neutral-600 text-lg font-normal mb-5 text-center;
+    @apply lg:mb-0 lg:text-left;
     @apply dark:text-neutral-300;
   }
 
+  &__HeadButton {
+    @apply block mx-auto;
+    @apply lg:mx-0;
+  }
+
   &__Separator {
-    @apply block w-full h-px bg-zinc-500 mb-12;
+    @apply row-start-2 block w-full h-px bg-zinc-500;
+    @apply lg:row-start-auto;
   }
 
   &__Content {
-    @apply grid grid-cols-[auto_1fr] gap-x-6;
+    @apply grid;
+    @apply lg:grid-cols-[auto_1fr] lg:gap-x-6;
   }
 
   &__Info {
@@ -32,20 +43,24 @@
   }
 
   &__Label {
-    @apply text-sm font-semibold text-primary mb-2;
+    @apply text-sm font-semibold text-primary mb-2 text-center block;
+    @apply lg:text-left;
   }
 
   &__Title {
-    @apply text-3xl font-bold text-neutral-900 mb-5;
+    @apply text-3xl font-bold text-neutral-900 mb-5 text-center;
+    @apply lg:text-left;
     @apply dark:text-neutral-50;
   }
 
   &__Description {
-    @apply text-base font-normal text-neutral-600;
+    @apply text-base font-normal text-neutral-600 text-center mb-11;
+    @apply lg:text-left lg:mb-0;
     @apply dark:text-neutral-300;
   }
 
   &__List {
-    @apply grid grid-cols-2 gap-x-6;
+    @apply grid grid-cols-1 gap-y-2;
+    @apply lg:grid-cols-2 lg:gap-x-6;
   }
 }
