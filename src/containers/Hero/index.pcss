@@ -1,22 +1,28 @@
 .Hero {
-  @apply max-w-[1392px] mt-8 mx-auto mb-24 grid grid-cols-2 place-items-center;
-  @apply 2xl:container 2xl:bg-primary 2xl:bg-opacity-10;
+  @apply max-w-[1392px] mx-auto mb-24 grid grid-cols-1 place-items-center;
+  @apply md:grid-cols-2;
+  @apply lg:px-6 lg:mt-8;
+  @apply 2xl:container 2xl:px-0 2xl:bg-primary 2xl:bg-opacity-10;
 
   &__Content {
-    @apply max-w-[360px];
+    @apply max-w-[360px] px-6 row-start-2;
+    @apply lg:px-0 lg:row-start-auto;
   }
 
   &__Title {
-    @apply text-neutral-900 text-6xl font-bold mb-6;
+    @apply text-neutral-900 text-3xl font-bold mb-3;
+    @apply lg:text-6xl lg:mb-6;
     @apply dark:text-neutral-50;
   }
 
   &__Description {
-    @apply text-neutral-600 text-base font-normal mb-8;
+    @apply text-neutral-600 text-base font-normal mb-6;
+    @apply lg:mb-8;
     @apply dark:text-neutral-300;
   }
 
   &__Image {
-    @apply w-full;
+    @apply w-full mb-12;
+    @apply lg:mb-0;
   }
 }
