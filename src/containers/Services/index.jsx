@@ -1,14 +1,15 @@
 import React from 'react'
 import CardService from '@components/CardService'
+import { useTranslation } from 'react-i18next'
 import './index.pcss'
 
 const Services = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="Services">
-      <b className="Services__Label">WHY DFLEX</b>
-      <h2 className="Services__Title">
-        Creativity is nothing but the way to solve new problems.
-      </h2>
+      <b className="Services__Label">{t('services.label')}</b>
+      <h2 className="Services__Title">{t('services.title')}</h2>
       <div className="Services__Track">
         <CardService />
         <CardService />

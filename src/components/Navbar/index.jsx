@@ -13,30 +13,30 @@ import {
 } from '@heroicons/react/outline'
 import './index.pcss'
 
-const links = [
-  {
-    text: 'Home',
-    href: '/'
-  },
-  {
-    text: 'Services',
-    href: '/'
-  },
-  {
-    text: 'About us',
-    href: '/'
-  },
-  {
-    text: 'Blog',
-    href: '/'
-  }
-]
-
 const Navbar = () => {
   const [tooltip, setTooltip] = useState(false)
   const [offCanvas, setOffCanvas] = useState(false)
   const { darkmode, toggleDarkmode } = useDarkmode()
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
+
+  const links = [
+    {
+      text: t('navbar.link_1'),
+      href: '/'
+    },
+    {
+      text: t('navbar.link_2'),
+      href: '/'
+    },
+    {
+      text: t('navbar.link_3'),
+      href: '/'
+    },
+    {
+      text: t('navbar.link_4'),
+      href: '/'
+    }
+  ]
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng)
