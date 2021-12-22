@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import LogoFacebook from '@images/logo-facebook.svg'
 import LogoTwitter from '@images/logo-twitter.svg'
 import LogoInstagram from '@images/logo-instagram.svg'
@@ -25,12 +26,12 @@ const SocialIcons = [
 ]
 
 const Footer = () => {
+  const { t } = useTranslation()
+
   return (
     <footer className="Footer">
       <div className="Footer__Container">
-        <strong className="Footer__Leyend">
-          © 2022 The Bouncing Koala. All rights reserved
-        </strong>
+        <strong className="Footer__Leyend">{t('footer.leyend')}</strong>
         <ul className="Footer__List">
           {SocialIcons.map((item) => (
             <li className="Footer__Item" key={item.link}>

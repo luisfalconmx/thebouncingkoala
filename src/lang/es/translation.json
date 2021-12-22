@@ -1,7 +1,71 @@
 {
+  "button": "Empezar",
+  "navbar": {
+    "link_1": "Inicio",
+    "link_2": "Servicios",
+    "link_3": "Nosotros",
+    "link_4": "Blog"
+  },
   "hero": {
     "title": "Hazlo simple pero significativo.",
     "description": "El público está más familiarizado con el mal diseño que con el buen diseño. En efecto, está condicionado a preferir un mal diseño.",
     "button": "Empezar"
+  },
+  "services": {
+    "label": "Por qué The Bouncing Koala",
+    "title": "La creatividad no es más que la forma de resolver nuevos problemas."
+  },
+  "cardService": {
+    "title": "Diseño de interfaz de usuario",
+    "description": "El paseo marítimo no sale del distrito escolar, por lo que hay algo divertido que hacer. Quiere servicios y servicios.",
+    "button": "Ver servicio"
+  },
+  "team": {
+    "label": "NUESTRO EQUIPO",
+    "title": "Conoce al equipo creativo"
+  },
+  "featured": {
+    "title": "Envío instantáneo de correo electrónico y correo postal.",
+    "description": "Simplifique su integración con Stripe Checkout. Se adapta dinámicamente al dispositivo y la ubicación de su cliente para aumentar la conversión."
+  },
+  "pricing": {
+    "caption": "Todo lo que necesita por $99 al mes",
+    "text": "Incluye todas las funciones que ofrecemos, además de proyectos ilimitados y usuarios ilimitados.",
+    "label": "Todo lo que necesitas",
+    "title": "Todo en una plataforma",
+    "description": "Deje que el dolor en sí sea mucho menos calmante, no abandone el distrito escolar, hagamos algo de dolor, hagamos la diversión, tengamos los servicios para lograrlo."
+  },
+  "featuredItem": {
+    "item_1": "Comentarios de correo electrónico y archivos adjuntos"
+  },
+  "featuredBlog": {
+    "label": "Publicaciones de blog destacadas",
+    "title": "Nuestro blog",
+    "description": "La creatividad es una palabra destacada para el trabajo que tengo que hacer entre ahora y el martes."
+  },
+  "cardBlog": {
+    "alt": "Guía para diseñar una mejor tipografía de aplicaciones móviles",
+    "type": "Artículo",
+    "title": "Guía para diseñar una mejor tipografía de aplicaciones móviles",
+    "description": "En este artículo, no hablaré sobre los conceptos generales de tipografía, que se pueden utilizar tanto en forma impresa"
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "description": "Obtenga los mejores servicios al precio más bajo",
+    "action": "Leer mas"
+  },
+  "cardFaq": {
+    "question": "¿Cuánto tardan los pagos?",
+    "answer": "Una vez que esté configurado, los pagos llegan a su cuenta bancaria en forma continua de 2 días. O puede optar por recibir pagos semanales o mensuales."
+  },
+  "newsletter": {
+    "title": "Suscríbase a nuestro boletín",
+    "description": "El medio ambiente no abandona el distrito escolar, es el dolor que algunas personas no quieren estar dispuestas a realizar los deberes del medio ambiente porque quiere ablandarlo.",
+    "input": "Ingrese su dirección de correo electrónico",
+    "leyend": "Nos preocupamos por la protección de sus datos. lea nuestra",
+    "privacy": "política de privacidad"
+  },
+  "footer": {
+    "leyend": "© 2022 The Bouncing Koala."
   }
 }

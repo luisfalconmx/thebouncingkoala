@@ -1,7 +1,71 @@
 {
+  "button": "Get Started",
+  "navbar": {
+    "link_1": "Home",
+    "link_2": "Services",
+    "link_3": "About Us",
+    "link_4": "Blog"
+  },
   "hero": {
     "title": "Make it simple, but significant.",
     "description": "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design.",
     "button": "Get Started"
+  },
+  "services": {
+    "label": "Why The Bouncing Koala",
+    "title": "Creativity is nothing but the way to solve new problems."
+  },
+  "cardService": {
+    "title": "UI Design",
+    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.",
+    "button": "View service"
+  },
+  "team": {
+    "label": "Our team",
+    "title": "Meet the creative team"
+  },
+  "featured": {
+    "title": "Instant email & postal delivery.",
+    "description": "Simplify your integration using Stripe Checkout. It dynamically adapts to your customer’s device and location to increase conversion."
+  },
+  "pricing": {
+    "caption": "Everything you need for $99 a month",
+    "text": "Includes every feature we offer plus unlimited projects and unlimited users",
+    "label": "Everything you need",
+    "title": "All in one platform",
+    "description": "Lorem ipsum dolor sit amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit mollit."
+  },
+  "featuredItem": {
+    "item_1": "Email Comments and Attachments"
+  },
+  "featuredBlog": {
+    "label": "Featured blog posts",
+    "title": "Our blog",
+    "description": "Creativity is a highfalutin word for the work I have to do between now and Tuesday."
+  },
+  "cardBlog": {
+    "alt": "Guide for designing better mobile apps typography",
+    "type": "Article",
+    "title": "Guide for designing better mobile apps typography",
+    "description": "In this article, I won’t talk about the general concepts of typography, which can be used both in print"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "description": "Get the best services at the lowest price",
+    "action": "Read more"
+  },
+  "cardFaq": {
+    "question": "How long do payouts take?",
+    "answer": "Once you’re set up, payouts arrive in your bank account on a 2-day rolling basis. Or you can opt to receive payouts weekly or monthly."
+  },
+  "newsletter": {
+    "title": "Sign up for our newsletter",
+    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit mollit.",
+    "input": "Enter your email address",
+    "leyend": "We care about the protection of your data. read our",
+    "privacy": "Privacy policy"
+  },
+  "footer": {
+    "leyend": "© 2022 The Bouncing Koala."
   }
 }

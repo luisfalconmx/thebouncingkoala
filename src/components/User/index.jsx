@@ -6,7 +6,7 @@ import './index.pcss'
 const User = ({
   image = defaultImage,
   name = 'Kristin Watson',
-  label = 'Jun 27, 2020 · 6 min read'
+  label = 'Jun 27, 2020 · 6 min'
 }) => {
   return (
     <div className="User">
