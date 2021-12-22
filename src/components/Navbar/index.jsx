@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useDarkmode } from '@hooks/useDarkmode'
 import classNames from 'classnames'
 import Button from '@components/Button'
-import Logo from '@images/Logotype.svg'
+import Logo from '@images/Logotype.svg?inline'
 import {
   TranslateIcon,
   MoonIcon,
