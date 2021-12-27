@@ -1419,6 +1419,11 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+"@thebouncingkoala/tailwindcss-preset-env@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@thebouncingkoala/tailwindcss-preset-env/-/tailwindcss-preset-env-1.0.1.tgz#f675602a40a2513bd34c82b6df5a7bd7fe934235"
+  integrity sha512-wtljX8Zkx0HxmHgRFBLN+4hxDAK+F8wLy4OZbVkAmFVrfH4jLztNaWY0F7uPgehHQuukyIWNzLM3/BOMB3VfLQ==
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
