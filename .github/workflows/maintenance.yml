@@ -55,37 +55,37 @@ jobs:
           badges: |
             [
               {
-                "badge": "https://img.shields.io/badge/Node%20js-${{env.package_engines_node}}-3c730f?style=for-the-badge&logo=node.js&labelColor=20232a",
+                "badge": "https://img.shields.io/badge/Node%20js-${{env.package_engines_node}}-3c730f?style=for-the-badge&logo=node.js&labelColor=3c730f&logoColor=ffffff",
                 "alt": "node",
                 "link": ""
               },
               {
-                "badge": "https://img.shields.io/badge/react-${{env.package_dependencies_react}}-35408a?style=for-the-badge&logo=react&labelColor=20232a",
+                "badge": "https://img.shields.io/badge/react-${{env.package_dependencies_react}}-35408a?style=for-the-badge&logo=react&labelColor=35408a&logoColor=ffffff",
                 "alt": "react",
                 "link": ""
               },
               {
-                "badge": "https://img.shields.io/badge/tailwindcss-${{env.package_devDependencies_tailwindcss}}-06B6D4?style=for-the-badge&logo=tailwindcss&labelColor=20232a",
+                "badge": "https://img.shields.io/badge/tailwindcss-${{env.package_devDependencies_tailwindcss}}-06B6D4?style=for-the-badge&logo=tailwindcss&labelColor=06B6D4&logoColor=ffffff",
                 "alt": "tailwindcss",
                 "link": ""
               },
               {
-                "badge": "https://img.shields.io/badge/postcss-${{env.package_devDependencies_postcss}}-DD3A0A?style=for-the-badge&logo=postcss&labelColor=20232a",
+                "badge": "https://img.shields.io/badge/postcss-${{env.package_devDependencies_postcss}}-DD3A0A?style=for-the-badge&logo=postcss&labelColor=DD3A0A&logoColor=ffffff",
                 "alt": "postcss",
                 "link": ""
               },
               {
-                "badge": "https://img.shields.io/badge/jest-${{env.package_devDependencies_jest}}-C21325?style=for-the-badge&logo=jest&labelColor=20232a",
+                "badge": "https://img.shields.io/badge/jest-${{env.package_devDependencies_jest}}-C21325?style=for-the-badge&logo=jest&labelColor=C21325&logoColor=ffffff",
                 "alt": "jest",
                 "link": ""
               },
               {
-                "badge": "https://img.shields.io/badge/dockerhub-${{ steps.get_release.outputs.release }}-2496ED?style=for-the-badge&logo=docker&labelColor=20232a",
+                "badge": "https://img.shields.io/badge/dockerhub-${{ steps.get_release.outputs.release }}-2496ED?style=for-the-badge&logo=docker&labelColor=2496ED&logoColor=ffffff",
                 "alt": "dockerhub",
                 "link": "https://hub.docker.com/r/luisfalconmx/strapi"
               },
               {
-                "badge": "https://img.shields.io/github/license/${{ env.REPOSITORY_FULL_NAME }}?style=for-the-badge&logo=github&labelColor=20232a&color=orange",
+                "badge": "https://img.shields.io/github/license/${{ env.REPOSITORY_FULL_NAME }}?style=for-the-badge&logo=github&labelColor=orange&color=orange&logoColor=ffffff",
                 "alt": "MIT License",
                 "link": "${{ env.REPOSITORY_GITHUB_URL }}/blob/main/LICENSE"
               }
