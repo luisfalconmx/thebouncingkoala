@@ -8,5 +8,16 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      const windowResize = () => {
+        const root = document.documentElement
+        const height = window.outerHeight
+
+        root.style.setProperty('--full-height', `${height}px`)
+      }
+
+      windowResize()
+      window.addEventListener('resize', windowResize)
+    </script>
   </body>
 </html>
