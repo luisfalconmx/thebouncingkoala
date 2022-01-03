@@ -1,5 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import classNames from 'classnames'
 import './index.pcss'
 
 const Input = ({
@@ -8,9 +9,11 @@ const Input = ({
   placeholder = 'Enter email address',
   required = true
 }) => {
+  const inputClass = classNames('Input', className)
+
   return (
     <input
-      className={`Input ${className}`}
+      className={inputClass}
       type={type}
       placeholder={placeholder}
       required={required}
