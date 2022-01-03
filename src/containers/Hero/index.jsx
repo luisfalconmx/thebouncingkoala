@@ -1,7 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import Image from '@components/Image'
 import Button from '@components/Button'
-import Image from '@images/HeroImage.png'
+import HeroImage from '@images/HeroImage.png'
+import HeroImageWebp from '@images/HeroImage.png?as=webp'
 import './index.pcss'
 
 const Hero = () => {
@@ -14,7 +16,12 @@ const Hero = () => {
         <p className="Hero__Description">{t('hero.description')}</p>
         <Button text={t('button')} className="Hero__Button" />
       </div>
-      <img className="Hero__Image" src={Image} alt="thebouncingkoala hero" />
+      <Image
+        className="Hero__Image"
+        src={HeroImage}
+        srcSet={HeroImageWebp}
+        alt="The bouncing koala hero"
+      />
     </section>
   )
 }

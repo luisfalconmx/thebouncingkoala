@@ -1,7 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import Image from '@components/Image'
 import Button from '@components/Button'
-import Image from '@images/featured-mockup.png'
+import ImageFeaturedMockup from '@images/featured-mockup.png'
+import ImageFeaturedMockupWebp from '@images/featured-mockup.png?as=webp'
 import './index.pcss'
 
 const Featured = () => {
@@ -14,7 +16,12 @@ const Featured = () => {
         <p className="Featured__Description">{t('featured.description')}</p>
         <Button text={t('button')} className="Featured__Button" />
       </div>
-      <img className="Featured__Image" src={Image} alt="featured image" />
+      <Image
+        className="Featured__Image"
+        src={ImageFeaturedMockup}
+        srcSet={ImageFeaturedMockupWebp}
+        alt="featured image"
+      />
     </section>
   )
 }

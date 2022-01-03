@@ -6,6 +6,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const CopyPlugin = require('copy-webpack-plugin')
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 require('dotenv').config()
 
@@ -102,6 +103,7 @@ module.exports = (env, argv) => {
     ]
   }
 
+  // Enable webpack plugins
   config.plugins = [
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -134,7 +136,33 @@ module.exports = (env, argv) => {
   if (Production) {
     config.optimization = {
       minimize: true,
-      minimizer: [new TerserWebpackPlugin()]
+      minimizer: [
+        new TerserWebpackPlugin(),
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+              plugins: [
+                ['imagemin-gifsicle', { interlaced: true }],
+                ['imagemin-mozjpeg', { progressive: true }],
+                ['imagemin-pngquant', { optimizationLevel: 5 }],
+                'imagemin-svgo'
+              ]
+            }
+          },
+          generator: [
+            {
+              // You can apply generator using `?as=webp`, you can use any name and provide more options
+              preset: 'webp',
+              filename: '[name].[ext]',
+              implementation: ImageMinimizerPlugin.imageminGenerate,
+              options: {
+                plugins: ['imagemin-webp']
+              }
+            }
+          ]
+        })
+      ]
     }
   }
 
