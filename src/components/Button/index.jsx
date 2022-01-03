@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import './index.pcss'
 
 const Button = ({ text = 'Get Started', className }) => {
-  const buttonClass = classNames('Button', className, 'transform')
+  const buttonClass = classNames('Button', className)
 
   return <button className={buttonClass}>{text}</button>
 }
