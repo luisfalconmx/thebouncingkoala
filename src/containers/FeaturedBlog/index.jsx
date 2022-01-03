@@ -14,9 +14,21 @@ const FeaturedBlog = () => {
         {t('featuredBlog.description')}
       </p>
       <div className="FeaturedBlog__Track">
-        <CardBlog />
-        <CardBlog />
-        <CardBlog />
+        <CardBlog
+          type={t('cardBlog.type')}
+          title={t('cardBlog.title')}
+          description={t('cardBlog.description')}
+        />
+        <CardBlog
+          type={t('cardBlog.type')}
+          title={t('cardBlog.title')}
+          description={t('cardBlog.description')}
+        />
+        <CardBlog
+          type={t('cardBlog.type')}
+          title={t('cardBlog.title')}
+          description={t('cardBlog.description')}
+        />
       </div>
     </section>
   )

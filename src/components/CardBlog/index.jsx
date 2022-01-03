@@ -2,7 +2,6 @@ import React from 'react'
 import propTypes from 'prop-types'
 import User from '@components/User'
 import './index.pcss'
-import { t } from 'i18next'
 
 const CardBlog = ({
   image,
@@ -20,11 +19,11 @@ const CardBlog = ({
         <img className="CardBlog__Image" src={image} alt={title} />
       </a>
       <div className="CardBlog__Content">
-        <small className="CardBlog__Type">{t('cardBlog.type')}</small>
+        <small className="CardBlog__Type">{type}</small>
         <a className="CardBlog__Link" href={link}>
-          <b className="CardBlog__Title">{t('cardBlog.title')}</b>
+          <b className="CardBlog__Title">{title}</b>
         </a>
-        <p className="CardBlog__Description">{t('cardBlog.description')}</p>
+        <p className="CardBlog__Description">{description}</p>
       </div>
       <div className="CardBlog__Footer">
         <User image={authorImage} name={author} label={label} />
