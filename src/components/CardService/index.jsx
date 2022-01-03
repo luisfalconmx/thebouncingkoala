@@ -7,7 +7,7 @@ import './index.pcss'
 
 const CardService = ({
   image = defaultImage,
-  title = 'UI Design asdasd',
+  title = 'UI Design',
   description = 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.',
   link = '/'
 }) => {

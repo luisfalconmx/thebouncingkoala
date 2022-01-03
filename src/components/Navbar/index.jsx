@@ -73,7 +73,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button translate="button" className="Navbar__Button" />
+          <Button text={t('button')} className="Navbar__Button" />
           <div className="Navbar__Actions">
             <div className="Navbar__ActionLanguage">
               <TranslateIcon

@@ -14,7 +14,7 @@ const Pricing = () => {
           <p className="Pricing__HeadTitle">{t('pricing.caption')}</p>
           <p className="Pricing__HeadDescription">{t('pricing.text')}</p>
         </div>
-        <Button translate="button" className="Pricing__HeadButton" />
+        <Button text={t('button')} className="Pricing__HeadButton" />
       </div>
       <div className="Pricing__Separator" />
       <div className="Pricing__Content">
