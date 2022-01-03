@@ -2,8 +2,8 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Image from '@components/Image'
 import Button from '@components/Button'
-import HeroImage from '@images/HeroImage.png'
-import HeroImageWebp from '@images/HeroImage.png?as=webp'
+import HeroImage from '@images/HeroImage.jpg'
+import HeroImageWebp from '@images/HeroImage.jpg?as=webp'
 import './index.pcss'
 
 const Hero = () => {
