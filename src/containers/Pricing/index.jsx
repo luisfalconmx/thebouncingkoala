@@ -14,7 +14,7 @@ const Pricing = () => {
           <p className="Pricing__HeadTitle">{t('pricing.caption')}</p>
           <p className="Pricing__HeadDescription">{t('pricing.text')}</p>
         </div>
-        <Button className="Pricing__HeadButton" />
+        <Button text={t('button')} className="Pricing__HeadButton" />
       </div>
       <div className="Pricing__Separator" />
       <div className="Pricing__Content">
@@ -24,14 +24,14 @@ const Pricing = () => {
           <p className="Pricing__Description">{t('pricing.description')}</p>
         </div>
         <div className="Pricing__List">
-          <FeaturedItem />
-          <FeaturedItem />
-          <FeaturedItem />
-          <FeaturedItem />
-          <FeaturedItem />
-          <FeaturedItem />
-          <FeaturedItem />
-          <FeaturedItem />
+          <FeaturedItem content={t('featuredItem.item_1')} />
+          <FeaturedItem content={t('featuredItem.item_1')} />
+          <FeaturedItem content={t('featuredItem.item_1')} />
+          <FeaturedItem content={t('featuredItem.item_1')} />
+          <FeaturedItem content={t('featuredItem.item_1')} />
+          <FeaturedItem content={t('featuredItem.item_1')} />
+          <FeaturedItem content={t('featuredItem.item_1')} />
+          <FeaturedItem content={t('featuredItem.item_1')} />
         </div>
       </div>
     </section>

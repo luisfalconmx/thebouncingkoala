@@ -11,10 +11,22 @@ const FAQ = () => {
       <h2 className="FAQ__Title">{t('faq.title')}</h2>
       <p className="FAQ__Description">{t('faq.description')}</p>
       <div className="FAQ__Grid">
-        <CardFAQ />
-        <CardFAQ />
-        <CardFAQ />
-        <CardFAQ />
+        <CardFAQ
+          question={t('cardFaq.question')}
+          answer={t('cardFaq.answer')}
+        />
+        <CardFAQ
+          question={t('cardFaq.question')}
+          answer={t('cardFaq.answer')}
+        />
+        <CardFAQ
+          question={t('cardFaq.question')}
+          answer={t('cardFaq.answer')}
+        />
+        <CardFAQ
+          question={t('cardFaq.question')}
+          answer={t('cardFaq.answer')}
+        />
       </div>
     </section>
   )

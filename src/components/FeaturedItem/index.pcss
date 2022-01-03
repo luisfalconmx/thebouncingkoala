@@ -1,13 +1,15 @@
 .FeaturedItem {
-  @apply w-fit mx-auto grid grid-cols-[1.5rem,auto] gap-x-3 py-5 max-w-[360px];
-  @apply lg:w-auto lg:mx-0 lg:border-b lg:border-zinc-300;
+  @apply w-full mx-auto grid grid-cols-1 gap-y-3 py-5 max-w-[276px];
+  @apply lg:w-auto lg:mx-0 lg:grid-cols-[1.5rem,auto] lg:gap-x-3 lg:gap-y-0 lg:border-b lg:border-zinc-300;
 
   &__Icon {
-    @apply w-6 text-primary;
+    @apply w-6 text-primary mx-auto;
+    @apply lg:mx-0;
   }
 
   &__Content {
-    @apply text-neutral-900 text-sm font-normal;
+    @apply text-neutral-900 text-sm text-center font-normal;
+    @apply lg:text-left;
     @apply dark:text-neutral-50;
   }
 }

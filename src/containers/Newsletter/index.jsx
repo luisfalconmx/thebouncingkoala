@@ -19,7 +19,7 @@ const Newsletter = () => {
         <form className="Newsletter__Form">
           <div className="Newsletter__FormElement">
             <Input className="Newsletter__Input" />
-            <Button className="Newsletter__Button" />
+            <Button text={t('button')} className="Newsletter__Button" />
           </div>
           <small className="Newsletter__Leyend">
             {t('newsletter.leyend')} <a href="/">{t('newsletter.privacy')}</a>

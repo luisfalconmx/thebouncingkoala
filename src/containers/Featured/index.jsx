@@ -12,7 +12,7 @@ const Featured = () => {
       <div className="Featured__Content">
         <h2 className="Featured__Title">{t('featured.title')}</h2>
         <p className="Featured__Description">{t('featured.description')}</p>
-        <Button className="Featured__Button" />
+        <Button text={t('button')} className="Featured__Button" />
       </div>
       <img className="Featured__Image" src={Image} alt="featured image" />
     </section>

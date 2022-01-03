@@ -1,17 +1,17 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
 import './index.pcss'
 
-const Button = ({ className = '', text = 'Get Started' }) => {
-  const { t } = useTranslation()
+const Button = ({ text = 'Get Started', className }) => {
+  const buttonClass = classNames('Button', className)
 
-  return <button className={`Button ${className}`}>{t('button')}</button>
+  return <button className={buttonClass}>{text}</button>
 }
 
 Button.propTypes = {
-  className: propTypes.string,
-  text: propTypes.string
+  text: propTypes.string,
+  className: propTypes.string
 }
 
 export default Button
