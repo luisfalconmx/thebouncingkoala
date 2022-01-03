@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import Image from '@components/Image'
 import Button from '@components/Button'
 import ImageFeaturedMockup from '@images/featured-mockup.png'
+import ImageFeaturedMockupWebp from '@images/featured-mockup.png?as=webp'
 import './index.pcss'
 
 const Featured = () => {
@@ -18,6 +19,7 @@ const Featured = () => {
       <Image
         className="Featured__Image"
         src={ImageFeaturedMockup}
+        srcSet={ImageFeaturedMockupWebp}
         alt="featured image"
       />
     </section>

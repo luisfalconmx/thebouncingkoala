@@ -103,6 +103,7 @@ module.exports = (env, argv) => {
     ]
   }
 
+  // Enable webpack plugins
   config.plugins = [
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -138,6 +139,17 @@ module.exports = (env, argv) => {
       minimizer: [
         new TerserWebpackPlugin(),
         new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+              plugins: [
+                ['imagemin-gifsicle', { interlaced: true }],
+                ['imagemin-mozjpeg', { progressive: true }],
+                ['imagemin-pngquant', { optimizationLevel: 5 }],
+                'imagemin-svgo'
+              ]
+            }
+          },
           generator: [
             {
               // You can apply generator using `?as=webp`, you can use any name and provide more options
