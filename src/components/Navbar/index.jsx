@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDarkmode } from '@hooks/useDarkmode'
 import classNames from 'classnames'
+import Image from '@components/Image'
 import Button from '@components/Button'
 import Logo from '@images/Logotype.svg?inline'
 import {
@@ -61,7 +62,7 @@ const Navbar = () => {
     <header className="Navbar">
       <div className="Navbar__Container">
         <a className="Navbar__Hotlink" href="/">
-          <img className="Navbar__Logo" src={Logo} />
+          <Image className="Navbar__Logo" src={Logo} width={64} height={52} />
         </a>
         <nav className={navbarNavClasses}>
           <ul className="Navbar__List">

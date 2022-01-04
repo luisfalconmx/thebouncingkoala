@@ -1,8 +1,8 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Image from '@components/Image'
-import defaultImage from '@images/CardService__Image.png'
-import defaultImageWebp from '@images/CardService__Image.png?as=webp'
+import defaultImage from '@images/CardTeam__Image.png'
+import defaultImageWebp from '@images/CardTeam__Image.png?as=webp'
 import './index.pcss'
 
 const CardTeam = ({
@@ -13,7 +13,13 @@ const CardTeam = ({
 }) => {
   return (
     <div className="CardTeam">
-      <Image src={image} srcSet={imageWebp} alt={name} />
+      <Image
+        src={image}
+        srcSet={imageWebp}
+        alt={name}
+        width={360}
+        height={352}
+      />
       <div className="CardTeam__Content">
         <h3 className="CardTeam__Name">{name}</h3>
         <p className="CardTeam__Position">{position}</p>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import Image from '@components/Image'
 import LogoFacebook from '@images/logo-facebook.svg'
 import LogoTwitter from '@images/logo-twitter.svg'
 import LogoInstagram from '@images/logo-instagram.svg'
@@ -9,18 +10,22 @@ import './index.pcss'
 const SocialIcons = [
   {
     icon: LogoFacebook,
+    alt: 'Facebook',
     link: 'https://www.facebook.com/'
   },
   {
     icon: LogoTwitter,
+    alt: 'Twitter',
     link: 'https://www.twitter.com/'
   },
   {
     icon: LogoInstagram,
+    alt: 'Instagram',
     link: 'https://www.instagram.com/'
   },
   {
     icon: LogoGithub,
+    alt: 'Github',
     link: 'https://www.github.com/'
   }
 ]
@@ -36,7 +41,13 @@ const Footer = () => {
           {SocialIcons.map((item) => (
             <li className="Footer__Item" key={item.link}>
               <a className="Footer__Link" href={item.link}>
-                <img className="Footer__Icon" src={item.icon} />
+                <Image
+                  className="Footer__Icon"
+                  src={item.icon}
+                  alt={item.alt}
+                  width={20}
+                  height={20}
+                />
               </a>
             </li>
           ))}
