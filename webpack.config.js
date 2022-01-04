@@ -140,24 +140,32 @@ module.exports = (env, argv) => {
         new TerserWebpackPlugin(),
         new ImageMinimizerPlugin({
           minimizer: {
-            implementation: ImageMinimizerPlugin.imageminMinify,
+            implementation: ImageMinimizerPlugin.squooshMinify,
             options: {
-              plugins: [
-                ['imagemin-gifsicle', { interlaced: true }],
-                ['imagemin-mozjpeg', { progressive: true }],
-                ['imagemin-pngquant', { optimizationLevel: 5 }],
-                'imagemin-svgo'
-              ]
+              encodeOptions: {
+                mozjpeg: {
+                  quality: 100
+                },
+                webp: {
+                  lossless: 1
+                },
+                avif: {
+                  cqLevel: 0
+                }
+              }
             }
           },
           generator: [
             {
               // You can apply generator using `?as=webp`, you can use any name and provide more options
               preset: 'webp',
-              filename: '[name].[ext]',
-              implementation: ImageMinimizerPlugin.imageminGenerate,
+              implementation: ImageMinimizerPlugin.squooshGenerate,
               options: {
-                plugins: ['imagemin-webp']
+                encodeOptions: {
+                  webp: {
+                    quality: 90
+                  }
+                }
               }
             }
           ]
