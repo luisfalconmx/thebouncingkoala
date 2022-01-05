@@ -26,7 +26,7 @@ const SocialIcons = [
   {
     icon: LogoGithub,
     alt: 'Github',
-    link: 'https://www.github.com/'
+    link: 'https://github.com/thebouncingkoala'
   }
 ]
 

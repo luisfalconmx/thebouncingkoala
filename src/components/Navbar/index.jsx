@@ -62,7 +62,13 @@ const Navbar = () => {
     <header className="Navbar">
       <div className="Navbar__Container">
         <a className="Navbar__Hotlink" href="/">
-          <Image className="Navbar__Logo" src={Logo} width={64} height={52} />
+          <Image
+            className="Navbar__Logo"
+            alt="Logo The Bouncing Koala"
+            src={Logo}
+            width={64}
+            height={52}
+          />
         </a>
         <nav className={navbarNavClasses}>
           <ul className="Navbar__List">
