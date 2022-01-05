@@ -29,7 +29,7 @@
     "description": "Simplifique su integración con Stripe Checkout. Se adapta dinámicamente al dispositivo y la ubicación de su cliente para aumentar la conversión."
   },
   "pricing": {
-    "caption": "Todo lo que necesita por $99 al mes",
+    "caption": "Todo lo que necesita",
     "text": "Incluye todas las funciones que ofrecemos, además de proyectos ilimitados y usuarios ilimitados.",
     "label": "Todo lo que necesitas",
     "title": "Todo en una plataforma",
