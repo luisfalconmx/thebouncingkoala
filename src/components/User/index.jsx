@@ -11,7 +11,7 @@ const User = ({
 }) => {
   return (
     <div className="User">
-      <Image src={image} alt={name} width={48} height={48} />
+      <Image src={image} alt={name} width="48" height="48" />
       <div className="User__Info">
         <b className="User__Name">{name}</b>
         <small className="User__Label">{label}</small>

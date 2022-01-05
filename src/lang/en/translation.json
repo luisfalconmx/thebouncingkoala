@@ -29,7 +29,7 @@
     "description": "Simplify your integration using Stripe Checkout. It dynamically adapts to your customer’s device and location to increase conversion."
   },
   "pricing": {
-    "caption": "Everything you need for $99 a month",
+    "caption": "Everything you need",
     "text": "Includes every feature we offer plus unlimited projects and unlimited users",
     "label": "Everything you need",
     "title": "All in one platform",

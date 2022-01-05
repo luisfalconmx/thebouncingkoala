@@ -18,8 +18,8 @@ const CardService = ({
         className="CardService__Image"
         src={image}
         alt={title}
-        width={48}
-        height={48}
+        width="48"
+        height="48"
       />
       <h3 className="CardService__Title">{title}</h3>
       <p className="CardService__Description">{description}</p>

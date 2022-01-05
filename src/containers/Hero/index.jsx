@@ -21,8 +21,8 @@ const Hero = () => {
         src={HeroImage}
         srcSet={HeroImageWebp}
         alt="The bouncing koala hero"
-        width={696}
-        height={748}
+        width="696"
+        height="748"
       />
     </section>
   )

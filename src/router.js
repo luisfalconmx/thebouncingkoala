@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // Import Layout Container
 import Layout from '@containers/Layout'
 
-// Import containers
-import Home from '@routes/Home' // Default route
+// Import Routes
+const Home = lazy(() => import('@routes/Home'))
 const Contact = lazy(() => import('@routes/Contact'))
 const NotFound = lazy(() => import('@routes/NotFound'))
 
