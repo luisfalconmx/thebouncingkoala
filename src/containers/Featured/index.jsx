@@ -21,6 +21,8 @@ const Featured = () => {
         src={ImageFeaturedMockup}
         srcSet={ImageFeaturedMockupWebp}
         alt="featured image"
+        width={478}
+        height={406}
       />
     </section>
   )

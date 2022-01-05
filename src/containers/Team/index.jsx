@@ -11,9 +11,15 @@ const Team = () => {
       <b className="Team__Label">{t('team.label')}</b>
       <h2 className="Team__Title">{t('team.title')}</h2>
       <div className="Team__Track">
-        <CardTeam />
-        <CardTeam />
-        <CardTeam />
+        <CardTeam
+          name="Wade Warren"
+          linkedin="//"
+          gmail="//"
+          behance="//"
+          github="//"
+        />
+        <CardTeam name="Wade Warren" gmail="//" behance="//" />
+        <CardTeam name="Wade Warren" linkedin="//" github="//" />
       </div>
     </section>
   )

@@ -1,9 +1,9 @@
 .CardTeam {
-  @apply max-w-[360px] shadow-soft rounded-xl;
+  @apply max-w-[360px] shadow-soft rounded-xl bg-neutral-50 rounded-b-xl;
+  @apply dark:bg-night-50;
 
   &__Content {
-    @apply bg-neutral-50 p-6 rounded-b-xl;
-    @apply dark:bg-night-50;
+    @apply p-6;
   }
 
   &__Name {
@@ -14,5 +14,13 @@
   &__Position {
     @apply text-base font-normal text-neutral-600;
     @apply dark:text-neutral-300;
+  }
+
+  &__Social {
+    @apply mt-2 grid grid-cols-[repeat(auto-fill,minmax(12px,24px))] gap-x-3;
+  }
+
+  &__SocialIcon {
+    @apply block w-fit cursor-pointer;
   }
 }

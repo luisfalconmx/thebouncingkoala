@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { ArrowNarrowRightIcon } from '@heroicons/react/outline'
+import Image from '@components/Image'
 import defaultImage from '@images/CardService__Icon.png'
 import './index.pcss'
 
@@ -13,7 +14,13 @@ const CardService = ({
 }) => {
   return (
     <div className="CardService">
-      <img className="CardService__Image" src={image} alt={title} />
+      <Image
+        className="CardService__Image"
+        src={image}
+        alt={title}
+        width={48}
+        height={48}
+      />
       <h3 className="CardService__Title">{title}</h3>
       <p className="CardService__Description">{description}</p>
       <a className="CardService__Link" href={link}>
