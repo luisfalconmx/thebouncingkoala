@@ -1,5 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import Image from '@components/Image'
 import User from '@components/User'
 import './index.pcss'
 
@@ -16,7 +17,13 @@ const CardBlog = ({
   return (
     <div className="CardBlog">
       <a href={link}>
-        <img className="CardBlog__Image" src={image} alt={title} />
+        <Image
+          className="CardBlog__Image"
+          src={image}
+          alt={title}
+          width="349"
+          height="201"
+        />
       </a>
       <div className="CardBlog__Content">
         <small className="CardBlog__Type">{type}</small>

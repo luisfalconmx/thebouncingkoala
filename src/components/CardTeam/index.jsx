@@ -49,8 +49,8 @@ const CardTeam = ({
         src={image}
         srcSet={imageWebp}
         alt={name}
-        width={360}
-        height={352}
+        width="360"
+        height="352"
       />
       <div className="CardTeam__Content">
         <h3 className="CardTeam__Name">{name}</h3>

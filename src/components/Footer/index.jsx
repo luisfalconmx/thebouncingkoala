@@ -45,8 +45,8 @@ const Footer = () => {
                   className="Footer__Icon"
                   src={item.icon}
                   alt={item.alt}
-                  width={20}
-                  height={20}
+                  width="20"
+                  height="20"
                 />
               </a>
             </li>

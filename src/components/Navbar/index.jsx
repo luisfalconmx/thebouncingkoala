@@ -66,8 +66,8 @@ const Navbar = () => {
             className="Navbar__Logo"
             alt="Logo The Bouncing Koala"
             src={Logo}
-            width={64}
-            height={52}
+            width="64"
+            height="52"
           />
         </a>
         <nav className={navbarNavClasses}>
