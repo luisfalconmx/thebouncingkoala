@@ -5,7 +5,7 @@ import User from '@components/User'
 import './index.pcss'
 
 const CardBlog = ({
-  image,
+  image = '//',
   type = 'Article',
   link = '/',
   title = 'Guide for designing better mobile apps typography',
