@@ -13,13 +13,19 @@ const Team = () => {
       <div className="Team__Track">
         <CardTeam
           name="Wade Warren"
-          linkedin="//"
-          gmail="//"
-          behance="//"
-          github="//"
+          linkedin="https://www.linkedin.com"
+          gmail="test@gmail.com"
         />
-        <CardTeam name="Wade Warren" gmail="//" behance="//" />
-        <CardTeam name="Wade Warren" linkedin="//" github="//" />
+        <CardTeam
+          name="Wade Warren"
+          gmail="test@gmail.com"
+          behance="https://behance.net"
+        />
+        <CardTeam
+          name="Wade Warren"
+          linkedin="https://www.linkedin.com"
+          github="https://github.com"
+        />
       </div>
     </section>
   )

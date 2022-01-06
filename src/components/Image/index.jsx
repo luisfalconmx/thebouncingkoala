@@ -14,8 +14,8 @@ Image.propTypes = {
   src: propTypes.string.isRequired,
   srcSet: propTypes.string,
   alt: propTypes.string.isRequired,
-  width: propTypes.number,
-  height: propTypes.number,
+  width: propTypes.string,
+  height: propTypes.string,
   className: propTypes.string
 }
 
