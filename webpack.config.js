@@ -7,6 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const CopyPlugin = require('copy-webpack-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
+const AnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const Dotenv = require('dotenv-webpack')
 require('dotenv').config()
 
@@ -16,11 +17,18 @@ module.exports = (env, argv) => {
   // Detect webpack mode
   const Development = argv.mode === 'development'
   const Production = argv.mode === 'production'
+  const Analyze = argv.env.analyze === true
 
   // Get enviroment variables from .env file
   const { HOST } = process.env
 
-  config.entry = './src/index.js'
+  config.entry = {
+    app: {
+      import: './src/index.js',
+      dependOn: 'shared'
+    },
+    shared: ['i18next']
+  }
 
   config.output = {
     path: path.resolve(__dirname, 'dist'),
@@ -116,7 +124,9 @@ module.exports = (env, argv) => {
       filename: '[name].[contenthash].css'
     }),
 
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['!stats.json']
+    }),
 
     new Dotenv(),
 
@@ -131,6 +141,16 @@ module.exports = (env, argv) => {
       ]
     })
   ]
+
+  // Enable AnalyzerPlugin only in development mode
+  if (Analyze) {
+    config.plugins.push(
+      new AnalyzerPlugin({
+        analyzerMode: Analyze ? 'server' : 'disabled',
+        openAnalyzer: Analyze
+      })
+    )
+  }
 
   // Enable optimizations in production mode
   if (Production) {
