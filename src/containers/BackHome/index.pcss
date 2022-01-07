@@ -1,0 +1,40 @@
+.BackHome {
+  @apply max-w-[1440px] relative min-h-screen mx-auto flex justify-between items-center flex-col pt-20;
+  @apply md:justify-center md:pt-0;
+
+  &__Content {
+    @apply max-w-[335px] bg-white mb-11;
+    @apply sm:max-w-[610px] sm:p-4;
+    @apply dark:bg-night-100;
+  }
+
+  &__Title {
+    @apply text-3xl font-bold text-center mb-9;
+    @apply sm:text-6xl md:mb-11;
+  }
+
+  &__Description {
+    @apply text-base font-medium text-center mb-8;
+    @apply sm:text-xl;
+  }
+
+  &__Button {
+    @apply block mx-auto;
+  }
+
+  &__ImageTop {
+    @apply absolute top-0 right-0 -z-10 hidden;
+    @apply sm:block;
+    @apply md:max-w-[350px];
+    @apply xl:max-w-[400px];
+    @apply 2xl:max-w-none;
+  }
+
+  &__ImageBottom {
+    @apply max-w-none rotate-180 mr-auto;
+    @apply sm:absolute sm:mr-0 sm:bottom-0 sm:left-0 sm:-z-10;
+    @apply md:max-w-[350px];
+    @apply xl:max-w-[400px];
+    @apply 2xl:max-w-none;
+  }
+}

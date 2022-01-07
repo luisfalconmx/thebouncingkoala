@@ -1,9 +1,10 @@
 import React from 'react'
+import BackToHome from '@containers/BackHome'
 
 const NotFound = () => (
-  <section>
-    <h1>404 Error</h1>
-  </section>
+  <>
+    <BackToHome />
+  </>
 )
 
 export default NotFound
