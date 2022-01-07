@@ -1,0 +1,34 @@
+.BackHome {
+  @apply max-w-[1440px] relative h-screen mx-auto flex justify-center items-center;
+
+  &__Content {
+    @apply max-w-[610px] bg-white p-4;
+    @apply dark:bg-night-100;
+  }
+
+  &__Title {
+    @apply text-6xl font-bold text-center mb-11;
+  }
+
+  &__Description {
+    @apply text-xl font-medium text-center mb-8;
+  }
+
+  &__Button {
+    @apply block mx-auto;
+  }
+
+  &__ImageTop {
+    @apply absolute top-0 right-0 -z-10;
+    @apply md:max-w-[350px];
+    @apply xl:max-w-[400px];
+    @apply 2xl:max-w-none;
+  }
+
+  &__ImageBottom {
+    @apply absolute bottom-0 left-0 rotate-180 -z-10;
+    @apply md:max-w-[350px];
+    @apply xl:max-w-[400px];
+    @apply 2xl:max-w-none;
+  }
+}
