@@ -1,17 +1,21 @@
 .BackHome {
-  @apply max-w-[1440px] relative h-screen mx-auto flex justify-center items-center;
+  @apply max-w-[1440px] relative min-h-screen mx-auto flex justify-between items-center flex-col pt-20;
+  @apply md:justify-center md:pt-0;
 
   &__Content {
-    @apply max-w-[610px] bg-white p-4;
+    @apply max-w-[335px] bg-white mb-11;
+    @apply sm:max-w-[610px] sm:p-4;
     @apply dark:bg-night-100;
   }
 
   &__Title {
-    @apply text-6xl font-bold text-center mb-11;
+    @apply text-3xl font-bold text-center mb-9;
+    @apply sm:text-6xl md:mb-11;
   }
 
   &__Description {
-    @apply text-xl font-medium text-center mb-8;
+    @apply text-base font-medium text-center mb-8;
+    @apply sm:text-xl;
   }
 
   &__Button {
@@ -19,14 +23,16 @@
   }
 
   &__ImageTop {
-    @apply absolute top-0 right-0 -z-10;
+    @apply absolute top-0 right-0 -z-10 hidden;
+    @apply sm:block;
     @apply md:max-w-[350px];
     @apply xl:max-w-[400px];
     @apply 2xl:max-w-none;
   }
 
   &__ImageBottom {
-    @apply absolute bottom-0 left-0 rotate-180 -z-10;
+    @apply max-w-none rotate-180 mr-auto;
+    @apply sm:absolute sm:mr-0 sm:bottom-0 sm:left-0 sm:-z-10;
     @apply md:max-w-[350px];
     @apply xl:max-w-[400px];
     @apply 2xl:max-w-none;

@@ -21,7 +21,9 @@ const BackHome = () => (
         The url you were looking for is not available. Try searching for a new
         url or go back home.
       </p>
-      <Button className="BackHome__Button" text="Back to home" />
+      <a href="/">
+        <Button className="BackHome__Button" text="Back to home" />
+      </a>
     </div>
     <Image
       className="BackHome__ImageBottom"
