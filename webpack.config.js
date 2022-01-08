@@ -82,6 +82,10 @@ module.exports = (env, argv) => {
         }
       },
       {
+        test: /\.md$/,
+        type: 'asset/source'
+      },
+      {
         test: /\.(css|pcss|sss)$/i,
         use: [
           Production ? MiniCssExtractPlugin.loader : 'style-loader',
