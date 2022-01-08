@@ -8,6 +8,7 @@ import Layout from '@containers/Layout'
 const Home = lazy(() => import('@routes/Home'))
 const Contact = lazy(() => import('@routes/Contact'))
 const NotFound = lazy(() => import('@routes/NotFound'))
+const Privacy = lazy(() => import('@routes/Privacy'))
 
 const Router = () => (
   <BrowserRouter>
@@ -16,6 +17,7 @@ const Router = () => (
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
