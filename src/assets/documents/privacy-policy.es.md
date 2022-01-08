@@ -6,13 +6,13 @@ Esta Política de privacidad describe Nuestras políticas y procedimientos sobre
 
 Usamos sus datos personales para proporcionar y mejorar el servicio. Al utilizar el Servicio, acepta la recopilación y el uso de información de acuerdo con esta Política de privacidad. Esta Política de privacidad se ha creado con la ayuda de la [Plantilla de política de privacidad](https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/).
 
-# Interpretación y Definiciones
+## Interpretación y Definiciones
 
-## Interpretación
+### Interpretación
 
 Las palabras cuya letra inicial está en mayúscula tienen significados definidos en las siguientes condiciones. Las siguientes definiciones tendrán el mismo significado independientemente de que aparezcan en singular o en plural.
 
-## Definiciones
+### Definiciones
 
 A los efectos de esta Política de privacidad:
 
@@ -38,11 +38,11 @@ A los efectos de esta Política de privacidad:
 
 - **Usted** significa la persona que accede o usa el Servicio, o la empresa u otra entidad legal en nombre de la cual dicha persona accede o usa el Servicio, según corresponda.
 
-# Recopilación y uso de sus datos personales
+## Recopilación y uso de sus datos personales
 
-## Tipos de datos recopilados
+### Tipos de datos recopilados
 
-### Información personal
+#### Información personal
 
 Al usar Nuestro Servicio, podemos pedirle que nos proporcione cierta información de identificación personal que pueda usarse para contactarlo o identificarlo. La información de identificación personal puede incluir, entre otros:
 
@@ -51,7 +51,7 @@ Al usar Nuestro Servicio, podemos pedirle que nos proporcione cierta informació
 - Número de teléfono
 - Datos de uso
 
-### Datos de uso
+#### Datos de uso
 
 Los datos de uso se recopilan automáticamente cuando se utiliza el servicio.
 
@@ -61,7 +61,7 @@ Cuando accede al Servicio a través de un dispositivo móvil, podemos recopilar 
 
 También podemos recopilar información que su navegador envía cada vez que visita nuestro Servicio o cuando accede al Servicio a través de un dispositivo móvil.
 
-### Tecnologías de seguimiento y cookies
+#### Tecnologías de seguimiento y cookies
 
 Usamos cookies y tecnologías de seguimiento similares para rastrear la actividad en nuestro servicio y almacenar cierta información. Las tecnologías de seguimiento utilizadas son balizas, etiquetas y scripts para recopilar y rastrear información y para mejorar y analizar Nuestro Servicio. Las tecnologías que utilizamos pueden incluir:
 
@@ -100,7 +100,7 @@ Usamos cookies de sesión y persistentes para los fines que se establecen a cont
 
 Para obtener más información sobre las cookies que utilizamos y sus opciones con respecto a las cookies, visite nuestra Política de cookies o la sección de Cookies de nuestra Política de privacidad.
 
-## Uso de sus datos personales
+### Uso de sus datos personales
 
 La Compañía puede usar Datos Personales para los siguientes propósitos:
 
@@ -123,13 +123,13 @@ Podemos compartir su información personal en las siguientes situaciones:
 - **Con otros usuarios:** cuando comparte información personal o interactúa en las áreas públicas con otros usuarios, dicha información puede ser vista por todos los usuarios y puede distribuirse públicamente al exterior.
 - **Con su consentimiento**: podemos divulgar su información personal para cualquier otro propósito con su consentimiento.
 
-## Retención de sus datos personales
+### Retención de sus datos personales
 
 La Compañía retendrá sus datos personales solo durante el tiempo que sea necesario para los fines establecidos en esta política de privacidad. Retendremos y usaremos sus datos personales en la medida necesaria para cumplir con nuestras obligaciones legales (por ejemplo, si estamos obligados a retener sus datos para cumplir con las leyes aplicables), resolver disputas y hacer cumplir nuestros acuerdos y políticas legales.
 
 La Compañía también retendrá los Datos de uso con fines de análisis interno. Los datos de uso generalmente se conservan por un período de tiempo más corto, excepto cuando estos datos se usan para fortalecer la seguridad o mejorar la funcionalidad de nuestro servicio, o estamos legalmente obligados a retener estos datos por períodos de tiempo más largos.
 
-## Transferencia de sus datos personales
+### Transferencia de sus datos personales
 
 Su información, incluidos los Datos personales, se procesa en las oficinas operativas de la Compañía y en cualquier otro lugar donde se encuentren las partes involucradas en el procesamiento. Significa que esta información puede transferirse y mantenerse en computadoras ubicadas fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de su jurisdicción.
 
@@ -137,17 +137,17 @@ Su consentimiento a esta Política de privacidad seguido de Su envío de dicha i
 
 La Compañía tomará todas las medidas razonablemente necesarias para garantizar que Sus datos sean tratados de forma segura y de acuerdo con esta Política de Privacidad y no se realizará ninguna transferencia de Sus Datos Personales a una organización o país a menos que existan controles adecuados establecidos, incluida la seguridad de Tus datos y otra información personal.
 
-## Divulgación de sus datos personales
+### Divulgación de sus datos personales
 
-### Transacciones de negocios
+#### Transacciones de negocios
 
 Si la Compañía está involucrada en una fusión, adquisición o venta de activos, sus Datos personales pueden ser transferidos. Le avisaremos antes de que sus datos personales se transfieran y estén sujetos a una política de privacidad diferente.
 
-### Cumplimiento de la ley
+#### Cumplimiento de la ley
 
 En determinadas circunstancias, es posible que se le solicite a la Compañía que revele sus datos personales si así lo exige la ley o en respuesta a solicitudes válidas de las autoridades públicas (por ejemplo, un tribunal o una agencia gubernamental).
 
-### Otros requisitos legales
+#### Otros requisitos legales
 
 La Compañía puede divulgar sus datos personales si cree de buena fe que dicha acción es necesaria para:
 
@@ -157,23 +157,23 @@ La Compañía puede divulgar sus datos personales si cree de buena fe que dicha 
 - Proteger la seguridad personal de los Usuarios del Servicio o del público
 - Proteger contra responsabilidad legal
 
-## Seguridad de sus datos personales
+### Seguridad de sus datos personales
 
 La seguridad de sus datos personales es importante para nosotros, pero recuerde que ningún método de transmisión a través de Internet o método de almacenamiento electrónico es 100% seguro. Si bien nos esforzamos por utilizar medios comercialmente aceptables para proteger sus datos personales, no podemos garantizar su seguridad absoluta.
 
-# Privacidad de los niños
+## Privacidad de los niños
 
 Nuestro Servicio no se dirige a ninguna persona menor de 13 años. No recopilamos a sabiendas información de identificación personal de ninguna persona menor de 13 años. Si usted es un padre o tutor y sabe que su hijo nos ha proporcionado datos personales, por favor Contáctenos. Si nos damos cuenta de que hemos recopilado Datos personales de cualquier persona menor de 13 años sin la verificación del consentimiento de los padres, tomamos medidas para eliminar esa información de Nuestros servidores.
 
 Si necesitamos depender del consentimiento como base legal para procesar su información y su país requiere el consentimiento de uno de los padres, es posible que necesitemos el consentimiento de sus padres antes de recopilar y utilizar esa información.
 
-# Enlaces a otros sitios web
+## Enlaces a otros sitios web
 
 Nuestro Servicio puede contener enlaces a otros sitios web que no son operados por Nosotros. Si hace clic en el enlace de un tercero, se lo dirigirá al sitio de ese tercero. Le recomendamos encarecidamente que revise la Política de privacidad de cada sitio que visite.
 
 No tenemos control ni asumimos ninguna responsabilidad por el contenido, las políticas de privacidad o las prácticas de los sitios o servicios de terceros.
 
-# Cambios a esta Política de privacidad
+## Cambios a esta Política de privacidad
 
 Es posible que actualicemos nuestra Política de privacidad de vez en cuando. Le notificaremos de cualquier cambio publicando la nueva Política de privacidad en esta página.
 
@@ -181,7 +181,7 @@ Le informaremos por correo electrónico y / o un aviso destacado en Nuestro Serv
 
 Se le aconseja que revise esta Política de privacidad periódicamente para ver si hay cambios. Los cambios a esta Política de privacidad entran en vigencia cuando se publican en esta página.
 
-# Contáctenos
+## Contáctenos
 
 Si tiene alguna pregunta sobre esta Política de privacidad, puede contactarnos:
 

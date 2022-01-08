@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import Markdown from 'markdown-to-jsx'
 import policyEN from '@documents/privacy-policy.en.md'
 import policyES from '@documents/privacy-policy.es.md'
+import './index.pcss'
 
 const PrivacyPolicy = () => {
   const { i18n } = useTranslation()
