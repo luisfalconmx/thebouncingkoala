@@ -16,6 +16,7 @@
     @apply w-16;
 
     img {
+      @apply filter;
       @apply dark:invert;
     }
   }
@@ -41,10 +42,10 @@
   }
 
   &__Link {
-    @apply text-2xl font-semibold text-neutral-900;
+    @apply text-2xl font-semibold text-neutral-900 transition-all duration-200 transform;
     @apply lg:text-base lg:font-medium;
     @apply dark:text-neutral-50;
-    @apply hover:text-primary transition-all duration-200;
+    @apply hover:text-primary;
   }
 
   &__Button {
@@ -63,9 +64,9 @@
   }
 
   &__Icon {
-    @apply w-7 h-7 cursor-pointer;
+    @apply w-7 h-7 cursor-pointer transition-all duration-200 transform;
     @apply dark:stroke-neutral-50;
-    @apply hover:stroke-primary transition-all duration-200;
+    @apply hover:stroke-primary;
   }
 
   &__Tooltip {
@@ -79,7 +80,7 @@
   }
 
   &__TooltipButton {
-    @apply mr-4 mb-2 text-xl;
+    @apply mr-4 mb-2 text-xl transform;
     @apply lg:mr-2 lg:mb-1;
     @apply hover:text-primary;
   }
