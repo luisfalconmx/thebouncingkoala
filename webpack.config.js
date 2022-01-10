@@ -40,13 +40,15 @@ module.exports = (env, argv) => {
     extensions: ['.js', '.jsx'],
     alias: {
       '@images': path.resolve(__dirname, 'src/assets/images/'),
+      '@icons': path.resolve(__dirname, 'src/assets/icons/'),
       '@documents': path.resolve(__dirname, 'src/assets/documents/'),
       '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@containers': path.resolve(__dirname, 'src/containers/'),
       '@routes': path.resolve(__dirname, 'src/routes/'),
       '@hooks': path.resolve(__dirname, 'src/hooks/'),
-      '@styles': path.resolve(__dirname, 'src/styles/')
+      '@styles': path.resolve(__dirname, 'src/styles/'),
+      '@templates': path.resolve(__dirname, 'src/templates/')
     }
   }
 
@@ -119,9 +121,9 @@ module.exports = (env, argv) => {
   // Enable webpack plugins
   config.plugins = [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './src/templates/index.html',
       filename: 'index.html',
-      favicon: './public/favicon.ico',
+      favicon: './src/assets/icons/favicon.ico',
       inject: true
     }),
 

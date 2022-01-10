@@ -1,7 +1,5 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-// Import Layout Container
 import Layout from '@containers/Layout'
 
 // Import Routes
@@ -12,7 +10,7 @@ const Privacy = lazy(() => import('@routes/Privacy'))
 
 const Router = () => (
   <BrowserRouter>
-    <Suspense fallback="loading">
+    <Suspense fallback={null}>
       <Layout>
         <Routes>
           <Route exact path="/" element={<Home />} />

@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import { ArrowNarrowRightIcon } from '@heroicons/react/outline'
 import Image from '@components/Image'
-import defaultImage from '@images/CardService__Icon.png'
+import defaultImage from '@images/cardservice-icon.png'
 import './index.pcss'
 
 const CardService = ({

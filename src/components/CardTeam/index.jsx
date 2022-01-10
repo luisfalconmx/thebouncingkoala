@@ -1,8 +1,8 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Image from '@components/Image'
-import defaultImage from '@images/CardTeam__Image.png'
-import defaultImageWebp from '@images/CardTeam__Image.png?as=webp'
+import defaultImage from '@images/cardteam-image.png'
+import defaultImageWebp from '@images/cardteam-image.png?as=webp'
 import {
   Gmail,
   Linkedin,

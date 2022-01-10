@@ -5,19 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>thebouncingkoala</title>
-  </head>
-  <body>
-    <div id="app"></div>
     <script>
-      const windowResize = () => {
-        const root = document.documentElement
-        const height = window.innerHeight
+      const root = document.documentElement
+      const theme = localStorage.getItem('koala-theme')
 
+      const windowResize = () => {
+        const height = window.innerHeight
         root.style.setProperty('--full-height', `${height}px`)
       }
 
+      if (theme === 'dark') {
+        root.style.setProperty('--loader-background', 'rgb(18 17 39)')
+      }
+
       windowResize()
+
       window.addEventListener('resize', windowResize)
+
+      window.addEventListener('load', () => {
+        root.style.setProperty('--loader-height', '0')
+        root.style.setProperty('--loader-icon-top', '-150vh')
+      })
     </script>
+  </head>
+  <body>
+    <div id="app"></div>
   </body>
 </html>

@@ -4,7 +4,7 @@ import { useDarkmode } from '@hooks/useDarkmode'
 import classNames from 'classnames'
 import Image from '@components/Image'
 import Button from '@components/Button'
-import Logo from '@images/Logotype.svg?inline'
+import Logo from '@images/logo.svg?inline'
 import {
   TranslateIcon,
   MoonIcon,
