@@ -6,7 +6,7 @@ import Footer from '@containers/Footer'
 const Layout = ({ children }) => (
   <>
     <Navbar />
-    {children}
+    <div className="Layout__Content">{children}</div>
     <Footer />
   </>
 )
