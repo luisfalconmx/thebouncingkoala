@@ -2,7 +2,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CriticalCssPlugin = require('critical-css-webpack-plugin')
+const Critters = require('critters-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WebpackBar = require('webpackbar')
@@ -132,11 +132,9 @@ module.exports = (env, argv) => {
       filename: '[name].[contenthash].css'
     }),
 
-    new CriticalCssPlugin(),
+    new Critters(),
 
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['!stats.json']
-    }),
+    new CleanWebpackPlugin(),
 
     new Dotenv(),
 
