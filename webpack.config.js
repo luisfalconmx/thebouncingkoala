@@ -10,18 +10,18 @@ const CopyPlugin = require('copy-webpack-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const AnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const Dotenv = require('dotenv-webpack')
-require('dotenv').config()
-
-const config = {}
 
 module.exports = (env, argv) => {
+  const config = {}
+
   // Detect webpack mode
   const Development = argv.mode === 'development'
   const Production = argv.mode === 'production'
   const Analyze = argv.env.analyze === true
 
   // Get enviroment variables from .env file
-  const { HOST } = process.env
+  require('dotenv').config()
+  const { HOST, PORT } = process.env
 
   config.entry = {
     app: {
@@ -63,7 +63,7 @@ module.exports = (env, argv) => {
   if (Development) {
     config.devServer = {
       host: HOST,
-      port: 3000,
+      port: PORT,
       static: path.join(__dirname, 'dist'),
       compress: true,
       historyApiFallback: true

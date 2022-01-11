@@ -3,18 +3,21 @@ const nesting = require('tailwindcss/nesting')
 const autoprefixer = require('autoprefixer')
 const tailwindcss = require('tailwindcss')
 const cssnano = require('cssnano')
-const config = {}
 
 module.exports = ({ env }) => {
+  const config = {}
   const Production = env === 'production'
+
+  const cssnanoOpts = {
+    preset: ['default', { discardComments: { removeAll: true } }]
+  }
 
   config.plugins = [
     postcssImport(),
     nesting(),
     tailwindcss(),
     autoprefixer(),
-    Production &&
-      cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
+    Production && cssnano(cssnanoOpts)
   ]
 
   return config
