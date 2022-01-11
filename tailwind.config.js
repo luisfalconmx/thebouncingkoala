@@ -1,6 +1,8 @@
+const TKB = require('@thebouncingkoala/tailwindcss-preset-env')
+
 module.exports = {
   content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx}'],
-  presets: [require('@thebouncingkoala/tailwindcss-preset-env')],
+  presets: [TKB],
   theme: {
     extend: {}
   },
