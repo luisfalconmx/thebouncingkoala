@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ReactSVG } from 'react-svg'
 import { useTranslation } from 'react-i18next'
 import { useDarkmode } from '@hooks/useDarkmode'
 import classNames from 'classnames'
-import Image from '@components/Image'
 import Button from '@components/Button'
 import Logo from '@images/logo.svg?inline'
 import {
@@ -63,13 +63,7 @@ const Navbar = () => {
     <header className="Navbar">
       <div className="Navbar__Container">
         <a className="Navbar__Hotlink" href="/">
-          <Image
-            className="Navbar__Logo"
-            alt="Logo The Bouncing Koala"
-            src={Logo}
-            width="64"
-            height="52"
-          />
+          <ReactSVG className="Navbar__Logo" src={Logo} />
         </a>
         <nav className={navbarNavClasses}>
           <ul className="Navbar__List">
