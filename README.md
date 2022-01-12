@@ -31,6 +31,7 @@
 <!-- END templates/head.md -->
 
 <!-- START templates/content.md -->
+
 ## Contributing
 
 ## Feedback
@@ -53,8 +54,7 @@ Check the complete list of all official releases published:
 
 <!-- END templates/content.md -->
 
-<!-- START templates/footer.md -->
----
+## <!-- START templates/footer.md -->
 
 <p align="center">
   Created with ❤️ by <a href="https://github.com/luisfalconmx">luisfalconmx</a>

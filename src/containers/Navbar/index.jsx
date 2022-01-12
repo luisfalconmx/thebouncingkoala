@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useDarkmode } from '@hooks/useDarkmode'
 import classNames from 'classnames'
@@ -27,11 +28,11 @@ const Navbar = () => {
     },
     {
       text: t('navbar.link_2'),
-      href: '/'
+      href: '/privacy'
     },
     {
       text: t('navbar.link_3'),
-      href: '/'
+      href: '/not-found'
     },
     {
       text: t('navbar.link_4'),
@@ -74,9 +75,9 @@ const Navbar = () => {
           <ul className="Navbar__List">
             {links.map((link) => (
               <li className="Navbar__Item" key={link.text}>
-                <a className="Navbar__Link" href={link.href}>
+                <Link className="Navbar__Link" to={link.href}>
                   {link.text}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

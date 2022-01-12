@@ -3,12 +3,6 @@ import propTypes from 'prop-types'
 import Image from '@components/Image'
 import defaultImage from '@images/cardteam-image.png'
 import defaultImageWebp from '@images/cardteam-image.png?as=webp'
-import {
-  Gmail,
-  Linkedin,
-  Behance,
-  Github
-} from '@icons-pack/react-simple-icons'
 import './index.pcss'
 
 const CardTeam = ({
@@ -23,22 +17,20 @@ const CardTeam = ({
 }) => {
   const socialIcons = [
     {
-      icon: <Gmail className="text-[#EA4335]" width={24} />,
+      icon: '',
       prefix: 'mailto:',
       url: gmail
     },
     {
-      icon: <Linkedin className="text-[#0A66C2]" width={24} />,
+      icon: '',
       url: linkedin
     },
     {
-      icon: <Behance className="text-[#1769FF]" width={24} />,
+      icon: '',
       url: behance
     },
     {
-      icon: (
-        <Github className="text-[#181717] dark:text-[#F5F5F5]" width={24} />
-      ),
+      icon: '',
       url: github
     }
   ].filter(({ url }) => url)
