@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { ReactSVG } from 'react-svg'
 import { useTranslation } from 'react-i18next'
 import { useDarkmode } from '@hooks/useDarkmode'
 import classNames from 'classnames'
-import Image from '@components/Image'
 import Button from '@components/Button'
 import Logo from '@images/logo.svg?inline'
 import {
@@ -27,11 +28,11 @@ const Navbar = () => {
     },
     {
       text: t('navbar.link_2'),
-      href: '/'
+      href: '/privacy'
     },
     {
       text: t('navbar.link_3'),
-      href: '/'
+      href: '/not-found'
     },
     {
       text: t('navbar.link_4'),
@@ -62,21 +63,15 @@ const Navbar = () => {
     <header className="Navbar">
       <div className="Navbar__Container">
         <a className="Navbar__Hotlink" href="/">
-          <Image
-            className="Navbar__Logo"
-            alt="Logo The Bouncing Koala"
-            src={Logo}
-            width="64"
-            height="52"
-          />
+          <ReactSVG className="Navbar__Logo" src={Logo} />
         </a>
         <nav className={navbarNavClasses}>
           <ul className="Navbar__List">
             {links.map((link) => (
               <li className="Navbar__Item" key={link.text}>
-                <a className="Navbar__Link" href={link.href}>
+                <Link className="Navbar__Link" to={link.href}>
                   {link.text}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

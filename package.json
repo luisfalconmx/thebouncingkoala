@@ -19,6 +19,8 @@
     "test:coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
     "lint": "eslint --fix",
+    "lint:styles": "stylelint --fix '**/*.{css,pcss,sss}'",
+    "pretty": "prettier --write .",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
@@ -37,8 +39,6 @@
   ],
   "dependencies": {
     "@heroicons/react": "^1.0.5",
-    "@icons-pack/react-simple-icons": "^4.6.1",
-    "@squoosh/lib": "^0.4.0",
     "classnames": "^2.3.1",
     "i18next": "^21.6.4",
     "i18next-browser-languagedetector": "^6.1.2",
@@ -48,7 +48,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.3",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "react-svg": "^14.1.7"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -57,6 +58,7 @@
     "@babel/preset-react": "^7.16.7",
     "@commitlint/cli": "^16.0.1",
     "@commitlint/config-conventional": "^16.0.0",
+    "@squoosh/lib": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
