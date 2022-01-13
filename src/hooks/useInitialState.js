@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useDarkmode = () => {
+const useInitialState = () => {
   const key = 'koala-theme'
   const matchType = '(prefers-color-scheme: dark)'
   const preference = window.localStorage.getItem(key) === 'dark'
@@ -36,4 +36,4 @@ const useDarkmode = () => {
   }
 }
 
-export { useDarkmode }
+export default useInitialState
