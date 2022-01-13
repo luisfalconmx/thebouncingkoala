@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ReactSVG } from 'react-svg'
-import { useDarkmode } from '@hooks/useDarkmode'
+import AppContext from '@context/AppContext'
 import classNames from 'classnames'
 import Button from '@components/Button'
 import Logo from '@images/logo.svg'
@@ -18,7 +18,7 @@ import './index.pcss'
 const Navbar = () => {
   const [tooltip, setTooltip] = useState(false)
   const [offCanvas, setOffCanvas] = useState(false)
-  const { darkmode, toggleDarkmode } = useDarkmode()
+  const { darkmode, toggleDarkmode } = useContext(AppContext)
   const { t, i18n } = useTranslation()
 
   const links = [

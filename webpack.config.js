@@ -49,6 +49,7 @@ module.exports = (env, argv) => {
       '@containers': path.resolve(__dirname, 'src/containers/'),
       '@context': path.resolve(__dirname, 'src/context/'),
       '@hooks': path.resolve(__dirname, 'src/hooks/'),
+      '@lang': path.resolve(__dirname, 'src/lang/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@routes': path.resolve(__dirname, 'src/routes/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
