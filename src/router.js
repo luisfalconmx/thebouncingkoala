@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ScrollToTop from '@utils/ScrollToTop'
 import Layout from '@containers/Layout'
 
 // Import Routes
@@ -10,6 +11,7 @@ const Privacy = lazy(() => import('@routes/Privacy'))
 
 const Router = () => (
   <BrowserRouter>
+    <ScrollToTop />
     <Suspense fallback={null}>
       <Layout>
         <Routes>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import Input from '@components/Input'
 import Button from '@components/Button'
 import './index.pcss'
@@ -22,7 +23,8 @@ const Newsletter = () => {
             <Button text={t('button')} className="Newsletter__Button" />
           </div>
           <small className="Newsletter__Leyend">
-            {t('newsletter.leyend')} <a href="/">{t('newsletter.privacy')}</a>
+            {t('newsletter.leyend')}{' '}
+            <Link to="/privacy">{t('newsletter.privacy')}</Link>
           </small>
         </form>
       </div>

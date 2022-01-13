@@ -40,16 +40,20 @@ module.exports = (env, argv) => {
   config.resolve = {
     extensions: ['.js', '.jsx'],
     alias: {
+      '@api': path.resolve(__dirname, 'src/api/'),
       '@images': path.resolve(__dirname, 'src/assets/images/'),
       '@icons': path.resolve(__dirname, 'src/assets/icons/'),
       '@documents': path.resolve(__dirname, 'src/assets/documents/'),
       '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@containers': path.resolve(__dirname, 'src/containers/'),
-      '@routes': path.resolve(__dirname, 'src/routes/'),
+      '@context': path.resolve(__dirname, 'src/context/'),
       '@hooks': path.resolve(__dirname, 'src/hooks/'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@routes': path.resolve(__dirname, 'src/routes/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
-      '@templates': path.resolve(__dirname, 'src/templates/')
+      '@templates': path.resolve(__dirname, 'src/templates/'),
+      '@utils': path.resolve(__dirname, 'src/utils/')
     }
   }
 
