@@ -5,28 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Bouncing Koala</title>
-    <script>
-      const root = document.documentElement
-      const theme = localStorage.getItem('koala-theme')
-      const matchType = '(prefers-color-scheme: dark)'
-
-      const windowResize = () => {
-        const height = window.innerHeight
-        root.style.setProperty('--full-height', `${height}px`)
-      }
-
-      if (theme === 'dark' || window.matchMedia(matchType).matches) {
-        root.style.setProperty('--loader-background', 'rgb(18 17 39)')
-      }
-
-      window.addEventListener('resize', windowResize)
-
-      window.addEventListener('load', () => {
-        windowResize()
-        root.style.setProperty('--loader-height', '0')
-        root.style.setProperty('--loader-icon-top', '-150vh')
-      })
-    </script>
   </head>
   <body>
     <div id="app"></div>

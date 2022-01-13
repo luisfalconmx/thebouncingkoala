@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ReactSVG } from 'react-svg'
 import { useTranslation } from 'react-i18next'
+import { ReactSVG } from 'react-svg'
 import { useDarkmode } from '@hooks/useDarkmode'
 import classNames from 'classnames'
 import Button from '@components/Button'
-import Logo from '@images/logo.svg?inline'
+import Logo from '@images/logo.svg'
 import {
   TranslateIcon,
   MoonIcon,
@@ -24,19 +24,30 @@ const Navbar = () => {
   const links = [
     {
       text: t('navbar.link_1'),
-      href: '/'
+      route: '/'
     },
     {
       text: t('navbar.link_2'),
-      href: '/privacy'
+      route: '/services'
     },
     {
       text: t('navbar.link_3'),
-      href: '/not-found'
+      route: '/about-us'
     },
     {
       text: t('navbar.link_4'),
-      href: '/'
+      route: '/blog'
+    }
+  ]
+
+  const languageButtons = [
+    {
+      text: 'English',
+      lang: 'en'
+    },
+    {
+      text: 'Español',
+      lang: 'es'
     }
   ]
 
@@ -44,9 +55,6 @@ const Navbar = () => {
     i18n.changeLanguage(lng)
     setTooltip(false)
   }
-
-  const changeLangEn = () => changeLanguage('en')
-  const changeLangEs = () => changeLanguage('es')
 
   const showTooltip = () => setTooltip(!tooltip)
   const toggleOffCanvas = () => setOffCanvas(!offCanvas)
@@ -59,17 +67,28 @@ const Navbar = () => {
     'Navbar__Nav--Visible': offCanvas
   })
 
+  const resizeMenu = () => {
+    const root = document.documentElement
+    const height = window.innerHeight
+    root.style.setProperty('--full-height', `${height}px`)
+  }
+
+  useEffect(() => {
+    resizeMenu()
+    window.addEventListener('resize', resizeMenu)
+  }, [])
+
   return (
     <header className="Navbar">
       <div className="Navbar__Container">
-        <a className="Navbar__Hotlink" href="/">
+        <Link className="Navbar__Hotlink" to="/">
           <ReactSVG className="Navbar__Logo" src={Logo} />
-        </a>
+        </Link>
         <nav className={navbarNavClasses}>
           <ul className="Navbar__List">
             {links.map((link) => (
               <li className="Navbar__Item" key={link.text}>
-                <Link className="Navbar__Link" to={link.href}>
+                <Link className="Navbar__Link" to={link.route}>
                   {link.text}
                 </Link>
               </li>
@@ -83,20 +102,16 @@ const Navbar = () => {
                 onClick={showTooltip}
               />
               <div className={tooltipClasses}>
-                <button
-                  className="Navbar__TooltipButton"
-                  type="button"
-                  onClick={changeLangEs}
-                >
-                  Español
-                </button>
-                <button
-                  className="Navbar__TooltipButton"
-                  type="button"
-                  onClick={changeLangEn}
-                >
-                  English
-                </button>
+                {languageButtons.map((button) => (
+                  <button
+                    className="Navbar__TooltipButton"
+                    type="button"
+                    onClick={() => changeLanguage(button.lang)}
+                    key={button.text}
+                  >
+                    {button.text}
+                  </button>
+                ))}
               </div>
             </div>
             {darkmode ? (

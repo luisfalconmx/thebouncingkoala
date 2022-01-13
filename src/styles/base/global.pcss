@@ -9,35 +9,4 @@
 body {
   @apply font-sans bg-white text-neutral-900;
   @apply dark:bg-night-100 dark:text-neutral-50;
-
-  &::before {
-    content: '';
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background-color: var(--loader-background);
-    max-height: var(--loader-height);
-    transition-property: max-height;
-    transition-duration: 0.5s;
-    transition-delay: 0.8s;
-  }
-
-  &::after {
-    content: url('../assets/images/logo-loader.png');
-    width: fit-content;
-    height: fit-content;
-    position: fixed;
-    top: var(--loader-icon-top);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: 1000;
-    transition-property: top;
-    transition-duration: 0.5s;
-    transition-delay: 0.8s;
-  }
 }
