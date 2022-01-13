@@ -55,11 +55,11 @@ exclude-contributors:
 template: |
   ## Getting the project
   Get Docker Image from Dockerhub: https://hub.docker.com/r/luisfalconmx/thebouncingkoala.com
-  Get Docker Image from Github Container Registry:
+  Get Docker Image from Github Container Registry: https://github.com/thebouncingkoala/thebouncingkoala.com/pkgs/container/thebouncingkoala.com
   License: https://github.com/thebouncingkoala/thebouncingkoala.com/blob/main/LICENSE
   Code of Conduct: https://github.com/thebouncingkoala/thebouncingkoala.com/blob/main/.github/CODE_OF_CONDUCT.md
 
-  ## New in thebouncingkoala.com $RESOLVED_VERSION
+  ## New in thebouncingkoala.com v$RESOLVED_VERSION
 
   $CHANGES
   $CONTRIBUTORS
