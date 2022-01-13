@@ -6,8 +6,8 @@ COPY ["./package.json", "./yarn.lock", "/home/node/app/"]
 WORKDIR /home/node/app
 RUN yarn
 COPY [".", "./"]
-RUN yarn run build
+RUN yarn build
 
 # Copy dist folder to nginx folder
-FROM nginx:1.19.10-alpine
-COPY --from=build /home/node/app/dist /usr/share/nginx/html
+# FROM nginx:1.19.10-alpine
+# COPY --from=build /home/node/app/dist /usr/share/nginx/html
