@@ -54,13 +54,7 @@ exclude-contributors:
   - 'dependabot[bot]'
 
 template: |
-  ## Getting the project
-  Get Docker Image from Dockerhub: https://hub.docker.com/r/thebouncingkoala/website
-  Get Docker Image from Github Container Registry: https://github.com/thebouncingkoala/website/pkgs/container/website
-  License: https://github.com/thebouncingkoala/website/blob/main/LICENSE
-  Code of Conduct: https://github.com/thebouncingkoala/website/blob/main/.github/CODE_OF_CONDUCT.md
-
-  ## New in website v$RESOLVED_VERSION
+  ## New in $REPOSITORY v$RESOLVED_VERSION
 
   $CHANGES
   $CONTRIBUTORS
