@@ -1,12 +1,12 @@
 {
-  "name": "thebouncingkoala.com",
+  "name": "@thebouncingkoala/website",
   "version": "0.0.0",
   "description": "Official website for The Bouncing Koala",
   "author": "thebouncingkoala",
   "license": "MIT",
   "main": "src/index.js",
-  "engines": {
-    "node": ">=14.16"
+  "volta": {
+    "node": "14.18.3"
   },
   "scripts": {
     "start": "yarn run dev",

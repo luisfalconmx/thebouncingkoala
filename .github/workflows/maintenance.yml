@@ -1,36 +1,30 @@
-name: Repository maintenance
+name: Maintenance
+
 on:
   schedule:
-    - cron: 0 0 * * *
+    - cron: 30 3 * * *
+
+env:
+  RELEASE_VERSION: ${{github.ref_name}}
+  REPOSITORY_SLUG: ${{github.event.repository.name}}
+  REPOSITORY_FULL_NAME: ${{github.event.repository.full_name}}
+  REPOSITORY_DESCRIPTION: ${{github.event.repository.description}}
+  REPOSITORY_HOMEPAGE_URL: ${{github.event.repository.homepage}}
+  REPOSITORY_OWNER: ${{github.event.repository.owner.login}}
+  REPOSITORY_DEFAULT_BRANCH: ${{github.event.repository.default_branch}}
+  REPOSITORY_LICENSE: ${{github.event.repository.license.url}}
+  REPOSITORY_RELEASES: ${{github.event.repository.releases_url}}
+
 jobs:
-  docs:
-    name: Documentation
+  maintenance:
+    name: Maintenance
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - name: Fetching repository contents
+      - name: Checkout Repository
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT }}
-
-      - name: Get package.json metadata
-        uses: antifree/json-to-variables@v1.0.1
-        with:
-          filename: 'package.json'
-          prefix: package
-
-      - name: Github repository metadata
-        uses: varunsridharan/action-repository-meta@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Get latest release
-        id: get_release
-        uses: pozetroninc/github-action-get-latest-release@master
-        with:
-          owner: ${{ env.REPOSITORY_OWNER }}
-          repo: ${{ env.REPOSITORY_SLUG }}
-          excludes: prerelease, draft
 
       - name: Dynamic template render
         uses: varunsridharan/action-dynamic-readme@main
@@ -43,67 +37,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
 
-      - name: Update readme badges
-        uses: wow-actions/add-badges@v1.0.1
-        env:
-          repo_url: ${{ env.REPOSITORY_GITHUB_URL }}
-          repo_name: ${{ env.REPOSITORY_SLUG }}
-          repo_owner: ${{ env.REPOSITORY_OWNER }}
-        with:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-          center: true
-          badges: |
-            [
-              {
-                "badge": "https://img.shields.io/badge/Node%20js-${{env.package_engines_node}}-3c730f?style=for-the-badge&logo=node.js&labelColor=3c730f&logoColor=ffffff",
-                "alt": "node",
-                "link": ""
-              },
-              {
-                "badge": "https://img.shields.io/badge/react-${{env.package_dependencies_react}}-35408a?style=for-the-badge&logo=react&labelColor=35408a&logoColor=ffffff",
-                "alt": "react",
-                "link": ""
-              },
-              {
-                "badge": "https://img.shields.io/badge/tailwindcss-${{env.package_devDependencies_tailwindcss}}-06B6D4?style=for-the-badge&logo=tailwindcss&labelColor=06B6D4&logoColor=ffffff",
-                "alt": "tailwindcss",
-                "link": ""
-              },
-              {
-                "badge": "https://img.shields.io/badge/postcss-${{env.package_devDependencies_postcss}}-DD3A0A?style=for-the-badge&logo=postcss&labelColor=DD3A0A&logoColor=ffffff",
-                "alt": "postcss",
-                "link": ""
-              },
-              {
-                "badge": "https://img.shields.io/badge/jest-${{env.package_devDependencies_jest}}-C21325?style=for-the-badge&logo=jest&labelColor=C21325&logoColor=ffffff",
-                "alt": "jest",
-                "link": ""
-              },
-              {
-                "badge": "https://img.shields.io/badge/dockerhub-${{ steps.get_release.outputs.release }}-2496ED?style=for-the-badge&logo=docker&labelColor=2496ED&logoColor=ffffff",
-                "alt": "dockerhub",
-                "link": "https://hub.docker.com/r/luisfalconmx/strapi"
-              },
-              {
-                "badge": "https://img.shields.io/github/license/${{ env.REPOSITORY_FULL_NAME }}?style=for-the-badge&logo=github&labelColor=orange&color=orange&logoColor=ffffff",
-                "alt": "MIT License",
-                "link": "${{ env.REPOSITORY_GITHUB_URL }}/blob/main/LICENSE"
-              }
-            ]
-
       - name: Screenshot website
         uses: swinton/screenshot-website@v1.x
         with:
           source: ${{ env.REPOSITORY_HOMEPAGE_URL }}
           destination: screenshot.png
 
-      - name: Download artifact
+      - name: Download screenshot artifact
         uses: actions/download-artifact@v2
         with:
           name: screenshot
           path: .github/
 
-      - name: Update resources
+      - name: Commit screenshot
         uses: test-room-7/action-update-file@v1.6.0
         with:
           github-token: ${{ secrets.PAT }}
@@ -121,12 +67,6 @@ jobs:
           short_description: ${{ env.REPOSITORY_DESCRIPTION }}
           readme_file: 'README.md'
 
-  meta:
-    name: Metadata
-    needs: docs
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-    steps:
       - name: Synchronize labels
         uses: julb/action-manage-label@v1
         with:

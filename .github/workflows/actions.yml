@@ -1,0 +1,308 @@
+name: Actions
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    types: [opened, reopened, synchronize]
+  release:
+    types: [published]
+
+env:
+  RELEASE_VERSION: ${{github.ref_name}}
+  REPOSITORY_SLUG: ${{github.event.repository.name}}
+  REPOSITORY_FULL_NAME: ${{github.event.repository.full_name}}
+  REPOSITORY_DESCRIPTION: ${{github.event.repository.description}}
+  REPOSITORY_HOMEPAGE_URL: ${{github.event.repository.homepage}}
+  REPOSITORY_OWNER: ${{github.event.repository.owner.login}}
+  REPOSITORY_DEFAULT_BRANCH: ${{github.event.repository.default_branch}}
+  REPOSITORY_LICENSE: ${{github.event.repository.license.url}}
+  REPOSITORY_RELEASES: ${{github.event.repository.releases_url}}
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: |
+      github.event_name == 'pull_request' &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: javascript
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v1
+
+  build:
+    name: Build
+    needs: analyze
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: |
+      github.event_name == 'pull_request' &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get Node Version
+        id: node_version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: package.json
+          prop_path: volta.node
+
+      - name: Setup Node Enviroment
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{steps.node_version.outputs.prop}}
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{hashFiles('yarn.lock')}}
+
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: |
+      github.event_name == 'pull_request' &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get Node Version
+        id: node_version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: package.json
+          prop_path: volta.node
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{steps.node_version.outputs.prop}}
+
+      - name: Restore node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{hashFiles('yarn.lock')}}
+
+      - name: Run linters
+        run: yarn run lint
+
+      - name: Run tests
+        run: yarn run test:ci
+
+      - name: Generate coverage report
+        uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          threshold: 80
+          package-manager: yarn
+          test-script: yarn run test:coverage
+
+      - name: Validate min coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+        with:
+          path: './coverage/lcov.info'
+          min_coverage: 80
+
+  release:
+    name: Release
+    needs: test
+    if: always() && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run release drafter
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Get Node Version
+        id: node_version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: package.json
+          prop_path: volta.node
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{steps.node_version.outputs.prop}}
+
+      - name: Build project
+        run: |
+          yarn install
+          yarn build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_dir: ./dist/
+          cname: ${{env.REPOSITORY_HOMEPAGE_URL}}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'ci: deploy to gh-pages [skip ci]'
+
+  deploy:
+    name: Deploy
+    needs: release
+    if: always() && github.event_name == 'release'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{secrets.PAT}}
+          ref: ${{env.REPOSITORY_DEFAULT_BRANCH}}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{secrets.DOCKERHUB_USERNAME}}
+          password: ${{secrets.DOCKERHUB_TOKEN}}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{secrets.GCR_USERNAME}}
+          password: ${{secrets.PAT}}
+
+      - name: Build and push docker image to Dockerhub and GCR
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: |
+            ${{secrets.DOCKERHUB_USERNAME}}/${{env.REPOSITORY_SLUG}}:${{env.RELEASE_VERSION}}
+            ${{secrets.DOCKERHUB_USERNAME}}/${{env.REPOSITORY_SLUG}}:latest
+            ghcr.io/${{env.REPOSITORY_FULL_NAME}}:${{env.RELEASE_VERSION}}
+            ghcr.io/${{env.REPOSITORY_FULL_NAME}}:latest
+
+      - name: Image digest
+        run: echo ${{steps.docker_build.outputs.digest}}
+
+      - name: Create github deployment
+        uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          target_url: ${{env.REPOSITORY_HOMEPAGE_URL}}
+          environment: production
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.SSH_HOST}}
+          port: ${{secrets.SSH_PORT}}
+          username: ${{secrets.SSH_USER}}
+          key: ${{secrets.SSH_KEY}}
+          script: |
+            docker system prune -a -f
+            docker stop ${{env.REPOSITORY_OWNER}}_${{env.REPOSITORY_SLUG}}
+            docker run -d --rm \
+              --name ${{env.REPOSITORY_OWNER}}_${{env.REPOSITORY_SLUG}} \
+              -p ${{secrets.APP_PORT}} \
+              ${{secrets.DOCKERHUB_USERNAME}}/${{env.REPOSITORY_SLUG}}:latest
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          target_url: ${{env.REPOSITORY_HOMEPAGE_URL}}
+          state: success
+          deployment_id: ${{steps.deployment.outputs.deployment_id}}
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          target_url: ${{env.REPOSITORY_HOMEPAGE_URL}}
+          state: failure
+          deployment_id: ${{steps.deployment.outputs.deployment_id}}
+
+      - name: Dynamic template render
+        uses: varunsridharan/action-dynamic-readme@main
+        with:
+          GLOBAL_TEMPLATE_REPOSITORY: luisfalconmx/luisfalconmx
+          files: README.md
+          committer_name: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
+          commit_message: 'docs: update readme file [skip ci]'
+        env:
+          GITHUB_TOKEN: ${{secrets.PAT}}
+
+      - name: Removing .git/COMMIT_EDITMSG file
+        run: rm -Rf .git/COMMIT_EDITMSG
+
+      - name: Update package.json version
+        uses: reedyuk/npm-version@1.1.1
+        with:
+          version: ${{ env.RELEASE_VERSION }}
+
+      - name: Screenshot website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: ${{env.REPOSITORY_HOMEPAGE_URL}}
+          destination: screenshot.png
+
+      - name: Download artifact
+        if: success()
+        uses: actions/download-artifact@v2
+        with:
+          name: screenshot
+          path: .github/
+
+      - name: Commit Release Files
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: 'ci: release files updated [skip ci]'
+          branch: ${{env.REPOSITORY_DEFAULT_BRANCH}}
+          add: "['.github/screenshot.png', './package.json']"
+
+      - name: Push README to Dockerhub
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_USER: ${{secrets.DOCKERHUB_USERNAME}}
+          DOCKER_PASS: ${{secrets.DOCKERHUB_PASSWORD}}
+        with:
+          destination_container_repo: ${{secrets.DOCKERHUB_USERNAME}}/${{env.REPOSITORY_SLUG}}
+          provider: dockerhub
+          short_description: ${{env.REPOSITORY_DESCRIPTION}}
+          readme_file: 'README.md'
