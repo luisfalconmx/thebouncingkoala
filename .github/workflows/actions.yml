@@ -9,17 +9,6 @@ on:
   release:
     types: [published]
 
-env:
-  RELEASE_VERSION: ${{github.ref_name}}
-  REPOSITORY_SLUG: ${{github.event.repository.name}}
-  REPOSITORY_FULL_NAME: ${{github.event.repository.full_name}}
-  REPOSITORY_DESCRIPTION: ${{github.event.repository.description}}
-  REPOSITORY_HOMEPAGE_URL: ${{github.event.repository.homepage}}
-  REPOSITORY_OWNER: ${{github.event.repository.owner.login}}
-  REPOSITORY_DEFAULT_BRANCH: ${{github.event.repository.default_branch}}
-  REPOSITORY_LICENSE: ${{github.event.repository.license.url}}
-  REPOSITORY_RELEASES: ${{github.event.repository.releases_url}}
-
 jobs:
   analyze:
     name: Analyze
@@ -136,6 +125,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Github repository metadata
+        uses: varunsridharan/action-repository-meta@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run release drafter
         uses: release-drafter/release-drafter@v5
         env:
@@ -175,6 +169,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
+      - name: Github repository metadata
+        uses: varunsridharan/action-repository-meta@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -234,7 +233,7 @@ jobs:
             docker stop ${{env.REPOSITORY_OWNER}}_${{env.REPOSITORY_SLUG}}
             docker run -d --rm \
               --name ${{env.REPOSITORY_OWNER}}_${{env.REPOSITORY_SLUG}} \
-              -p ${{secrets.APP_PORT}} \
+              -p ${{secrets.CONTAINER_PORT}} \
               ${{secrets.DOCKERHUB_USERNAME}}/${{env.REPOSITORY_SLUG}}:latest
 
       - name: Update deployment status (success)
