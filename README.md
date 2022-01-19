@@ -1,15 +1,11 @@
 <!-- START templates/head.md -->
 <h1 align="center">
-  thebouncingkoala.com
+  website
 </h1>
 
 <h3 align="center">
   Official website for The Bouncing Koala
 </h3>
-
-<p align="center">
-  https://thebouncingkoala.com
-</p>
 
 <!-- [START BADGES] -->
 <!-- Please keep comment here to allow auto update -->
@@ -20,13 +16,13 @@
   <img src="https://img.shields.io/badge/postcss-^8.4.5-DD3A0A?style=for-the-badge&logo=postcss&labelColor=DD3A0A&logoColor=ffffff" alt="postcss" />
   <img src="https://img.shields.io/badge/jest-^27.4.5-C21325?style=for-the-badge&logo=jest&labelColor=C21325&logoColor=ffffff" alt="jest" />
   <a href="https://hub.docker.com/r/luisfalconmx/strapi"><img src="https://img.shields.io/badge/dockerhub-v1.4.0-2496ED?style=for-the-badge&logo=docker&labelColor=2496ED&logoColor=ffffff" alt="dockerhub" /></a>
-  <a href="https://github.com/thebouncingkoala/thebouncingkoala.com/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thebouncingkoala/thebouncingkoala.com?style=for-the-badge&logo=github&labelColor=orange&color=orange&logoColor=ffffff" alt="MIT License" /></a>
+  <a href="https://github.com/thebouncingkoala/website/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thebouncingkoala/website?style=for-the-badge&logo=github&labelColor=orange&color=orange&logoColor=ffffff" alt="MIT License" /></a>
 </p>
 <!-- [END BADGES] -->
 
 <br />
 
-<img width="100%" src="https://raw.githubusercontent.com/thebouncingkoala/thebouncingkoala.com/main/.github/screenshot.png">
+<img width="100%" src="https://raw.githubusercontent.com/thebouncingkoala/website/main/.github/screenshot.png">
 
 <!-- END templates/head.md -->
 
@@ -40,12 +36,12 @@
 ## Releases
 
 Check the complete list of all official releases published:
-[https://github.com/thebouncingkoala/thebouncingkoala.com/releases](https://github.com/thebouncingkoala/thebouncingkoala.com/releases)
+[https://github.com/thebouncingkoala/website/releases](https://github.com/thebouncingkoala/website/releases)
 
 ## License & Code of Conduct
 
-- [MIT License](https://github.com/thebouncingkoala/thebouncingkoala.com/blob/main/LICENSE)
-- [Code of Conduct](https://github.com/thebouncingkoala/thebouncingkoala.com/blob/main/.github/CODE_OF_CONDUCT.md)
+- [MIT License](https://github.com/thebouncingkoala/website/blob/main/LICENSE)
+- [Code of Conduct](https://github.com/thebouncingkoala/website/blob/main/.github/CODE_OF_CONDUCT.md)
 
 ## Security
 
