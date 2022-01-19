@@ -1,10 +1,10 @@
 <!-- START templates/head.md -->
 <h1 align="center">
-  website
+  
 </h1>
 
 <h3 align="center">
-  Official website for The Bouncing Koala
+  
 </h3>
 
 <!-- [START BADGES] -->
@@ -12,7 +12,7 @@
 
 <br />
 
-<img width="100%" src="https://raw.githubusercontent.com/thebouncingkoala/website/main/.github/screenshot.png">
+<img width="100%" src="https://raw.githubusercontent.com///.github/screenshot.png">
 
 <!-- END templates/head.md -->
 
@@ -26,11 +26,11 @@
 ## Releases
 
 Check the complete list of all official releases published:
-[https://github.com/thebouncingkoala/website/releases](https://github.com/thebouncingkoala/website/releases)
+[https://github.com//releases](https://github.com//releases)
 
 ## License & Code of Conduct
 
-- [https://api.github.com/licenses/mit]()
+- []()
 - [Code of Conduct]()
 
 ## Security
