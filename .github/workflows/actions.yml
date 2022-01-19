@@ -96,7 +96,7 @@ jobs:
           key: node-modules-${{hashFiles('yarn.lock')}}
 
       - name: Run linters
-        run: yarn run lint
+        run: yarn run eslint . --ext .js,.jsx
 
       - name: Run tests
         run: yarn run test:ci
