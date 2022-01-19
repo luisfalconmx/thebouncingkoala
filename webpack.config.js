@@ -68,7 +68,7 @@ module.exports = (env, argv) => {
   if (Development) {
     config.devServer = {
       host: HOST,
-      port: PORT,
+      port: PORT || '3000',
       static: path.join(__dirname, 'dist'),
       compress: true,
       historyApiFallback: true
