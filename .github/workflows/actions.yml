@@ -64,6 +64,9 @@ jobs:
           path: node_modules
           key: node-modules-${{hashFiles('yarn.lock')}}
 
+      - name: Install dependencies
+        run: yarn install
+
   test:
     name: Test
     needs: build
@@ -96,7 +99,9 @@ jobs:
           key: node-modules-${{hashFiles('yarn.lock')}}
 
       - name: Run linters
-        run: yarn run eslint . --ext .js,.jsx
+        run: |
+          yarn run lint
+          yarn run lint:styles
 
       - name: Run tests
         run: yarn run test:ci
