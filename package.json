@@ -5,10 +5,6 @@
   "author": "thebouncingkoala",
   "license": "MIT",
   "main": "src/index.js",
-  "volta": {
-    "node": "14.18.3",
-    "yarn": "1.22.17"
-  },
   "scripts": {
     "start": "yarn run dev",
     "dev": "webpack serve --mode development",
@@ -24,6 +20,17 @@
     "pretty": "prettier --write .",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{css,pcss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": "prettier --write"
   },
   "keywords": [
     "react",

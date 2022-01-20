@@ -45,24 +45,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Get Node Version
-        id: node_version
-        uses: notiz-dev/github-action-json-property@release
-        with:
-          path: package.json
-          prop_path: volta.node
-
       - name: Setup Node Enviroment
         uses: actions/setup-node@v2
         with:
-          node-version: ${{steps.node_version.outputs.prop}}
-
-      - name: Cache node_modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('yarn.lock') }}
+          node-version-file: '.nvmrc'
+          cache: yarn
 
       - name: Install dependencies
         run: yarn install
@@ -79,29 +66,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Get Node Version
-        id: node_version
-        uses: notiz-dev/github-action-json-property@release
-        with:
-          path: package.json
-          prop_path: volta.node
-
-      - name: Setup node
+      - name: Setup Node Enviroment
         uses: actions/setup-node@v2
         with:
-          node-version: ${{steps.node_version.outputs.prop}}
+          node-version-file: '.nvmrc'
+          cache: yarn
 
-      - name: Restore node_modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install
 
       - name: Run linters
-        run: |
-          yarn run lint
-          yarn run lint:styles
+        run: yarn run lint && yarn run lint:styles
 
       - name: Run tests
         run: yarn run test:ci
@@ -140,22 +115,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Get Node Version
-        id: node_version
-        uses: notiz-dev/github-action-json-property@release
-        with:
-          path: package.json
-          prop_path: volta.node
-
-      - name: Setup Node
+      - name: Setup Node Enviroment
         uses: actions/setup-node@v2
         with:
-          node-version: ${{steps.node_version.outputs.prop}}
+          node-version-file: '.nvmrc'
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install
 
       - name: Build project
-        run: |
-          yarn install
-          yarn build
+        run: yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -234,9 +204,8 @@ jobs:
           username: ${{secrets.SSH_USER}}
           key: ${{secrets.SSH_KEY}}
           script: |
-            docker system prune -a -f
-            docker stop ${{env.REPOSITORY_OWNER}}_${{env.REPOSITORY_SLUG}}
-            docker run -d --rm \
+            docker rm -f ${{env.REPOSITORY_OWNER}}_${{env.REPOSITORY_SLUG}}
+            docker run -d \
               --name ${{env.REPOSITORY_OWNER}}_${{env.REPOSITORY_SLUG}} \
               -p ${{secrets.CONTAINER_PORT}} \
               ${{secrets.DOCKERHUB_USERNAME}}/${{env.REPOSITORY_SLUG}}:latest
