@@ -1,4 +1,3 @@
-// Require dependencies
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -68,7 +67,7 @@ module.exports = (env, argv) => {
   if (Development) {
     config.devServer = {
       host: HOST,
-      port: PORT,
+      port: PORT || '3000',
       static: path.join(__dirname, 'dist'),
       compress: true,
       historyApiFallback: true
