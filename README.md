@@ -7,13 +7,9 @@
   Official website for The Bouncing Koala
 </h3>
 
-<!-- [START BADGES] -->
-<!-- [END BADGES] -->
-
 <br />
 
 <img width="100%" src="https://raw.githubusercontent.com/thebouncingkoala/website/main/.github/screenshot.png">
-
 <!-- END templates/head.md -->
 
 <!-- START templates/content.md -->
@@ -36,7 +32,6 @@ Check the complete list of all official releases published:
 ## Security
 
 ## Support
-
 <!-- END templates/content.md -->
 
 ## <!-- START templates/footer.md -->
@@ -45,5 +40,4 @@ Check the complete list of all official releases published:
 <p align="center">
   Created with ❤️ by <a href="https://github.com/luisfalconmx">luisfalconmx</a>
 </p>
-
 <!-- END templates/footer.md -->
