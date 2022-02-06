@@ -52,7 +52,6 @@ module.exports = (env, argv) => {
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@routes': path.resolve(__dirname, 'src/routes/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
-      '@templates': path.resolve(__dirname, 'src/templates/'),
       '@utils': path.resolve(__dirname, 'src/utils/')
     }
   }
@@ -126,9 +125,16 @@ module.exports = (env, argv) => {
   // Enable webpack plugins
   config.plugins = [
     new HtmlWebpackPlugin({
-      template: './src/templates/index.html',
+      template: './public/index.html',
       filename: 'index.html',
-      favicon: './src/assets/icons/favicon.ico',
+      favicon: './public/favicon.ico',
+      inject: true
+    }),
+
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      filename: '404.html',
+      favicon: './public/favicon.ico',
       inject: true
     }),
 

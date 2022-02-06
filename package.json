@@ -1,8 +1,8 @@
 {
-  "name": "@thebouncingkoala/website",
+  "name": "@luisfalconmx/thebouncingkoala",
   "version": "1.5.1",
   "description": "Official website for The Bouncing Koala",
-  "author": "thebouncingkoala",
+  "author": "luisfalconmx",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
@@ -70,7 +70,6 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "@thebouncingkoala/tailwindcss-preset-env": "^1.0.1",
     "autoprefixer": "^10.4.1",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -112,5 +111,6 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.2",
     "webpackbar": "^5.0.2"
-  }
+  },
+  "repository": "git@github.com:luisfalconmx/thebouncingkoala.git"
 }
