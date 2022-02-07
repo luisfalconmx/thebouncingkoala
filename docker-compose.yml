@@ -1,13 +1,13 @@
 version: '3.9'
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
+    build: .
+    command: yarn start
     environment:
       - HOST=0.0.0.0
+      - PORT=3000
     ports:
       - '3000:3000'
     volumes:
-      - .:/home/node/app
-      - /home/node/app/node_modules
+      - .:/app
+      - /app/node_modules

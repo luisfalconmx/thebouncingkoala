@@ -1,9 +1,0 @@
-# --- Dockerfile optimize for development --- #
-
-# Build image
-FROM node:14.17.0-alpine
-COPY ["./package.json", "./yarn.lock", "/home/node/app/"]
-WORKDIR /home/node/app
-RUN yarn
-COPY [".", "./"]
-CMD [ "yarn", "start" ]
