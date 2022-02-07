@@ -9,9 +9,6 @@ on:
   release:
     types: [published]
 
-env:
-  IMAGE: ${{github.event.repository.owner.login}}/${{github.event.repository.name}}
-
 jobs:
   analyze:
     name: Analyze
@@ -24,14 +21,14 @@ jobs:
     needs: analyze
     uses: luisfalconmx/.github/.github/workflows/builder.yml@main
     with:
-      image-name: ${{env.IMAGE}}
+      image-name: ${{github.event.repository.owner.login}}/${{github.event.repository.name}}
 
   test:
     name: Test
     needs: build
     uses: luisfalconmx/.github/.github/workflows/loader.yml@main
     with:
-      image-name: ${{env.IMAGE}}
+      image-name: ${{github.event.repository.owner.login}}/${{github.event.repository.name}}
       command: yarn test
 
   pre-release:
@@ -58,4 +55,4 @@ jobs:
     uses: luisfalconmx/.github/.github/workflows/deployer.yml@main
     with:
       command: yarn run deploy
-      image-name: ${{env.IMAGE}}
+      image-name: ${{github.event.repository.owner.login}}/${{github.event.repository.name}}
