@@ -5,12 +5,9 @@ on:
     branches:
       - main
 
-env:
-  WORKFLOWS_URL: luisfalconmx/.github/.github/workflows
-
 jobs:
   analyze:
     name: Analyze
-    uses: ${{env.WORKFLOWS_URL}}/codeql.yml@main
+    uses: luisfalconmx/.github/.github/workflows/codeql.yml@main
     with:
       languages: javascript
