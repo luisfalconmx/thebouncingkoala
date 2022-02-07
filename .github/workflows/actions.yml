@@ -11,6 +11,6 @@ env:
 jobs:
   analyze:
     name: Analyze
-    uses: ${{env.WORKFLOWS_URL}}/codeql.yml
+    uses: ${{env.WORKFLOWS_URL}}/codeql.yml@main
     with:
       languages: javascript
