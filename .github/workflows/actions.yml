@@ -1,0 +1,16 @@
+name: Actions
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  WORKFLOWS_URL: luisfalconmx/.github/.github/workflows
+
+jobs:
+  analyze:
+    name: Analyze
+    uses: ${{env.WORKFLOWS_URL}}/codeql.yml
+    with:
+      languages: javascript
