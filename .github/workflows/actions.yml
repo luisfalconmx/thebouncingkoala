@@ -40,7 +40,7 @@ jobs:
 
   release:
     name: Release
-    needs: release
+    needs: pre-release
     uses: luisfalconmx/.github/.github/workflows/releaser.yml@main
     secrets:
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
