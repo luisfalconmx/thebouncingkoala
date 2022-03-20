@@ -1,0 +1,65 @@
+name: Maintenance
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  maintainer:
+    name: Maintenance
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: GitHub Repository Metadata
+        uses: varunsridharan/action-repository-meta@main
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+          ref: ${{env.REPOSITORY_DEFAULT_BRANCH}}
+
+      - name: Synchronize Labels
+        uses: julb/action-manage-label@v1
+        with:
+          from: https://raw.githubusercontent.com/luisfalconmx/.github/main/.github/labels.yml
+          skip_delete: false
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Dynamic template render
+        uses: varunsridharan/action-dynamic-readme@main
+        with:
+          GLOBAL_TEMPLATE_REPOSITORY: ${{env.REPOSITORY_FULL_NAME}}
+          files: README.md
+          committer_name: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
+          commit_message: 'docs: update readme file [skip ci]'
+        env:
+          GITHUB_TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+
+      - name: Screenshot Website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: ${{env.REPOSITORY_HOMEPAGE_URL}}
+          destination: screenshot.png
+
+      - name: Download Screenshot Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: screenshot
+          path: .github/
+
+      - name: Commit Screenshot
+        uses: EndBug/add-and-commit@v8
+        with:
+          add: .github/screenshot.png
+          message: 'docs: screenshot update [skip ci]'
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com

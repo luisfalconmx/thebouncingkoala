@@ -16,7 +16,7 @@
     "test:ci": "jest",
     "test:coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
-    "lint": "eslint --fix",
+    "lint": "eslint --fix .",
     "lint:styles": "stylelint --fix '**/*.{css,pcss,sss}'",
     "pretty": "prettier --write .",
     "prepare": "husky install",
@@ -49,7 +49,6 @@
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "classnames": "^2.3.1",
-    "gh-pages": "^3.2.3",
     "i18next": "^21.6.4",
     "i18next-browser-languagedetector": "^6.1.2",
     "i18next-http-backend": "^1.3.1",
