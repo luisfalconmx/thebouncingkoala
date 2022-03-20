@@ -10,6 +10,7 @@ const Team = () => {
     <section className="Team">
       <b className="Team__Label">{t('team.label')}</b>
       <h2 className="Team__Title">{t('team.title')}</h2>
+      <p className="Team__Description">{t('team.description')}</p>
       <div className="Team__Track">
         <CardTeam
           name="Wade Warren"

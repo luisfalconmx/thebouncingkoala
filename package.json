@@ -110,8 +110,7 @@
     "webpack": "^5.62.1",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.2",
-    "webpackbar": "^5.0.2"
+    "webpack-dev-server": "^4.7.2"
   },
   "repository": "git@github.com:luisfalconmx/thebouncingkoala.git"
 }

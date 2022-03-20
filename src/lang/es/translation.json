@@ -7,22 +7,40 @@
     "link_4": "Blog"
   },
   "hero": {
-    "title": "Hazlo simple pero significativo.",
-    "description": "El público está más familiarizado con el mal diseño que con el buen diseño. En efecto, está condicionado a preferir un mal diseño.",
+    "title": "Enfócate en lo que eres bueno",
+    "description": "En The Bouncing Koala somos el proveedor de servicios web integral desde diseño hasta creación de contenido y marketing en redes sociales.",
     "button": "Empezar"
   },
   "services": {
-    "label": "Por qué The Bouncing Koala",
-    "title": "La creatividad no es más que la forma de resolver nuevos problemas."
-  },
-  "cardService": {
-    "title": "Diseño de interfaz de usuario",
-    "description": "El paseo marítimo no sale del distrito escolar, por lo que hay algo divertido que hacer. Quiere servicios y servicios.",
-    "button": "Ver servicio"
+    "label": "Somos los expertos en lo que necesitas",
+    "title": "Nosotros nos encargamos de todo para que puedas centrarte en tu negocio.",
+    "cards": [
+      {
+        "title": "Cripto Marketing",
+        "description": "La forma inteligente de promocionar tu proyecto de crypto desde creación de contenido hasta Influencers para tu marca.",
+        "button": "Ver Servicio"
+      },
+      {
+        "title": "Web Design",
+        "description": "Nuestros diseñadores y desarrolladores convierten tus ideas en realidad.",
+        "button": "Ver Servicio"
+      },
+      {
+        "title": "Social Media Content Creators",
+        "description": "Nuestro equipo creará el contenido ideal para tu negocio.",
+        "button": "Ver Servicio"
+      },
+      {
+        "title": "Creación de contenido NFT",
+        "description": "Diseñamos los nft que necesitas para crear tu marketplace",
+        "button": "Ver Servicio"
+      }
+    ]
   },
   "team": {
     "label": "NUESTRO EQUIPO",
-    "title": "Conoce al equipo creativo"
+    "title": "¡Conoce al equipo creativo!",
+    "description": "En The Bouncing Koala cada miembro tiene habilidades que van desde la redacción hasta el diseño gráfico ¡te ayudamos a conseguir tus objetivos! Pero primero conócenos un poco más:"
   },
   "featured": {
     "title": "Envío instantáneo de correo electrónico y correo postal.",

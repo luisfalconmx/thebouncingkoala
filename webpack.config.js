@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Critters = require('critters-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const WebpackBar = require('webpackbar')
 const CopyPlugin = require('copy-webpack-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const AnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -147,8 +146,6 @@ module.exports = (env, argv) => {
     new CleanWebpackPlugin(),
 
     new Dotenv(),
-
-    new WebpackBar(),
 
     new CopyPlugin({
       patterns: [

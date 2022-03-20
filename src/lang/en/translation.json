@@ -7,22 +7,40 @@
     "link_4": "Blog"
   },
   "hero": {
-    "title": "Make it simple, but significant.",
-    "description": "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design.",
+    "title": "Focus on what you are good at",
+    "description": "At The Bouncing Koala we are the one-stop web service provider from design to content creation and social media marketing.",
     "button": "Get Started"
   },
   "services": {
-    "label": "Why The Bouncing Koala",
-    "title": "Creativity is nothing but the way to solve new problems."
-  },
-  "cardService": {
-    "title": "UI Design",
-    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.",
-    "button": "View service"
+    "label": "We are the experts in what you need",
+    "title": "We take care of everything so you can focus on your business",
+    "cards": [
+      {
+        "title": "Cripto Marketing",
+        "description": "The smart way to promote your crypto project from content creation to Influencers for your brand.",
+        "button": "View Service"
+      },
+      {
+        "title": "Web Design",
+        "description": "Our designers and developers turn your ideas into reality.",
+        "button": "View Service"
+      },
+      {
+        "title": "Social Media Content Creators",
+        "description": "Our team will create the ideal content for your business.",
+        "button": "View Service"
+      },
+      {
+        "title": "NFT Content Creation",
+        "description": "We design the nft you need to create your marketplace",
+        "button": "View Service"
+      }
+    ]
   },
   "team": {
     "label": "Our team",
-    "title": "Meet the creative team"
+    "title": "Meet the creative team",
+    "description": "At The Bouncing Koala each member has skills ranging from writing to graphic design, we help you achieve your goals! But first get to know us a little more:"
   },
   "featured": {
     "title": "Instant email & postal delivery.",
