@@ -6,10 +6,14 @@
     @apply h-[201px] object-cover text-neutral-900 rounded-t-xl;
     @apply empty:bg-zinc-300;
     @apply dark:text-neutral-50;
+
+    img {
+      @apply rounded-t-xl;
+    }
   }
 
   &__Content {
-    @apply h-full px-6 pt-8;
+    @apply h-full px-6 pt-8 max-w-prose;
   }
 
   &__Type {

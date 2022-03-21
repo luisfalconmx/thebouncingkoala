@@ -1,5 +1,11 @@
 .User {
-  @apply max-w-[203px] grid grid-cols-[repeat(auto-fit,minmax(0,auto))] gap-x-3 items-center;
+  @apply max-w-[203px] grid grid-cols-[repeat(auto-fit,minmax(0,auto))] gap-x-1 items-center;
+
+  &__Image {
+    img {
+      @apply rounded-full;
+    }
+  }
 
   &__Info {
     @apply flex flex-col;
