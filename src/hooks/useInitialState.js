@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import GhostContentAPI from '@tryghost/content-api'
 
 const useInitialState = () => {
   const key = 'koala-theme'
@@ -8,6 +9,12 @@ const useInitialState = () => {
   const keyExist = key in localStorage
   const isDark = preference || (!keyExist && browserTheme)
   const [darkmode, setDarkmode] = useState(isDark)
+
+  const api = new GhostContentAPI({
+    url: process.env.API_URL,
+    key: process.env.API_KEY,
+    version: process.env.API_VERSION
+  })
 
   const setPreferences = () => {
     const root = document.documentElement
@@ -31,6 +38,7 @@ const useInitialState = () => {
   }, [darkmode])
 
   return {
+    api,
     darkmode,
     toggleDarkmode
   }
