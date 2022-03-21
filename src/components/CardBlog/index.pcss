@@ -1,5 +1,5 @@
 .CardBlog {
-  @apply flex flex-col max-w-[360px] h-[590px] rounded-xl shadow-soft bg-neutral-50;
+  @apply flex flex-col w-full max-w-[360px] h-[590px] rounded-xl shadow-soft bg-neutral-50;
   @apply dark:bg-night-50;
 
   &__Image {
@@ -8,7 +8,7 @@
     @apply dark:text-neutral-50;
 
     img {
-      @apply rounded-t-xl;
+      @apply w-full rounded-t-xl max-h-[220px] object-cover;
     }
   }
 
