@@ -14,8 +14,6 @@ const BlogPosts = () => {
       .catch((error) => console.error(error))
   }, [])
 
-  console.log('posts', posts)
-
   return (
     <section className="BlogPosts">
       <h1 className="BlogPosts__Title">Blog</h1>

@@ -31,6 +31,7 @@ module.exports = (env, argv) => {
 
   config.output = {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/images/[hash][ext]'
   }
