@@ -1,64 +1,50 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Image from '@components/Image'
-import defaultImage from '@images/cardteam-image.png'
-import defaultImageWebp from '@images/cardteam-image.png?as=webp'
+import { ReactSVG } from 'react-svg'
+import iconFacebook from '@images/icon-facebook.svg'
+import iconTwitter from '@images/icon-twitter.svg'
 import './index.pcss'
 
-const CardTeam = ({
-  image = defaultImage,
-  imageWebp = defaultImageWebp,
-  name,
-  position,
-  gmail,
-  linkedin,
-  behance,
-  github
-}) => {
-  const socialIcons = [
+const CardTeam = ({ name, bio, image, website, facebook, twitter, url }) => {
+  const social = [
     {
-      icon: '',
-      prefix: 'mailto:',
-      url: gmail
+      conditional: facebook,
+      icon: iconFacebook,
+      url: `https://www.facebook.com/${facebook}`
     },
     {
-      icon: '',
-      url: linkedin
-    },
-    {
-      icon: '',
-      url: behance
-    },
-    {
-      icon: '',
-      url: github
+      conditional: twitter,
+      icon: iconTwitter,
+      url: `https://twitter.com/${twitter}`
     }
-  ].filter(({ url }) => url)
+  ]
 
   return (
     <div className="CardTeam">
-      <Image
-        src={image}
-        srcSet={imageWebp}
-        alt={name}
-        width="360"
-        height="352"
-      />
+      <a href={website} target="_blank" rel="noreferrer">
+        <Image className="CardTeam__Image" src={image} alt={name} />
+      </a>
       <div className="CardTeam__Content">
-        <h3 className="CardTeam__Name">{name}</h3>
-        {position && <p className="CardTeam__Position">{position}</p>}
+        <a href={website} target="_blank" rel="noreferrer">
+          <h3 className="CardTeam__Name">{name}</h3>
+          {bio && <p className="CardTeam__Position">{bio}</p>}
+        </a>
         <div className="CardTeam__Social">
-          {socialIcons.map(({ icon, prefix, url }) => (
-            <a
-              className="CardTeam__SocialIcon"
-              target="_blank"
-              rel="noreferrer"
-              href={prefix + url}
-              key={url}
-            >
-              {icon}
-            </a>
-          ))}
+          {social.map(
+            ({ conditional, icon, url }) =>
+              conditional && (
+                <a
+                  className="CardTeam__SocialIcon"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={url}
+                  key={url}
+                >
+                  <ReactSVG src={icon} width={10} />
+                </a>
+              )
+          )}
         </div>
       </div>
     </div>
@@ -66,14 +52,13 @@ const CardTeam = ({
 }
 
 CardTeam.propTypes = {
-  image: propTypes.string,
-  imageWebp: propTypes.string,
   name: propTypes.string.isRequired,
-  position: propTypes.string,
-  gmail: propTypes.string,
-  linkedin: propTypes.string,
-  behance: propTypes.string,
-  github: propTypes.string
+  bio: propTypes.string,
+  image: propTypes.string,
+  website: propTypes.string,
+  facebook: propTypes.string,
+  twitter: propTypes.string,
+  url: propTypes.string
 }
 
 export default CardTeam

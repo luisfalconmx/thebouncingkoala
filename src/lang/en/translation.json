@@ -7,41 +7,50 @@
     "link_4": "Blog"
   },
   "hero": {
-    "title": "Make it simple, but significant.",
-    "description": "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design.",
+    "title": "Focus on what you are good at",
+    "description": "At The Bouncing Koala we are the one-stop web service provider from design to content creation and social media marketing.",
     "button": "Get Started"
   },
   "services": {
-    "label": "Why The Bouncing Koala",
-    "title": "Creativity is nothing but the way to solve new problems."
-  },
-  "cardService": {
-    "title": "UI Design",
-    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.",
-    "button": "View service"
+    "label": "We are the experts in what you need",
+    "title": "We take care of everything so you can focus on your business",
+    "cards": [
+      {
+        "title": "Cripto Marketing",
+        "description": "The smart way to promote your crypto project from content creation to Influencers for your brand.",
+        "button": "View Service"
+      },
+      {
+        "title": "Web Design",
+        "description": "Our designers and developers turn your ideas into reality.",
+        "button": "View Service"
+      },
+      {
+        "title": "Social Media Content Creators",
+        "description": "Our team will create the ideal content for your business.",
+        "button": "View Service"
+      },
+      {
+        "title": "NFT Content Creation",
+        "description": "We design the nft you need to create your marketplace",
+        "button": "View Service"
+      }
+    ]
   },
   "team": {
     "label": "Our team",
-    "title": "Meet the creative team"
+    "title": "Meet the creative team!",
+    "description": "At The Bouncing Koala each member has skills ranging from writing to graphic design, we help you achieve your goals! But first get to know us a little more:"
   },
   "featured": {
-    "title": "Instant email & postal delivery.",
-    "description": "Simplify your integration using Stripe Checkout. It dynamically adapts to your customer’s device and location to increase conversion."
-  },
-  "pricing": {
-    "caption": "Everything you need",
-    "text": "Includes every feature we offer plus unlimited projects and unlimited users",
-    "label": "Everything you need",
-    "title": "All in one platform",
-    "description": "Lorem ipsum dolor sit amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit mollit."
-  },
-  "featuredItem": {
-    "item_1": "Email Comments and Attachments"
+    "title": "We help you build your business",
+    "description": "At The Bouncing Koala we do from the creation of your website, content, promotion with influencers and more. No matter what type of product or service you are promoting, we can help you reach your target audience. Let's start a project together!",
+    "button": "Know more"
   },
   "featuredBlog": {
     "label": "Featured blog posts",
     "title": "Our blog",
-    "description": "Creativity is a highfalutin word for the work I have to do between now and Tuesday."
+    "description": "Estamos atentos no solo a lo que está sucediendo ahora, sino también a lo que podría suceder en el futuro. Hecha un vistazo a nuestro blog."
   },
   "cardBlog": {
     "alt": "Guide for designing better mobile apps typography",
@@ -49,18 +58,9 @@
     "title": "Guide for designing better mobile apps typography",
     "description": "In this article, I won’t talk about the general concepts of typography, which can be used both in print"
   },
-  "faq": {
-    "title": "Frequently asked questions",
-    "description": "Get the best services at the lowest price",
-    "action": "Read more"
-  },
-  "cardFaq": {
-    "question": "How long do payouts take?",
-    "answer": "Once you’re set up, payouts arrive in your bank account on a 2-day rolling basis. Or you can opt to receive payouts weekly or monthly."
-  },
   "newsletter": {
     "title": "Sign up for our newsletter",
-    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit mollit.",
+    "description": "We share all our ingredients for success, promotions and more.",
     "input": "Enter your email address",
     "leyend": "We care about the protection of your data. read our",
     "privacy": "Privacy policy"

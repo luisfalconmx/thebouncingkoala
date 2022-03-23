@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import { ReactSVG } from 'react-svg'
 import LogoFacebook from '@images/logo-facebook.svg'
 import LogoTwitter from '@images/logo-twitter.svg'
 import LogoInstagram from '@images/logo-instagram.svg'
-import LogoGithub from '@images/logo-github.svg'
 import './index.pcss'
 
 const SocialIcons = [
@@ -22,21 +20,16 @@ const SocialIcons = [
     icon: LogoInstagram,
     alt: 'Instagram',
     link: 'https://www.instagram.com'
-  },
-  {
-    icon: LogoGithub,
-    alt: 'Github',
-    link: 'https://github.com/thebouncingkoala'
   }
 ]
 
 const Footer = () => {
-  const { t } = useTranslation()
-
   return (
     <footer className="Footer">
       <div className="Footer__Container">
-        <strong className="Footer__Leyend">{t('footer.leyend')}</strong>
+        <strong className="Footer__Leyend">
+          © {new Date().getFullYear()} The Bouncing Koala.
+        </strong>
         <ul className="Footer__List">
           {SocialIcons.map((item) => (
             <li className="Footer__Item" key={item.link}>
