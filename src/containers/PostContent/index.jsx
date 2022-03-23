@@ -22,8 +22,6 @@ const PostContent = () => {
       .catch((error) => console.error(error))
   }, [])
 
-  console.log(content)
-
   return (
     <section className="PostContent">
       <h1 className="PostContent__Title">{content.title}</h1>

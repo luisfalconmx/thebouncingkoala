@@ -22,8 +22,6 @@ const FeaturedBlog = () => {
       .catch((err) => console.error(err))
   }, [])
 
-  console.log('posts', posts)
-
   return (
     <section className="FeaturedBlog">
       <b className="FeaturedBlog__Label">{t('featuredBlog.label')}</b>
