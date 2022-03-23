@@ -130,13 +130,6 @@ module.exports = (env, argv) => {
       inject: true
     }),
 
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: '404.html',
-      favicon: './public/favicon.ico',
-      inject: true
-    }),
-
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
     }),
