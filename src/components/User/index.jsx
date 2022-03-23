@@ -1,20 +1,18 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Image from '@components/Image'
-import defaultImage from '@images/user.png'
-import defaultImageWebp from '@images/user.png?as=webp'
 import './index.pcss'
 
 const User = ({
-  image = defaultImage,
+  image,
   name = 'Kristin Watson',
   label = 'Jun 27, 2020 · 6 min'
 }) => {
   return (
     <div className="User">
       <Image
+        className="User__Image"
         src={image}
-        srcSet={defaultImageWebp}
         alt={name}
         width="48"
         height="48"
@@ -28,7 +26,7 @@ const User = ({
 }
 
 User.propTypes = {
-  image: propTypes.string,
+  image: propTypes.string.isRequired,
   name: propTypes.string,
   label: propTypes.string
 }

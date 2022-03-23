@@ -1,6 +1,12 @@
 .CardTeam {
-  @apply max-w-[360px] shadow-soft rounded-xl bg-neutral-50 rounded-b-xl;
+  @apply w-[290px] min-h-[380px] shadow-soft rounded-xl bg-neutral-50 rounded-b-xl;
   @apply dark:bg-night-50;
+
+  &__Image {
+    img {
+      @apply w-full rounded-t-xl max-h-[290px] object-cover;
+    }
+  }
 
   &__Content {
     @apply p-6;

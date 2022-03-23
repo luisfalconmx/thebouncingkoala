@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Critters = require('critters-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const WebpackBar = require('webpackbar')
 const CopyPlugin = require('copy-webpack-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const AnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -32,6 +31,7 @@ module.exports = (env, argv) => {
 
   config.output = {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/images/[hash][ext]'
   }
@@ -41,7 +41,6 @@ module.exports = (env, argv) => {
     alias: {
       '@api': path.resolve(__dirname, 'src/api/'),
       '@images': path.resolve(__dirname, 'src/assets/images/'),
-      '@icons': path.resolve(__dirname, 'src/assets/icons/'),
       '@documents': path.resolve(__dirname, 'src/assets/documents/'),
       '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
       '@components': path.resolve(__dirname, 'src/components/'),
@@ -131,13 +130,6 @@ module.exports = (env, argv) => {
       inject: true
     }),
 
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: '404.html',
-      favicon: './public/favicon.ico',
-      inject: true
-    }),
-
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
     }),
@@ -147,8 +139,6 @@ module.exports = (env, argv) => {
     new CleanWebpackPlugin(),
 
     new Dotenv(),
-
-    new WebpackBar(),
 
     new CopyPlugin({
       patterns: [

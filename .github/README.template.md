@@ -1,9 +1,8 @@
-<!-- START .github/README.template.md -->
-# thebouncingkoala
+# ${{ env.REPOSITORY_SLUG }}
 
-#### Official website for The Bouncing Koala
+#### ${{ env.REPOSITORY_DESCRIPTION }}
 
-![Thebouncingkoala screenshot](https://raw.githubusercontent.com/luisfalconmx/thebouncingkoala/main/.github/screenshot.png)
+![${{env.REPOSITORY_NAME}} screenshot](https://raw.githubusercontent.com/${{env.REPOSITORY_FULL_NAME}}/${{env.REPOSITORY_DEFAULT_BRANCH}}/.github/screenshot.png)
 
 ## Getting Started
 
@@ -11,17 +10,17 @@
 
 ```bash
 # HTTPS
-https://github.com/luisfalconmx/thebouncingkoala.git
+${{env.REPOSITORY_GITHUB_URL}}.git
 ```
 
 ```bash
 # SSH
-git@github.com:luisfalconmx/thebouncingkoala.git
+git@github.com:${{env.REPOSITORY_FULL_NAME}}.git
 ```
 
 ```bash
 # GITHUB CLI
-gh repo clone luisfalconmx/thebouncingkoala
+gh repo clone ${{env.REPOSITORY_FULL_NAME}}
 ```
 
 #### Or fork this project clicking in the fork button set in head of this page.
@@ -116,15 +115,15 @@ All changes to the project will be validated by creating a commit. These are the
 
 ### Join us in discussions
 
-We use GitHub Discussions to talk about all sorts of topics related to documentation and this site. For example: if you'd like to help troubleshooting a PR, have a great new idea, or want to share something amazing you've learned in our docs, join us in the [discussions](https://github.com/luisfalconmx/thebouncingkoala/discussions).
+We use GitHub Discussions to talk about all sorts of topics related to documentation and this site. For example: if you'd like to help troubleshooting a PR, have a great new idea, or want to share something amazing you've learned in our docs, join us in the [discussions](${{env.REPOSITORY_GITHUB_URL}}/discussions).
 
 ## Roadmap
 
-Our project roadmap is where you can learn about what features we're working on, what stage they're in, and when we expect to bring them to you. Have any questions or comments about items on the roadmap? Share your feedback in [discussions](https://github.com/luisfalconmx/thebouncingkoala/discussions) section.
+Our project roadmap is where you can learn about what features we're working on, what stage they're in, and when we expect to bring them to you. Have any questions or comments about items on the roadmap? Share your feedback in [discussions](${{env.REPOSITORY_GITHUB_URL}}/discussions) section.
 
 Review the project roadmap. Maybe there is something amazing that you can contribute 😉
 
-[https://github.com/luisfalconmx/thebouncingkoala/projects?type=beta](https://github.com/luisfalconmx/thebouncingkoala/projects?type=beta)
+[${{env.REPOSITORY_GITHUB_URL}}/projects?type=beta](${{env.REPOSITORY_GITHUB_URL}}/projects?type=beta)
 
 ## Releases
 
@@ -163,20 +162,20 @@ git push origin <tag>
 ```
 
 Check the complete list of all official releases published:
-[https://github.com/luisfalconmx/thebouncingkoala/releases](https://github.com/luisfalconmx/thebouncingkoala/releases)
+[${{env.REPOSITORY_GITHUB_URL}}/releases](${{env.REPOSITORY_GITHUB_URL}}/releases)
 
 ## Deployments
 
 All deployments are automatic because this project has a integration with **Vercel**. Any contribution added in main branch will deploy this project in production.
 
 You can check the status of deployments in the next link:
-[https://github.com/luisfalconmx/thebouncingkoala/deployments](https://github.com/luisfalconmx/thebouncingkoala/deployments)
+[${{env.REPOSITORY_GITHUB_URL}}/deployments](${{env.REPOSITORY_GITHUB_URL}}/deployments)
 
-For better understand, it is advisable to follow the instructions detailed in [contributing](https://github.com/luisfalconmx/thebouncingkoala#contributing) section.
+For better understand, it is advisable to follow the instructions detailed in [contributing](${{env.REPOSITORY_GITHUB_URL}}#contributing) section.
 
 ## License
 
-This project is free and open-source software licensed under the [MIT Licence](https://github.com/luisfalconmx/thebouncingkoala/blob/main/LICENSE).
+This project is free and open-source software licensed under the [MIT Licence](${{env.REPOSITORY_LICENSE_URL}}).
 
 Some contents like images, videos, documents and other multimedia files use your own licence and in case required atributtion this is mentioned in any part of this project like in the code or in the documentation.
 
@@ -184,5 +183,4 @@ Some contents like images, videos, documents and other multimedia files use your
 
 Thank you very much for visiting this repository, contributing amazing code and being part of this great community on github.
 
-If you want to support me you can visit my [Github Sponsors Profile](https://github.com/sponsors/luisfalconmx). Any support, no matter how small, motivates me to continue creating open source projects and share them with everyone :)
-<!-- END .github/README.template.md -->
+If you want to support me you can visit my [Github Sponsors Profile](https://github.com/sponsors/${{env.REPOSITORY_OWNER}}). Any support, no matter how small, motivates me to continue creating open source projects and share them with everyone :)

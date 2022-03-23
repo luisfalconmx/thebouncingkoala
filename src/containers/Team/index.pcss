@@ -10,13 +10,23 @@
   }
 
   &__Title {
-    @apply text-3xl font-bold text-center text-neutral-900 mb-11;
-    @apply lg:text-4xl lg:mb-16;
+    @apply text-3xl font-bold text-center text-neutral-900 mb-6;
+    @apply lg:text-4xl lg:mb-9;
     @apply dark:text-neutral-50;
   }
 
+  &__Description {
+    @apply max-w-[760px] mx-auto text-center text-base font-normal text-neutral-600 mb-11;
+    @apply lg:text-lg;
+    @apply dark:text-neutral-300;
+  }
+
   &__Track {
-    @apply grid grid-cols-1 gap-y-10 justify-items-center;
-    @apply lg:grid-cols-3 lg:gap-y-0 lg:gap-x-7;
+    @apply flex justify-evenly flex-wrap;
+
+    & .CardTeam {
+      @apply mb-8;
+      @apply sm:mr-8;
+    }
   }
 }

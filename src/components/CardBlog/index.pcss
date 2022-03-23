@@ -1,15 +1,19 @@
 .CardBlog {
-  @apply flex flex-col max-w-[360px] h-[590px] rounded-xl shadow-soft bg-neutral-50;
+  @apply flex flex-col w-full max-w-[360px] min-h-[590px] rounded-xl shadow-soft bg-neutral-50;
   @apply dark:bg-night-50;
 
   &__Image {
     @apply h-[201px] object-cover text-neutral-900 rounded-t-xl;
     @apply empty:bg-zinc-300;
     @apply dark:text-neutral-50;
+
+    img {
+      @apply w-full h-[220px] object-cover rounded-t-xl;
+    }
   }
 
   &__Content {
-    @apply h-full px-6 pt-8;
+    @apply h-full px-6 pt-8 max-w-prose;
   }
 
   &__Type {
