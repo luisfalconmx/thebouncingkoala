@@ -16,6 +16,8 @@ const Team = () => {
       .catch((err) => console.error(err))
   }, [])
 
+  console.log(team)
+
   return (
     <section className="Team">
       <b className="Team__Label">{t('team.label')}</b>
