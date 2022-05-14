@@ -3,7 +3,6 @@ import Hero from '@containers/Hero'
 import Services from '@containers/Services'
 import Team from '@containers/Team'
 import Featured from '@containers/Featured'
-import FeaturedBlog from '@containers/FeaturedBlog'
 import Newsletter from '@containers/Newsletter'
 
 const Home = () => (
@@ -12,7 +11,6 @@ const Home = () => (
     <Services />
     <Team />
     <Featured />
-    <FeaturedBlog />
     <Newsletter />
   </>
 )
