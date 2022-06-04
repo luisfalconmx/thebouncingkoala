@@ -1,10 +1,11 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Image from '@components/Image'
+import defaultImage from '@images/user.png'
 import './index.pcss'
 
 const User = ({
-  image,
+  image = defaultImage,
   name = 'Kristin Watson',
   label = 'Jun 27, 2020 · 6 min'
 }) => {
@@ -26,7 +27,7 @@ const User = ({
 }
 
 User.propTypes = {
-  image: propTypes.string.isRequired,
+  image: propTypes.string,
   name: propTypes.string,
   label: propTypes.string
 }

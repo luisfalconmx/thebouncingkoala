@@ -23,20 +23,24 @@ const Navbar = () => {
 
   const links = [
     {
-      text: t('navbar.link_1'),
-      route: '/'
+      text: 'Services',
+      route: '#services'
     },
     {
-      text: t('navbar.link_2'),
-      route: '/services'
+      text: 'Team',
+      route: '#team'
     },
     {
-      text: t('navbar.link_3'),
-      route: '/about-us'
+      text: 'Pricing',
+      route: '#pricing'
     },
     {
-      text: t('navbar.link_4'),
-      route: '/blog'
+      text: 'Blog',
+      route: '#blog'
+    },
+    {
+      text: 'FAQ',
+      route: '#faq'
     }
   ]
 
@@ -88,9 +92,9 @@ const Navbar = () => {
           <ul className="Navbar__List">
             {links.map((link) => (
               <li className="Navbar__Item" key={link.text}>
-                <Link className="Navbar__Link" to={link.route}>
+                <a className="Navbar__Link" href={link.route}>
                   {link.text}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

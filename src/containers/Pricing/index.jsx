@@ -8,7 +8,7 @@ const Pricing = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="Pricing">
+    <section className="Pricing" id="pricing">
       <div className="Pricing__Head">
         <div>
           <p className="Pricing__HeadTitle">{t('pricing.caption')}</p>

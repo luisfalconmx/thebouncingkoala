@@ -1,23 +1,31 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
-import AppContext from '@context/AppContext'
 import CardTeam from '@components/CardTeam'
 import './index.pcss'
 
 const Team = () => {
   const { t } = useTranslation()
-  const { api } = useContext(AppContext)
-  const [team, setTeam] = useState([])
-
-  useEffect(() => {
-    api.authors
-      .browse()
-      .then((authors) => setTeam(authors))
-      .catch((err) => console.error(err))
-  }, [])
+  const team = [
+    {
+      name: 'Jesus Adair',
+      image: require('@images/team/jesus.jpeg')
+    },
+    {
+      name: "Ana d'Argence",
+      image: require('@images/team/ana.jpeg')
+    },
+    {
+      name: 'Enrique Garrido',
+      image: require('@images/team/enrique.jpeg')
+    },
+    {
+      name: 'Mariam Noriega',
+      image: require('@images/team/mariam.jpeg')
+    }
+  ]
 
   return (
-    <section className="Team">
+    <section className="Team" id="team">
       <b className="Team__Label">{t('team.label')}</b>
       <h2 className="Team__Title">{t('team.title')}</h2>
       <p className="Team__Description">{t('team.description')}</p>

@@ -7,7 +7,7 @@ const FAQ = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="FAQ">
+    <section className="FAQ" id="faq">
       <h2 className="FAQ__Title">{t('faq.title')}</h2>
       <p className="FAQ__Description">{t('faq.description')}</p>
       <div className="FAQ__Grid">

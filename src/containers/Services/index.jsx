@@ -8,7 +8,7 @@ const Services = () => {
   const numberOfServices = 4
 
   return (
-    <section className="Services">
+    <section className="Services" id="services">
       <b className="Services__Label">{t('services.label')}</b>
       <h2 className="Services__Title">{t('services.title')}</h2>
       <div className="Services__Track">

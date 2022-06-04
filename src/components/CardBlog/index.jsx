@@ -2,10 +2,11 @@ import React from 'react'
 import propTypes from 'prop-types'
 import Image from '@components/Image'
 import User from '@components/User'
+import defaultImage from '@images/cardBlog-image.png'
 import './index.pcss'
 
 const CardBlog = ({
-  image,
+  image = defaultImage,
   type = 'Article',
   link = '/',
   title = 'Guide for designing better mobile apps typography',
