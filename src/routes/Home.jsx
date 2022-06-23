@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from '@containers/Hero'
 import Services from '@containers/Services'
 import Team from '@containers/Team'
-import Pricing from '@containers/Pricing'
+// import Pricing from '@containers/Pricing'
 import Featured from '@containers/Featured'
 import FeaturedBlog from '@containers/FeaturedBlog'
 import FAQ from '@containers/FAQ'
@@ -14,7 +14,7 @@ const Home = () => (
     <Services />
     <Team />
     <Featured />
-    <Pricing />
+    {/* <Pricing /> */}
     <FeaturedBlog />
     <FAQ />
     <Newsletter />
