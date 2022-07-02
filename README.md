@@ -26,7 +26,7 @@ gh repo clone luisfalconmx/thebouncingkoala
 
 #### Or fork this project clicking in the fork button set in head of this page.
 
-![image](https://user-images.githubusercontent.com/57654255/156873180-7c057e80-bd11-46ba-a45b-d6901decf497.png)
+![image](https://user-images.githubusercontent.com/57654255/173723706-7091d0dd-6e3d-4551-b834-5cef3a2531bf.png)
 
 If you need help for this step check the next guide:
 [https://docs.github.com/en/get-started/quickstart/fork-a-repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
@@ -35,26 +35,26 @@ If you need help for this step check the next guide:
 
 ```
 nvm use
-yarn install
+npm install
 ```
 
 #### Finally you can start a local dev server with this command
 
 ```
-yarn start
+npm start
 ```
 
 #### If you need to check the code to find some errors and warnings, use the next commands
 
 ```
-yarn run lint
-yarn run lint:styles
+npm run lint
+npm run stylelint
 ```
 
 #### Also exists a command for apply code writing rules like indents, semicolons, etc. You can use the following command
 
 ```
-yarn run pretty
+npm run pretty
 ```
 
 ## Contributing
@@ -133,27 +133,25 @@ To create a release it is necessary to prepare the project following these steps
 #### Create a new version with tag
 
 ```
-yarn version --<version>
+npm version <version>
 ```
 
-The above command receives as a parameter a specific version such as a version type defined by npm's [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) which will automatically increment the number.
+The above command receives as a parameter a specific version such as 1.4.0 or a version type defined by npm's [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) which will automatically increment the number.
 
 These are the available types that can be used as a parameter:
 
-- **--patch** releases: `1.0` or `1.0.x` or `~1.0.4`
-- **--minor** releases: `1` or `1.x` or `^1.0.4`
-- **--major** releases: `*` or `x`
+- **Patch** releases: `1.0` or `1.0.x` or `~1.0.4`
+- **Minor** releases: `1` or `1.x` or `^1.0.4`
+- **Major** releases: `*` or `x`
 
 ### Examples
 
-```bash
-# v1.0.0 -> v1.1.0
-yarn version --minor
+```
+npm version 1.4.0
 ```
 
-```bash
-# v1.0.0 -> v1.0.1
-yarn version --patch
+```
+npm version minor
 ```
 
 #### Upload the tag to the remote repository
