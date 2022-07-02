@@ -10,35 +10,27 @@
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
     "analyze": "webpack --mode development --env analyze",
-    "deploy": "gh-pages -d dist",
     "test": "jest --watch",
     "test:verbose": "jest --watch --verbose",
     "test:ci": "jest",
     "test:coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
     "lint": "eslint --fix .",
-    "lint:styles": "stylelint --fix '**/*.{css,pcss,sss}'",
-    "pretty": "prettier --write ."
+    "stylelint": "stylelint --fix '**/*.{css,pcss,sss}'",
+    "pretty": "prettier --ignore-unknown --write .",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ],
-    "*.{css,pcss}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md}": "prettier --write"
+    "*.{ts,js}": "eslint --fix",
+    "*": "prettier --ignore-unknown --write",
+    "*.{css,pcss,sss}": "stylelint --fix"
   },
   "keywords": [
     "react",
-    "docker",
     "babel",
     "webpack",
     "postcss",
     "eslint",
-    "docker-compose",
     "prettier",
     "husky",
     "browserlist",
@@ -90,10 +82,10 @@
     "eslint-plugin-react": "^7.28.0",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "image-minimizer-webpack-plugin": "^3.2.1",
     "jest": "^27.4.5",
-    "lint-staged": "^12.1.5",
+    "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
