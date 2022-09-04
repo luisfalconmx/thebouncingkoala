@@ -183,7 +183,7 @@ For better understand, it is advisable to follow the instructions detailed in [c
 
 ## License
 
-This project is free and open-source software licensed under the [MIT Licence](https://github.com/luisfalconmx/thebouncingkoala/blob/main/LICENSE).
+This project is free and open-source software licensed under the [MIT Licence]().
 
 Some contents like images, videos, documents and other multimedia files use your own licence and in case required atributtion this is mentioned in any part of this project like in the code or in the documentation.
 
