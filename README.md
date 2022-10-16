@@ -3,13 +3,13 @@
 
 <p align="center">
   <b>Official website for The Bouncing Koala</b><br />
-  <sub>Created with ❤️ by luisfalconmx</sub>
+  <sub>Created with ❤️ by thebouncingkoala</sub>
 </p>
 
 <br />
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/luisfalconmx/thebouncingkoala/main/.github/screenshot.png" alt="Thebouncingkoala" width="100%" />
+  <img src="https://raw.githubusercontent.com/thebouncingkoala/thebouncingkoala/main/.github/screenshot.png" alt="Thebouncingkoala" width="100%" />
 </p>
 
 <br />
@@ -20,17 +20,17 @@
 
 ```bash
 # HTTPS
-https://github.com/luisfalconmx/thebouncingkoala.git
+https://github.com/thebouncingkoala/thebouncingkoala.git
 ```
 
 ```bash
 # SSH
-git@github.com:luisfalconmx/thebouncingkoala.git
+git@github.com:thebouncingkoala/thebouncingkoala.git
 ```
 
 ```bash
 # GITHUB CLI
-gh repo clone luisfalconmx/thebouncingkoala
+gh repo clone thebouncingkoala/thebouncingkoala
 ```
 
 #### Or fork this project clicking in the fork button set in head of this page.
@@ -125,15 +125,15 @@ All changes to the project will be validated by creating a commit. These are the
 
 ### Join us in discussions
 
-We use GitHub Discussions to talk about all sorts of topics related to documentation and this site. For example: if you'd like to help troubleshooting a PR, have a great new idea, or want to share something amazing you've learned in our docs, join us in the [discussions](https://github.com/luisfalconmx/thebouncingkoala/discussions).
+We use GitHub Discussions to talk about all sorts of topics related to documentation and this site. For example: if you'd like to help troubleshooting a PR, have a great new idea, or want to share something amazing you've learned in our docs, join us in the [discussions](https://github.com/thebouncingkoala/thebouncingkoala/discussions).
 
 ## Roadmap
 
-Our project roadmap is where you can learn about what features we're working on, what stage they're in, and when we expect to bring them to you. Have any questions or comments about items on the roadmap? Share your feedback in [discussions](https://github.com/luisfalconmx/thebouncingkoala/discussions) section.
+Our project roadmap is where you can learn about what features we're working on, what stage they're in, and when we expect to bring them to you. Have any questions or comments about items on the roadmap? Share your feedback in [discussions](https://github.com/thebouncingkoala/thebouncingkoala/discussions) section.
 
 Review the project roadmap. Maybe there is something amazing that you can contribute 😉
 
-[https://github.com/luisfalconmx/thebouncingkoala/projects?type=beta](https://github.com/luisfalconmx/thebouncingkoala/projects?type=beta)
+[https://github.com/thebouncingkoala/thebouncingkoala/projects?type=beta](https://github.com/thebouncingkoala/thebouncingkoala/projects?type=beta)
 
 ## Releases
 
@@ -170,20 +170,20 @@ git push origin <tag>
 ```
 
 Check the complete list of all official releases published:
-[https://github.com/luisfalconmx/thebouncingkoala/releases](https://github.com/luisfalconmx/thebouncingkoala/releases)
+[https://github.com/thebouncingkoala/thebouncingkoala/releases](https://github.com/thebouncingkoala/thebouncingkoala/releases)
 
 ## Deployments
 
 All deployments are automatic because this project has a integration with **Vercel**. Any contribution added in main branch will deploy this project in production.
 
 You can check the status of deployments in the next link:
-[https://github.com/luisfalconmx/thebouncingkoala/deployments](https://github.com/luisfalconmx/thebouncingkoala/deployments)
+[https://github.com/thebouncingkoala/thebouncingkoala/deployments](https://github.com/thebouncingkoala/thebouncingkoala/deployments)
 
-For better understand, it is advisable to follow the instructions detailed in [contributing](https://github.com/luisfalconmx/thebouncingkoala#contributing) section.
+For better understand, it is advisable to follow the instructions detailed in [contributing](https://github.com/thebouncingkoala/thebouncingkoala#contributing) section.
 
 ## License
 
-This project is free and open-source software licensed under the [MIT Licence]().
+This project is free and open-source software licensed under the [MIT Licence](https://github.com/thebouncingkoala/thebouncingkoala/blob/main/LICENSE).
 
 Some contents like images, videos, documents and other multimedia files use your own licence and in case required atributtion this is mentioned in any part of this project like in the code or in the documentation.
 
@@ -191,6 +191,6 @@ Some contents like images, videos, documents and other multimedia files use your
 
 Thank you very much for visiting this repository, contributing amazing code and being part of this great community on github.
 
-If you want to support me you can visit my [Github Sponsors Profile](https://github.com/sponsors/luisfalconmx). Any support, no matter how small, motivates me to continue creating open source projects and share them with everyone :)
+If you want to support me you can visit my [Github Sponsors Profile](https://github.com/sponsors/thebouncingkoala). Any support, no matter how small, motivates me to continue creating open source projects and share them with everyone :)
 
 <!-- END .github/README_TEMPLATE/frontend.template.md -->
