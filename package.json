@@ -5,6 +5,9 @@
   "author": "luisfalconmx",
   "license": "MIT",
   "main": "src/index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "yarn run dev",
     "dev": "webpack serve --mode development",
