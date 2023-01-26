@@ -15,10 +15,6 @@ const Team = () => {
       image: require('@images/team/ana.jpeg')
     },
     {
-      name: 'Enrique Garrido',
-      image: require('@images/team/enrique.jpeg')
-    },
-    {
       name: 'Mariam Noriega',
       image: require('@images/team/mariam.jpeg')
     }
@@ -31,11 +27,7 @@ const Team = () => {
       <p className="Team__Description">{t('team.description')}</p>
       <div className="Team__Track">
         {team.map((member) => (
-          <CardTeam
-            key={member.name}
-            image={member.profile_image}
-            {...member}
-          />
+          <CardTeam key={member.name} />
         ))}
       </div>
     </section>

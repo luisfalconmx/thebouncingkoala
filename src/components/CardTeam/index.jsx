@@ -1,12 +1,21 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Image from '@components/Image'
+import DefaultImage from '@images/cardteam-image.png'
 import { ReactSVG } from 'react-svg'
 import iconFacebook from '@images/icon-facebook.svg'
 import iconTwitter from '@images/icon-twitter.svg'
 import './index.pcss'
 
-const CardTeam = ({ name, bio, image, website, facebook, twitter, url }) => {
+const CardTeam = ({
+  name = 'Wade Warren',
+  bio = 'Creative director',
+  image = DefaultImage,
+  website,
+  facebook,
+  twitter,
+  url
+}) => {
   const social = [
     {
       conditional: facebook,
