@@ -3,7 +3,7 @@
 
 <p align="center">
   <b>Official website for The Bouncing Koala</b><br />
-  <sub>Created with ❤️ by thebouncingkoala</sub>
+  <sub>Created with ❤️ by luisfalconmx</sub>
 </p>
 
 <br />
@@ -191,6 +191,6 @@ Some contents like images, videos, documents and other multimedia files use your
 
 Thank you very much for visiting this repository, contributing amazing code and being part of this great community on github.
 
-If you want to support me you can visit my [Github Sponsors Profile](https://github.com/sponsors/thebouncingkoala). Any support, no matter how small, motivates me to continue creating open source projects and share them with everyone :)
+If you want to support me you can visit my [Github Sponsors Profile](https://github.com/sponsors/luisfalconmx). Any support, no matter how small, motivates me to continue creating open source projects and share them with everyone :)
 
 <!-- END .github/README_TEMPLATE/frontend.template.md -->
