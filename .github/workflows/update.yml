@@ -8,5 +8,7 @@ jobs:
   update:
     name: Maintain
     uses: luisfalconmx/.github/.github/workflows/update.yml@main
+    with:
+      screenshot: true
     secrets:
       PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
