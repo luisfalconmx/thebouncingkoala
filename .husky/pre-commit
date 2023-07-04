@@ -4,5 +4,4 @@
 # Enable colors
 export FORCE_COLOR=1
 
-yarn run test:ci
 npx lint-staged
