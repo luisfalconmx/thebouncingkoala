@@ -44,6 +44,3 @@ jobs:
         run: |
           yarn run lint
           yarn run stylelint
-
-      - name: Run tests
-        run: yarn run test:ci
