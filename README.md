@@ -1,8 +1,8 @@
 <!-- START .github/README_TEMPLATE/frontend.template.md -->
-<h1 align="center">Thebouncingkoala</h1>
+<h1 align="center">thebouncingkoala</h1>
 
 <p align="center">
-  <b>Official website for The Bouncing Koala</b><br />
+  <b>Company website with multilanguage support, dark mode and fully responsive for thebouncingkoala agency</b><br />
   <sub>Created with ❤️ by luisfalconmx</sub>
 </p>
 
